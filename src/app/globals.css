@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+:root {
+  --ink: #1a1814;
+  --ink-muted: #6b6560;
+  --ink-faint: #a8a39d;
+  --paper: #faf8f4;
+  --paper-warm: #f2ede6;
+  --paper-mid: #e8e2d9;
+  --accent: #c0392b;
+  --accent-soft: #f5ebe8;
+  --border: rgba(26, 24, 20, 0.12);
+  --border-strong: rgba(26, 24, 20, 0.25);
+  --radius: 4px;
+  --radius-lg: 8px;
+  --font-display: 'Noto Serif JP', Georgia, serif;
+  --font-body: 'Noto Sans JP', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--ink);
+  background: white;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.08);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--ink-faint);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.2s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--paper-warm); }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+
+/* Article markdown rendering */
+.article-output h1 { font-size: 1.6rem; margin: 2rem 0 1rem; color: var(--ink); }
+.article-output h2 { font-size: 1.3rem; margin: 1.8rem 0 0.8rem; color: var(--ink); border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+.article-output h3 { font-size: 1.1rem; margin: 1.4rem 0 0.6rem; color: var(--ink); }
+.article-output p { margin-bottom: 1.2rem; line-height: 1.9; }
+.article-output ul, .article-output ol { margin: 1rem 0 1.2rem 1.5rem; }
+.article-output li { margin-bottom: 0.4rem; }
+.article-output strong { font-weight: 500; }
+.article-output blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.6rem 1.2rem;
+  margin: 1.2rem 0;
+  background: var(--accent-soft);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--ink-muted);
+  font-style: italic;
+}
