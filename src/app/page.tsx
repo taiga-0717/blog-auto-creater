@@ -33,13 +33,60 @@ export default function Home() {
   const [isGenerating, setIsGenerating] = useState(false)
   const [article, setArticle] = useState('')
   const [error, setError] = useState('')
-  const [activeTab, setActiveTab] = useState<'generate' | 'settings'>('generate')
+  const [activeTab, setActiveTab] = useState<'generate' | 'auto' | 'settings'>('generate')
+  const [adminPassword, setAdminPassword] = useState('')
+  const [memo, setMemo] = useState('')
+  const [autoTheme, setAutoTheme] = useState('')
+  const [autoBusy, setAutoBusy] = useState<'' | 'test' | 'create'>('')
+  const [autoMessage, setAutoMessage] = useState('')
+  const [autoError, setAutoError] = useState('')
+  const [autoEditUrl, setAutoEditUrl] = useState('')
   const [settingsSaved, setSettingsSaved] = useState(false)
   const [copyDone, setCopyDone] = useState(false)
 
   useEffect(() => {
     setSettings(loadSettings())
+    try {
+      setAdminPassword(localStorage.getItem('blog-generator-admin-password') || '')
+    } catch {}
   }, [])
+
+  const handleAutoDraft = async (action: 'test' | 'create') => {
+    if (!adminPassword) {
+      setAutoError('パスワードを入力してください')
+      return
+    }
+    try {
+      localStorage.setItem('blog-generator-admin-password', adminPassword)
+    } catch {}
+    setAutoBusy(action)
+    setAutoError('')
+    setAutoMessage('')
+    setAutoEditUrl('')
+    try {
+      const response = await fetch('/api/auto-draft', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: adminPassword, action, memo, theme: autoTheme })
+      })
+      const data = await response.json()
+      if (!data.success) {
+        setAutoError(data.error || '失敗しました')
+      } else if (action === 'test') {
+        setAutoMessage(data.message)
+      } else if (data.status === 'created') {
+        setAutoMessage(`下書きを作成しました：「${data.title}」`)
+        setAutoEditUrl(data.draft.editUrl)
+        setMemo('')
+      } else {
+        setAutoMessage(data.reason || '作成しませんでした')
+      }
+    } catch {
+      setAutoError('通信エラーが発生しました（生成に時間がかかりすぎた可能性があります。WordPressの下書き一覧も確認してください）')
+    } finally {
+      setAutoBusy('')
+    }
+  }
 
   const handleSaveSettings = useCallback(() => {
     saveSettings(settings)
@@ -128,6 +175,10 @@ export default function Home() {
               className={`${styles.navBtn} ${activeTab === 'generate' ? styles.navActive : ''}`}
               onClick={() => setActiveTab('generate')}
             >生成</button>
+            <button
+              className={`${styles.navBtn} ${activeTab === 'auto' ? styles.navActive : ''}`}
+              onClick={() => setActiveTab('auto')}
+            >自動投稿</button>
             <button
               className={`${styles.navBtn} ${activeTab === 'settings' ? styles.navActive : ''}`}
               onClick={() => setActiveTab('settings')}
@@ -247,6 +298,96 @@ export default function Home() {
                   />
                 </>
               )}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'auto' && (
+          <div className={styles.settingsLayout}>
+            <div className={styles.settingsPanel}>
+              <h2 className={styles.settingsTitle}>WordPress 自動下書き</h2>
+
+              <div className={styles.apiKeyNote} style={{ marginBottom: 24 }}>
+                <strong>毎日13時ごろ（日本時間）に自動で下書きを作成します</strong>
+                <p>曜日ごとのテーマで記事を書き、WordPressに「下書き」として保存します。公開はWordPressの管理画面から行ってください。<br />
+                  校舎のできごとがある日は、下の「校舎メモ」から下書きを作ると、その日の自動作成はお休みになります。</p>
+              </div>
+
+              <section className={styles.section}>
+                <label className={styles.label}>
+                  <span className={styles.labelIcon}>🔑</span>
+                  パスワード
+                  <span className={styles.required}>必須</span>
+                </label>
+                <p className={styles.hint}>Vercel に設定した ADMIN_PASSWORD（このブラウザに保存されます）</p>
+                <input
+                  type="password"
+                  value={adminPassword}
+                  onChange={e => setAdminPassword(e.target.value)}
+                />
+              </section>
+
+              <section className={styles.section}>
+                <label className={styles.label}>
+                  <span className={styles.labelIcon}>🏫</span>
+                  今日の校舎メモ（任意）
+                </label>
+                <p className={styles.hint}>書いてあることだけを事実として使います。空欄なら曜日のテーマで書きます</p>
+                <textarea
+                  rows={5}
+                  placeholder={'例：\n・中2の英語小テストで満点が続出\n・10月から冬期講習の申し込み受付開始\n・自習室を平日21時まで開放中'}
+                  value={memo}
+                  onChange={e => setMemo(e.target.value)}
+                  style={{ resize: 'vertical' }}
+                />
+              </section>
+
+              <section className={styles.section}>
+                <label className={styles.label}>
+                  <span className={styles.labelIcon}>🎯</span>
+                  テーマ指定（任意）
+                </label>
+                <p className={styles.hint}>メモがないときに、曜日のテーマの代わりに使うテーマ</p>
+                <input
+                  type="text"
+                  placeholder="例：中3の2学期の過ごし方"
+                  value={autoTheme}
+                  onChange={e => setAutoTheme(e.target.value)}
+                />
+              </section>
+
+              {autoError && <div className={styles.errorBox}>{autoError}</div>}
+              {autoMessage && (
+                <div className={styles.apiKeyNote} style={{ marginBottom: 16 }}>
+                  <p style={{ margin: 0 }}>{autoMessage}</p>
+                  {autoEditUrl && (
+                    <p style={{ margin: '8px 0 0' }}>
+                      <a href={autoEditUrl} target="_blank" rel="noreferrer">WordPressで下書きを開く →</a>
+                    </p>
+                  )}
+                </div>
+              )}
+
+              <button
+                className={styles.generateBtn}
+                onClick={() => handleAutoDraft('create')}
+                disabled={autoBusy !== ''}
+              >
+                {autoBusy === 'create' ? (
+                  <>
+                    <span className={styles.spinner}></span>
+                    作成中...（1〜2分かかります）
+                  </>
+                ) : '今すぐ下書きを作成'}
+              </button>
+              <button
+                className={styles.saveBtn}
+                style={{ marginTop: 12 }}
+                onClick={() => handleAutoDraft('test')}
+                disabled={autoBusy !== ''}
+              >
+                {autoBusy === 'test' ? '確認中...' : 'WordPress接続テスト'}
+              </button>
             </div>
           </div>
         )}
