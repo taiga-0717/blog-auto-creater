@@ -482,6 +482,158 @@
   color: var(--accent);
 }
 
+.outputActions {
+  display: flex;
+  gap: 8px;
+}
+
+.wpBtn {
+  background: #21759b;
+  border: 1px solid #21759b;
+  color: white;
+  padding: 6px 14px;
+  border-radius: var(--radius);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.wpBtn:hover:not(:disabled) {
+  background: #1a5f7f;
+}
+
+.wpBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.wpSuccess,
+.wpError {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 24px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+}
+
+.wpSuccess {
+  background: #edf7ee;
+  color: #2e6b34;
+}
+
+.wpSuccess a {
+  color: #21759b;
+  font-weight: 500;
+}
+
+.wpError {
+  background: #fef2f2;
+  color: var(--accent);
+}
+
+.imageForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.positionSelect {
+  padding: 10px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: white;
+  font-size: 13px;
+  color: var(--ink);
+  width: auto;
+  flex-shrink: 0;
+}
+
+label.addBtn {
+  display: inline-flex;
+  align-items: center;
+}
+
+.imageList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.imageItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.imageThumb {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--paper-warm);
+  flex-shrink: 0;
+}
+
+.imageFields {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.imageFields .positionSelect {
+  align-self: flex-start;
+  padding: 6px 10px;
+}
+
+.imageActions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.moveBtn {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink-muted);
+  cursor: pointer;
+}
+
+.moveBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.wpTestRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.wpTestOk {
+  font-size: 13px;
+  color: #2e6b34;
+}
+
+.wpTestError {
+  font-size: 13px;
+  color: var(--accent);
+}
+
 @media (max-width: 900px) {
   .generateLayout {
     grid-template-columns: 1fr;
