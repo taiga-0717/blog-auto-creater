@@ -1,7 +1,15 @@
 import { WordPressSettings } from '@/types'
 
+// 管理画面のURL（/wp-admin/admin.php?page=... など）が入力されてもサイトのURLに直す
 export function normalizeSiteUrl(url: string): string {
-  return url.trim().replace(/\/+$/, '').replace(/\/wp-admin$/, '')
+  const trimmed = url.trim()
+  try {
+    const parsed = new URL(trimmed)
+    const path = parsed.pathname.replace(/\/(wp-admin|wp-json|wp-login\.php)(\/.*)?$/, '').replace(/\/+$/, '')
+    return `${parsed.origin}${path}`
+  } catch {
+    return trimmed.replace(/[?#].*$/, '').replace(/\/(wp-admin|wp-json)(\/.*)?$/, '').replace(/\/+$/, '')
+  }
 }
 
 export function validateWordPressSettings(wp: WordPressSettings | undefined): string | null {
@@ -31,15 +39,23 @@ export async function wpFetch(wp: WordPressSettings, path: string, init: Request
   return fetch(fallback, { ...init, headers, cache: 'no-store' })
 }
 
+const BLOCKED_MESSAGE =
+  'サーバーのセキュリティ機能にブロックされた可能性があります。' +
+  'エックスサーバーの場合は「サーバーパネル → WordPressセキュリティ設定 → 国外IPアクセス制限」でREST APIの制限をOFFに、' +
+  'ConoHa WINGの場合は「サイトセキュリティ」の海外アクセス制限・WAFの設定を確認してください'
+
 export async function wpErrorMessage(res: Response): Promise<string> {
   let detail = ''
+  let isWordPressError = false
   try {
     const data = await res.json()
+    isWordPressError = typeof data?.code === 'string'
     detail = data?.message ? `（${String(data.message).replace(/<[^>]+>/g, '')}）` : ''
   } catch {
-    // JSON以外のレスポンス
+    // JSON以外（HTML）のレスポンス＝WordPressより手前のWAFやサーバー設定で弾かれている
   }
   if (res.status === 401) return `WordPressの認証に失敗しました。ユーザー名とアプリケーションパスワードを確認してください${detail}`
+  if (res.status === 403 && !isWordPressError) return `WordPressへのアクセスが拒否されました（HTTP 403）。${BLOCKED_MESSAGE}`
   if (res.status === 403) return `このユーザーには投稿・アップロードの権限がありません${detail}`
   if (res.status === 404) return `WordPressのREST APIが見つかりません。サイトURLを確認してください${detail}`
   return `WordPressへのリクエストが失敗しました（HTTP ${res.status}）${detail}`
