@@ -6,7 +6,13 @@ export const defaultSettings: Settings = {
   blogIndexUrl: '',
   referenceLinks: [],
   ngWords: [],
-  closingText: ''
+  closingText: '',
+  fixedImages: [],
+  wordpress: {
+    siteUrl: '',
+    username: '',
+    appPassword: ''
+  }
 }
 
 export function loadSettings(): Settings {
@@ -14,13 +20,24 @@ export function loadSettings(): Settings {
   try {
     const stored = localStorage.getItem(SETTINGS_KEY)
     if (!stored) return defaultSettings
-    return { ...defaultSettings, ...JSON.parse(stored) }
+    const parsed = JSON.parse(stored)
+    return {
+      ...defaultSettings,
+      ...parsed,
+      wordpress: { ...defaultSettings.wordpress, ...parsed.wordpress }
+    }
   } catch {
     return defaultSettings
   }
 }
 
-export function saveSettings(settings: Settings): void {
-  if (typeof window === 'undefined') return
-  localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings))
+// 保存に失敗した場合（画像が大きすぎて容量オーバーなど）は false を返す
+export function saveSettings(settings: Settings): boolean {
+  if (typeof window === 'undefined') return false
+  try {
+    localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings))
+    return true
+  } catch {
+    return false
+  }
 }

@@ -98,3 +98,7 @@ button:active {
   color: var(--ink-muted);
   font-style: italic;
 }
+
+.article-output figure { margin: 1.5rem 0; }
+.article-output img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
+.article-output hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
