@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { WordPressSettings } from '@/types'
-import { validateWordPressSettings, wpErrorMessage, wpFetch } from '@/lib/wordpress'
+import { checkRestApi, validateWordPressSettings, wpErrorMessage, wpFetch } from '@/lib/wordpress'
 
 // 国内レンタルサーバーは海外IPからのREST APIアクセスを制限していることが多いため、東京リージョンで実行する
 export const preferredRegion = 'hnd1'
@@ -12,7 +12,11 @@ export async function POST(req: NextRequest) {
     if (invalid) return NextResponse.json({ success: false, error: invalid }, { status: 400 })
 
     const res = await wpFetch(wordpress, '/users/me?context=edit')
-    if (!res.ok) return NextResponse.json({ success: false, error: await wpErrorMessage(res) }, { status: 400 })
+    if (!res.ok) {
+      // 失敗したときだけ、REST API自体に届くか・アプリケーションパスワードが有効かを調べて原因を絞り込む
+      const error = (await checkRestApi(wordpress).catch(() => null)) ?? (await wpErrorMessage(res))
+      return NextResponse.json({ success: false, error }, { status: 400 })
+    }
     const user = await res.json()
     return NextResponse.json({ success: true, name: user.name })
   } catch (error) {
