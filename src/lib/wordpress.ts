@@ -1,7 +1,15 @@
 import { WordPressSettings } from '@/types'
 
+// 管理画面のURL（/wp-admin/admin.php?page=... など）が入力されてもサイトのURLに直す
 export function normalizeSiteUrl(url: string): string {
-  return url.trim().replace(/\/+$/, '').replace(/\/wp-admin$/, '')
+  const trimmed = url.trim()
+  try {
+    const parsed = new URL(trimmed)
+    const path = parsed.pathname.replace(/\/(wp-admin|wp-json|wp-login\.php)(\/.*)?$/, '').replace(/\/+$/, '')
+    return `${parsed.origin}${path}`
+  } catch {
+    return trimmed.replace(/[?#].*$/, '').replace(/\/(wp-admin|wp-json)(\/.*)?$/, '').replace(/\/+$/, '')
+  }
 }
 
 export function validateWordPressSettings(wp: WordPressSettings | undefined): string | null {
@@ -31,18 +39,59 @@ export async function wpFetch(wp: WordPressSettings, path: string, init: Request
   return fetch(fallback, { ...init, headers, cache: 'no-store' })
 }
 
+const BLOCKED_MESSAGE =
+  'サーバーのセキュリティ機能にブロックされた可能性があります。' +
+  'エックスサーバーの場合は「サーバーパネル → WordPressセキュリティ設定 → 国外IPアクセス制限」でREST APIの制限をOFFに、' +
+  'ConoHa WINGの場合は「サイトセキュリティ」の海外アクセス制限・WAFの設定を確認してください'
+
+const SECURITY_PLUGIN_MESSAGE =
+  'セキュリティ系プラグイン（SiteGuard WP Plugin、XO Security、All In One WP Security、Wordfence、Disable REST API など）で' +
+  'REST APIやアプリケーションパスワードが制限されていないか確認してください'
+
 export async function wpErrorMessage(res: Response): Promise<string> {
   let detail = ''
+  let code = ''
   try {
     const data = await res.json()
-    detail = data?.message ? `（${String(data.message).replace(/<[^>]+>/g, '')}）` : ''
+    code = typeof data?.code === 'string' ? data.code : ''
+    const message = data?.message ? String(data.message).replace(/<[^>]+>/g, '') : ''
+    detail = message || code ? `（${[message, code && `コード: ${code}`].filter(Boolean).join(' / ')}）` : ''
   } catch {
-    // JSON以外のレスポンス
+    // JSON以外（HTML）のレスポンス＝WordPressより手前のWAFやサーバー設定で弾かれている
   }
   if (res.status === 401) return `WordPressの認証に失敗しました。ユーザー名とアプリケーションパスワードを確認してください${detail}`
-  if (res.status === 403) return `このユーザーには投稿・アップロードの権限がありません${detail}`
+  if (res.status === 403 && !code) return `WordPressへのアクセスが拒否されました（HTTP 403）。${BLOCKED_MESSAGE}`
+  if (res.status === 403 && /forbidden|cannot_create|cannot_edit/.test(code) && !/cannot_access/.test(code)) {
+    return `このユーザーには投稿・アップロードの権限がありません。WordPressの「ユーザー」で権限グループが「投稿者」以上か確認してください${detail}`
+  }
+  if (res.status === 403) return `WordPressがリクエストを拒否しました${detail}。${SECURITY_PLUGIN_MESSAGE}`
   if (res.status === 404) return `WordPressのREST APIが見つかりません。サイトURLを確認してください${detail}`
   return `WordPressへのリクエストが失敗しました（HTTP ${res.status}）${detail}`
+}
+
+// 認証なしでREST APIの入口に届くか、アプリケーションパスワードが有効かを確認する
+export async function checkRestApi(wp: WordPressSettings): Promise<string | null> {
+  const site = normalizeSiteUrl(wp.siteUrl)
+  let res = await fetch(`${site}/wp-json/`, { cache: 'no-store' })
+  if (res.status === 404) res = await fetch(`${site}/?rest_route=/`, { cache: 'no-store' })
+  let index: { authentication?: Record<string, unknown>; code?: string; message?: string } | null = null
+  try {
+    index = await res.json()
+  } catch {
+    index = null
+  }
+  if (!index) {
+    if (res.status === 401 || res.status === 403) return `REST APIへのアクセスが拒否されました（HTTP ${res.status}）。${BLOCKED_MESSAGE}`
+    return `REST APIにアクセスできません（HTTP ${res.status}）。サイトURL（${site}）を確認してください`
+  }
+  if (!res.ok) {
+    const detail = [index.message, index.code && `コード: ${index.code}`].filter(Boolean).join(' / ')
+    return `REST APIへのアクセスが制限されています（HTTP ${res.status}${detail ? ` / ${detail}` : ''}）。${SECURITY_PLUGIN_MESSAGE}`
+  }
+  if (index.authentication && !('application-passwords' in index.authentication)) {
+    return `このサイトではアプリケーションパスワードが使えない状態です。サイトがHTTPSになっているか、${SECURITY_PLUGIN_MESSAGE}`
+  }
+  return null
 }
 
 export function editUrl(wp: WordPressSettings, postId: number): string {

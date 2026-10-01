@@ -570,6 +570,7 @@ export default function Home() {
                   placeholder="サイトURL（例：https://yourblog.com）"
                   value={settings.wordpress.siteUrl}
                   onChange={e => updateWordPress({ siteUrl: e.target.value })}
+                  onBlur={e => e.target.value.trim() && updateWordPress({ siteUrl: normalizeSiteUrl(e.target.value) })}
                 />
                 <input
                   type="text"
