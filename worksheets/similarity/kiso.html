@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>相似の証明 基礎編</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ======================= 表面：問題 ======================= -->
+<section class="page">
+  <div class="head">
+    <div class="ttl">
+      <small>中学3年 数学 ／ 相似な図形</small>
+      <b>相似の証明 対策プリント <span class="tag">基礎編</span></b>
+    </div>
+    <div class="name">
+      <div>組<span class="w1"></span></div>
+      <div>番<span class="w1"></span></div>
+      <div>名前<span class="w2"></span></div>
+      <div class="score">/ 100点</div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <!-- ===== 左：導入演習 ===== -->
+    <div class="col">
+      <div class="col-title">STEP 1　導入演習<small>穴うめで「証明の流れ」をつかもう</small></div>
+
+      <div class="box memo">
+        <div class="qh" style="margin-bottom:1mm">★ まずは確認！ 三角形の相似条件（この3つのどれかを使う）</div>
+        <table class="cond">
+          <tr><td class="n">①</td><td><b>3組の辺の比</b>がすべて等しい　　（例）a:a' = b:b' = c:c'</td></tr>
+          <tr><td class="n">②</td><td><b>2組の辺の比とその間の角</b>がそれぞれ等しい　　（例）a:a' = c:c'，∠B = ∠B'</td></tr>
+          <tr><td class="n">③</td><td><b>2組の角</b>がそれぞれ等しい　　（例）∠B = ∠B'，∠C = ∠C'　← いちばんよく使う！</td></tr>
+        </table>
+        <div class="steps">
+          <div><b>1. どれとどれ？</b>「△○○○と△○○○において」と書く</div>
+          <div><b>2. 等しいものを探す</b>角・辺の比を<u>理由つき</u>で書き，…①と番号をふる</div>
+          <div><b>3. 相似条件</b>「①，②より，○○○が<br>それぞれ等しいから」</div>
+          <div><b>4. 結論</b>「△○○○∽△○○○」<br>※頂点は<u>対応する順</u>に！</div>
+        </div>
+      </div>
+
+      <!-- 導入1 -->
+      <div class="q" style="flex: 0 0 auto;">
+        <div class="qh"><span class="no">導入 1</span>平行線と相似（2組の角）　<span style="font-weight:400;font-size:10.5pt">【各4点】</span></div>
+        <div class="row">
+          <div style="flex:1">
+            <div class="qtext">右の図で，DE∥BC です。<br>△ADE∽△ABC であることを証明します。<br><b>あ〜え</b> にあてはまることばや記号を書きなさい。</div>
+            <div class="proof-fill">
+              【証明】 △ADE と △ABC において<br>
+              共通な角だから　∠DAE ＝ ∠<span class="bl"><i>あ</i></span>　…①<br>
+              DE∥BC より，<span class="bl"><i>い</i></span> は等しいから<br>
+              　　∠ADE ＝ ∠<span class="bl"><i>う</i></span>　…②<br>
+              ①，②より，<span class="bl l"><i>え</i></span> がそれぞれ等しいから<br>
+              　　△ADE ∽ △ABC
+            </div>
+          </div>
+          <div class="fig" style="width:62mm">
+            <svg width="62mm" viewBox="0 0 210 175" font-size="15" font-family="BIZ UDPGothic, sans-serif">
+              <g fill="none" stroke="#111" stroke-width="1.8">
+                <path d="M100 14 L20 160 L190 160 Z"/>
+                <path d="M68 72.4 L136 72.4"/>
+                <path d="M99 69 L103 72.4 L99 75.8 M103 69 L107 72.4 L103 75.8" stroke-width="1.4"/>
+                <path d="M101 156.6 L105 160 L101 163.4 M105 156.6 L109 160 L105 163.4" stroke-width="1.4"/>
+              </g>
+              <text x="95" y="11">A</text><text x="5" y="170">B</text><text x="193" y="170">C</text>
+              <text x="52" y="76">D</text><text x="140" y="76">E</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- 導入2 -->
+      <div class="q grow">
+        <div class="qh"><span class="no">導入 2</span>辺の比と共通な角（2組の辺の比とその間の角）　<span style="font-weight:400;font-size:10.5pt">【各4点】</span></div>
+        <div class="row">
+          <div style="flex:1">
+            <div class="qtext">右の図で，AB＝10cm，AC＝8cm，AD＝4cm，AE＝5cm です。<br>△ADE∽△ACB であることを証明します。</div>
+            <div class="proof-fill">
+              【証明】 △ADE と △ACB において<br>
+              AD : AC ＝ 4 : 8 ＝ <span class="bl"><i>お</i></span>　…①<br>
+              AE : AB ＝ 5 : 10 ＝ <span class="bl"><i>か</i></span>　…②<br>
+              共通な角だから　∠DAE ＝ ∠<span class="bl"><i>き</i></span>　…③<br>
+              ①，②，③より，<br>
+              <span class="bl l" style="min-width:74mm"><i>く</i></span> がそれぞれ等しいから<br>
+              　　△ADE ∽ △ACB
+            </div>
+          </div>
+          <div style="width:68mm; display:flex; flex-direction:column; gap:2mm">
+<div class="fig">
+            <svg width="66mm" viewBox="0 0 240 182" font-size="15" font-family="BIZ UDPGothic, sans-serif">
+              <g transform="translate(0,10)">
+                <g fill="none" stroke="#111" stroke-width="1.8">
+                  <path d="M20 150 L220 150 L111.8 18.9 Z"/>
+                  <path d="M100 150 L77.4 68.1"/>
+                </g>
+                <text x="6" y="160">A</text><text x="224" y="160">B</text><text x="106" y="12">C</text>
+                <text x="94" y="167">D</text><text x="62" y="64">E</text>
+                <g font-size="13">
+                  <text x="52" y="166">4</text><text x="156" y="166">6</text>
+                  <text x="36" y="112">5</text><text x="82" y="44">3</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+<div class="sub" style="flex:1"><div class="st"><b>(2)</b> BC＝12cm のとき，DE の長さを求めなさい。【8点】</div><div style="flex:1;font-size:8.5pt;color:#666">計算</div><div class="ansbox">DE ＝<span style="flex:1"></span>cm</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 右：類題演習 ===== -->
+    <div class="col">
+      <div class="col-title">STEP 2　類題演習<small>今度は自分で証明を書いてみよう</small></div>
+
+      <!-- 類題1 -->
+      <div class="q grow">
+        <div class="qh"><span class="no">類題 1</span>砂時計型（平行線＋対頂角）</div>
+        <div class="qtext">右の図で，AB∥DC，線分 AC と BD の交点を O とします。<br>(1) △OAB∽△OCD を証明しなさい。【14点】</div>
+        <div class="row" style="flex:1">
+          <div class="ruled"><span class="lab">証明</span></div>
+          <div class="fig" style="width:52mm; flex-direction:column; justify-content:space-between">
+            <svg width="50mm" viewBox="0 0 190 165" font-size="15" font-family="BIZ UDPGothic, sans-serif">
+              <g fill="none" stroke="#111" stroke-width="1.8">
+                <path d="M45 20 L145 20 M20 145 L170 145 M45 20 L170 145 M145 20 L20 145"/>
+                <path d="M93 16.6 L97 20 L93 23.4" stroke-width="1.4"/>
+                <path d="M93 141.6 L97 145 L93 148.4" stroke-width="1.4"/>
+              </g>
+              <text x="30" y="16">A</text><text x="148" y="16">B</text>
+              <text x="174" y="158">C</text><text x="6" y="158">D</text>
+              <text x="89" y="96">O</text>
+              <g font-size="13"><text x="56" y="58">6</text><text x="138" y="108">9</text><text x="90" y="13">8</text></g>
+            </svg>
+          </div>
+        </div>
+        <div class="ansline">
+          <div style="font-size:10.5pt"><b>(2)</b> OA＝6cm，OC＝9cm，AB＝8cm のとき，CD の長さ　【6点】</div>
+          <div class="calc">計算</div>
+          <div class="ansbox">CD ＝<span style="flex:1"></span>cm</div>
+        </div>
+      </div>
+
+      <!-- 類題2 -->
+      <div class="q grow">
+        <div class="qh"><span class="no">類題 2</span>直角三角形の中の相似</div>
+        <div class="qtext">∠BAC＝90° の直角三角形 ABC で，頂点 A から辺 BC に垂線 AD をひきます。<br>(1) △ABC∽△DBA を証明しなさい。【14点】</div>
+        <div class="row" style="flex:1">
+          <div class="ruled"><span class="lab">証明</span></div>
+          <div class="fig" style="width:58mm">
+            <svg width="56mm" viewBox="0 0 260 185" font-size="15" font-family="BIZ UDPGothic, sans-serif">
+              <g fill="none" stroke="#111" stroke-width="1.8">
+                <path d="M20 160 L240 160 L99.2 54.4 Z M99.2 54.4 L99.2 160"/>
+                <path d="M99.2 152 L107.2 152 L107.2 160 M94.4 60.8 L100.8 65.6 L105.6 59.2" stroke-width="1.2"/>
+                <path d="M20 168 L20 180 M240 168 L240 180 M20 174 L240 174" stroke-width="1"/>
+              </g>
+              <text x="94" y="47">A</text><text x="4" y="164">B</text><text x="244" y="164">C</text><text x="95" y="152" dx="-14">D</text>
+              <g font-size="13"><text x="40" y="104">6cm</text><text x="114" y="171" fill="#111" style="paint-order:stroke" stroke="#fff" stroke-width="5">10cm</text></g>
+            </svg>
+          </div>
+        </div>
+        <div class="ansline">
+          <div style="font-size:10.5pt"><b>(2)</b> AB＝6cm，BC＝10cm のとき，BD の長さ　【6点】</div>
+          <div class="calc">計算</div>
+          <div class="ansbox">BD ＝<span style="flex:1"></span>cm</div>
+        </div>
+      </div>
+
+      <!-- 類題3 -->
+      <div class="q grow">
+        <div class="qh"><span class="no">類題 3</span>共通な角＋辺の比（対応に注意！）</div>
+        <div class="qtext">△ABC で AB＝6cm，BC＝9cm，AC＝7.5cm，辺 BC 上に BD＝4cm となる点 D をとります。<br>(1) △ABC∽△DBA を証明しなさい。【14点】 <span class="hint" style="margin:0">ヒント：∠B をはさむ辺を「短い辺どうし」「長い辺どうし」で比べよう</span></div>
+        <div class="row" style="flex:1">
+          <div class="ruled"><span class="lab">証明</span></div>
+          <div class="fig" style="width:58mm">
+            <svg width="56mm" viewBox="0 0 240 190" font-size="15" font-family="BIZ UDPGothic, sans-serif">
+              <g fill="none" stroke="#111" stroke-width="1.8">
+                <path d="M25 150 L223 150 L99.25 40.9 Z M99.25 40.9 L113 150"/>
+                <path d="M25 168 L25 186 M223 168 L223 186 M25 180 L223 180" stroke-width="1"/>
+              </g>
+              <text x="94" y="33">A</text><text x="8" y="155">B</text><text x="227" y="155">C</text><text x="107" y="166">D</text>
+              <g font-size="13"><text x="30" y="96">6cm</text><text x="168" y="92">7.5cm</text><text x="58" y="146">4cm</text>
+              <text x="160" y="185" stroke="#fff" stroke-width="5" style="paint-order:stroke">9cm</text></g>
+            </svg>
+          </div>
+        </div>
+        <div class="ansline">
+          <div style="font-size:10.5pt"><b>(2)</b> 線分 AD の長さ　【6点】</div>
+          <div class="calc">計算</div>
+          <div class="ansbox">AD ＝<span style="flex:1"></span>cm</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 裏面：解答・解説 ======================= -->
+<section class="page ans">
+  <div class="head">
+    <div class="ttl">
+      <small>中学3年 数学 ／ 相似な図形</small>
+      <b>相似の証明 対策プリント <span class="tag">基礎編</span>　解答・解説</b>
+    </div>
+    <div class="name" style="font-size:10pt; align-items:center">配点：導入1 各4点×4／導入2 各4点×4＋(2)8点／類題 (1)14点・(2)6点 ×3　計100点</div>
+  </div>
+
+  <div class="cols">
+    <div class="col">
+      <div class="col-title">STEP 1　導入演習の答え</div>
+
+      <div class="q">
+        <div class="qh"><span class="no">導入 1</span>答え</div>
+        <div class="ansrow">
+          <div>
+            <p><span class="k">あ</span> BAC　<span class="k">い</span> 同位角　<span class="k">う</span> ABC　<span class="k">え</span> 2組の角</p>
+            <div class="pf">
+              <p>【証明】 △ADE と △ABC において</p>
+              <p>共通な角だから　∠DAE ＝ ∠<span class="red">BAC</span>　…①</p>
+              <p>DE∥BC より，<span class="red">同位角</span>は等しいから　∠ADE ＝ ∠<span class="red">ABC</span>　…②</p>
+              <p>①，②より，<span class="red">2組の角</span>がそれぞれ等しいから　△ADE ∽ △ABC</p>
+            </div>
+          </div>
+        </div>
+        <div class="pt"><span class="tg">解説</span>平行線があったら，まず <b>同位角</b>（同じ位置の角）・<b>錯角</b>（Z の形の角）を探します。∠ADE と ∠ABC は，平行な2直線 DE，BC を直線 AB が横切ってできる「同じ位置の角」＝同位角です（∠AED＝∠ACB でも正解）。<br>
+        <span class="tg">注意</span>∠A は「∠DAE」「∠BAC」のように<b>3文字</b>で書くとていねい。「∠A」でも同じ角を表せるときは正解ですが，図が複雑になるほど3文字が安全です。</div>
+      </div>
+
+      <div class="q">
+        <div class="qh"><span class="no">導入 2</span>答え</div>
+        <p>(1) <span class="k">お</span> 1 : 2　<span class="k">か</span> 1 : 2　<span class="k">き</span> CAB（BAC も可）　<span class="k">く</span> 2組の辺の比とその間の角</p>
+        <div class="pf">
+          <p>【証明】 △ADE と △ACB において</p>
+          <p>AD : AC ＝ 4 : 8 ＝ <span class="red">1 : 2</span>　…①　　AE : AB ＝ 5 : 10 ＝ <span class="red">1 : 2</span>　…②</p>
+          <p>共通な角だから　∠DAE ＝ ∠<span class="red">CAB</span>　…③</p>
+          <p>①，②，③より，<span class="red">2組の辺の比とその間の角</span>がそれぞれ等しいから　△ADE ∽ △ACB</p>
+        </div>
+        <p>(2) 相似比は △ADE : △ACB ＝ 1 : 2。DE に対応する辺は <b>CB</b> なので<br>
+        　DE : CB ＝ 1 : 2　→　DE : 12 ＝ 1 : 2　→　2DE ＝ 12　→　<span class="red">DE ＝ 6cm</span></p>
+        <div class="pt"><span class="tg">解説</span>この図は D・E の位置が「ひっくり返って」います。AD(4) と AB(10)，AE(5) と AC(8) で比べると 4:10 と 5:8 で<b>等しくならない</b>ので，相似にはなりません。<br>
+        短い辺どうし（AD＝4 と AC＝8），長い辺どうし（AE＝5 と AB＝10）で比べると，どちらも 1:2 になります。<br>
+        だから頂点の対応は <b>A→A，D→C，E→B</b>。結論も「△ADE∽△<b>ACB</b>」の順で書きます（△ABC と書くと×）。</div>
+      </div>
+
+      <div class="box memo" style="flex:1">
+        <div class="qh">★ 証明でよくあるミス チェックリスト</div>
+        <ul>
+          <li>「△○○○と△○○○において」を書き忘れていないか</li>
+          <li>等しい理由（共通な角／同位角／錯角／対頂角／仮定より など）を書いたか</li>
+          <li>相似条件を<b>正確なことば</b>で書いたか（「2組の角が等しい」ではなく「2組の角が<b>それぞれ</b>等しい」）</li>
+          <li>結論の頂点の順番が<b>対応している</b>か（△ADE∽△ACB の A-A，D-C，E-B）</li>
+          <li>「合同」の条件（3組の辺がそれぞれ等しい など）とまちがえていないか</li>
+        </ul>
+        <div class="qh" style="margin-top:2mm">★ 相似な図形で長さを求める 3ステップ</div>
+        <div class="steps" style="grid-template-columns:repeat(3,1fr)">
+          <div><b>① 対応を確認</b>証明の結論 △ADE∽△ACB の<br>文字の順番＝対応の順番</div>
+          <div><b>② 相似比を求める</b>長さがわかっている<br>対応する辺どうしの比</div>
+          <div><b>③ 比例式を解く</b>a : b ＝ c : d なら<br>ad ＝ bc（外側の積＝内側の積）</div>
+        </div>
+        <p style="margin-top:2mm">（例）導入2 (2)：△<u>A</u><u>D</u><u>E</u>∽△<u>A</u><u>C</u><u>B</u> → 「DE」は2・3文字目 → 相手も2・3文字目の「CB」が対応！</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-title">STEP 2　類題演習の答え</div>
+
+      <div class="q">
+        <div class="qh"><span class="no">類題 1</span>答え</div>
+        <div class="pf">
+          <p>(1)【証明】 △OAB と △OCD において</p>
+          <p>AB∥DC より，錯角は等しいから　∠OAB ＝ ∠OCD　…①</p>
+          <p>対頂角は等しいから　∠AOB ＝ ∠COD　…②</p>
+          <p>①，②より，2組の角がそれぞれ等しいから　△OAB ∽ △OCD</p>
+        </div>
+        <p>(2) 相似比は OA : OC ＝ 6 : 9 ＝ 2 : 3。AB に対応するのは CD だから<br>
+        　AB : CD ＝ 2 : 3　→　8 : CD ＝ 2 : 3　→　2CD ＝ 24　→　<span class="red">CD ＝ 12cm</span></p>
+        <div class="pt"><span class="tg">解説</span>交わった2本の線分＋平行線の「砂時計型」は，<b>錯角</b>と<b>対頂角</b>がセット。②は「錯角は等しいから ∠OBA＝∠ODC」でも正解です。<br>
+        <span class="tg">注意</span>比の式 a:b＝c:d は「外側どうしの積＝内側どうしの積」(ad＝bc) で解きます。</div>
+      </div>
+
+      <div class="q">
+        <div class="qh"><span class="no">類題 2</span>答え</div>
+        <div class="pf">
+          <p>(1)【証明】 △ABC と △DBA において</p>
+          <p>仮定より　∠BAC ＝ ∠BDA ＝ 90°　…①</p>
+          <p>共通な角だから　∠ABC ＝ ∠DBA　…②</p>
+          <p>①，②より，2組の角がそれぞれ等しいから　△ABC ∽ △DBA</p>
+        </div>
+        <p>(2) 対応は A→D，B→B，C→A。よって AB : DB ＝ BC : BA<br>
+        　6 : BD ＝ 10 : 6　→　10BD ＝ 36　→　<span class="red">BD ＝ 3.6cm</span>　（<span class="frac"><span>18</span><span>5</span></span>cm でも可）</p>
+        <div class="pt"><span class="tg">解説</span>直角の記号（∟）があったら「90°の角」が1組。あとは<b>共通な角</b>を1つ見つければ完成です。<br>
+        対応がわかりにくいときは，<b>直角の頂点どうし</b>（A と D），<b>共通の角の頂点どうし</b>（B と B）を先に決め，残りが C と A，と考えます。</div>
+      </div>
+
+      <div class="q" style="flex:1">
+        <div class="qh"><span class="no">類題 3</span>答え</div>
+        <div class="pf">
+          <p>(1)【証明】 △ABC と △DBA において</p>
+          <p>AB : DB ＝ 6 : 4 ＝ 3 : 2　…①　　BC : BA ＝ 9 : 6 ＝ 3 : 2　…②</p>
+          <p>共通な角だから　∠ABC ＝ ∠DBA　…③</p>
+          <p>①，②，③より，2組の辺の比とその間の角がそれぞれ等しいから　△ABC ∽ △DBA</p>
+        </div>
+        <p>(2) 相似比は 3 : 2。AC に対応する辺は DA だから<br>
+        　AC : DA ＝ 3 : 2　→　7.5 : DA ＝ 3 : 2　→　3DA ＝ 15　→　<span class="red">AD ＝ 5cm</span></p>
+        <div class="pt"><span class="tg">解説</span>∠B をはさむ辺は，△ABC では BA＝6・BC＝9，△DBA では BD＝4・BA＝6。<br>
+        短い辺どうし 6 と 4（AB : DB），長い辺どうし 9 と 6（BC : BA）がどちらも 3 : 2 になります。<br>
+        <span class="tg">注意</span>AB は両方の三角形で使われる「共通の辺」ですが，△ABC では<b>短い辺</b>，△DBA では<b>長い辺</b>の役目です。ここが最大のつまずきポイント！</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

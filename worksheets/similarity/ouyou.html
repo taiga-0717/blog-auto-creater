@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>相似の証明 応用編</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .q.adv { flex: 1; }
+  .q.adv .row { flex: 1; }
+  .subs.c3 { grid-template-columns: repeat(3, 1fr); }
+  .subs.c4 { grid-template-columns: repeat(4, 1fr); }
+  .sub { min-height: 30mm; }
+  .sub .calc { flex: 1; font-size: 8pt; color: #777; }
+  .ansbox .ratio { flex: 1; text-align: center; color: #111; font-size: 12pt; }
+  .given { font-size: 10.5pt; }
+</style>
+</head>
+<body>
+
+<!-- ======================= 表面：問題 ======================= -->
+<section class="page">
+  <div class="head">
+    <div class="ttl">
+      <small>中学3年 数学 ／ 相似な図形</small>
+      <b>相似の証明 対策プリント <span class="tag">応用編</span>　〜相似と面積比〜</b>
+    </div>
+    <div class="name">
+      <div>組<span class="w1"></span></div>
+      <div>番<span class="w1"></span></div>
+      <div>名前<span class="w2"></span></div>
+      <div class="score">/ 100点</div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <!-- ===== 左 ===== -->
+    <div class="col">
+      <div class="box memo" style="padding:2mm 4mm; font-size:10pt">
+        <b>面積比の2つの道具</b>
+        <span class="tg">道具A</span>高さが等しい三角形の面積比 ＝ <b>底辺の比</b>
+        <span class="tg">道具B</span>相似比が m : n なら面積比は <b>m² : n²</b>
+      </div>
+
+      <!-- 応用1 -->
+      <div class="q adv">
+        <div class="qh"><span class="no">応用 1</span>平行四辺形の対角線と三角形　<span style="font-weight:400;font-size:10.5pt">【25点】</span></div>
+        <div class="qtext given">平行四辺形 ABCD で，辺 AD 上に AE : ED ＝ 2 : 1 となる点 E をとり，線分 BE と対角線 AC の交点を F とします。</div>
+        <div class="row">
+          <div style="flex:1; display:flex; flex-direction:column; min-width:0">
+            <div style="font-size:10.5pt; margin-bottom:1mm"><b>(1)</b> △AFE∽△CFB を証明しなさい。【10点】</div>
+            <div class="ruled"><span class="lab">証明</span></div>
+          </div>
+          <div class="fig" style="width:64mm">
+            <svg width="62mm" viewBox="0 0 260 172" font-size="15" font-family="BIZ UDPGothic, sans-serif">
+              <g fill="none" stroke="#111" stroke-width="1.8">
+                <path d="M60 20 L240 20 L200 150 L20 150 Z"/>
+                <path d="M60 20 L200 150 M20 150 L180 20"/>
+              </g>
+              <text x="46" y="16">A</text><text x="244" y="16">D</text><text x="4" y="164">B</text><text x="204" y="164">C</text>
+              <text x="175" y="14">E</text><text x="98" y="78">F</text>
+              <circle cx="180" cy="20" r="2.6"/><circle cx="116" cy="72" r="2.6"/>
+            </svg>
+          </div>
+        </div>
+        <div class="subs c3">
+          <div class="sub"><div class="st"><b>(2)</b> AF : FC【5点】</div><div class="calc">計算</div><div class="ansbox w"><span class="ratio">　　:　　</span></div></div>
+          <div class="sub"><div class="st"><b>(3)</b> △AFE の面積は平行四辺形 ABCD の何倍？【5点】</div><div class="calc">計算</div><div class="ansbox"><span style="flex:1"></span>倍</div></div>
+          <div class="sub"><div class="st"><b>(4)</b> 四角形 FCDE の面積は平行四辺形 ABCD の何倍？【5点】</div><div class="calc">計算</div><div class="ansbox"><span style="flex:1"></span>倍</div></div>
+        </div>
+      </div>
+
+      <!-- 応用2 -->
+      <div class="q adv">
+        <div class="qh"><span class="no">応用 2</span>延長線と2つの相似　<span style="font-weight:400;font-size:10.5pt">【25点】</span></div>
+        <div class="qtext given">平行四辺形 ABCD で，辺 BC 上に BE : EC ＝ 3 : 1 となる点 E をとります。線分 AE と対角線 BD の交点を F，直線 AE と辺 DC の延長との交点を G とします。AB＝9cm，平行四辺形 ABCD の面積は 168cm² です。</div>
+        <div class="row">
+          <div style="flex:1; display:flex; flex-direction:column; min-width:0">
+            <div style="font-size:10.5pt; margin-bottom:1mm"><b>(1)</b> △FBE∽△FDA を証明しなさい。【10点】</div>
+            <div class="ruled"><span class="lab">証明</span></div>
+          </div>
+          <div class="fig" style="width:64mm">
+            <svg width="60mm" viewBox="0 0 250 192" font-size="15" font-family="BIZ UDPGothic, sans-serif">
+              <g fill="none" stroke="#111" stroke-width="1.8">
+                <path d="M60 20 L220 20 L180 140 L20 140 Z"/>
+                <path d="M60 20 L166.7 180 M20 140 L220 20"/>
+                <path d="M180 140 L166.7 180" stroke-dasharray="5 4"/>
+              </g>
+              <text x="46" y="16">A</text><text x="224" y="16">D</text><text x="4" y="154">B</text><text x="186" y="152">C</text>
+              <text x="122" y="157">E</text><text x="86" y="90">F</text><text x="172" y="188">G</text>
+              <circle cx="140" cy="140" r="2.6"/><circle cx="105.7" cy="88.6" r="2.6"/><circle cx="166.7" cy="180" r="2.6"/>
+            </svg>
+          </div>
+        </div>
+        <div class="subs c4">
+          <div class="sub"><div class="st"><b>(2)</b> BF : FD【3点】</div><div class="calc">計算</div><div class="ansbox" style="min-width:0;align-self:stretch"><span class="ratio">　:　</span></div></div>
+          <div class="sub"><div class="st"><b>(3)</b> CG の長さ【4点】</div><div class="calc">計算</div><div class="ansbox" style="min-width:0;align-self:stretch"><span style="flex:1"></span>cm</div></div>
+          <div class="sub"><div class="st"><b>(4)</b> △BEF の面積【4点】</div><div class="calc">計算</div><div class="ansbox" style="min-width:0;align-self:stretch"><span style="flex:1"></span>cm²</div></div>
+          <div class="sub"><div class="st"><b>(5)</b> △ECG の面積【4点】</div><div class="calc">計算</div><div class="ansbox" style="min-width:0;align-self:stretch"><span style="flex:1"></span>cm²</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 右 ===== -->
+    <div class="col">
+      <!-- 応用3 -->
+      <div class="q adv">
+        <div class="qh"><span class="no">応用 3</span>三角形の中のクロス（平行線＋交点）　<span style="font-weight:400;font-size:10.5pt">【25点】</span></div>
+        <div class="qtext given">△ABC で，辺 AB 上に AD : DB ＝ 2 : 3 となる点 D をとり，D を通り辺 BC に平行な直線と辺 AC との交点を E とします。線分 BE と CD の交点を F とします。△ABC の面積は 175cm² です。</div>
+        <div class="row">
+          <div style="flex:1; display:flex; flex-direction:column; min-width:0">
+            <div style="font-size:10.5pt; margin-bottom:1mm"><b>(1)</b> △FDE∽△FCB を証明しなさい。【10点】</div>
+            <div class="ruled"><span class="lab">証明</span></div>
+          </div>
+          <div class="fig" style="width:64mm">
+            <svg width="60mm" viewBox="0 0 260 190" font-size="15" font-family="BIZ UDPGothic, sans-serif">
+              <g fill="none" stroke="#111" stroke-width="1.8">
+                <path d="M120 15 L20 175 L240 175 Z"/>
+                <path d="M80 79 L168 79 M20 175 L168 79 M240 175 L80 79"/>
+              </g>
+              <text x="114" y="11" dy="0">A</text><text x="4" y="186">B</text><text x="244" y="186">C</text>
+              <text x="64" y="80">D</text><text x="173" y="80">E</text><text x="120" y="127">F</text>
+              <circle cx="125.7" cy="106.4" r="2.6"/>
+            </svg>
+          </div>
+        </div>
+        <div class="subs c3">
+          <div class="sub"><div class="st"><b>(2)</b> DE : BC と EF : FB【各2.5点】</div><div class="calc">計算</div>
+            <div class="ansbox w" style="margin-bottom:1mm">DE:BC＝<span class="ratio">　:　</span></div>
+            <div class="ansbox w">EF:FB＝<span class="ratio">　:　</span></div></div>
+          <div class="sub"><div class="st"><b>(3)</b> △DEF の面積【5点】</div><div class="calc">計算</div><div class="ansbox"><span style="flex:1"></span>cm²</div></div>
+          <div class="sub"><div class="st"><b>(4)</b> △FBC の面積【5点】</div><div class="calc">計算</div><div class="ansbox"><span style="flex:1"></span>cm²</div></div>
+        </div>
+      </div>
+
+      <!-- 応用4 -->
+      <div class="q adv">
+        <div class="qh"><span class="no">応用 4</span>長方形の折り返しと相似　<span style="font-weight:400;font-size:10.5pt">【25点】</span></div>
+        <div class="qtext given">長方形 ABCD（AB＝8cm，AD＝10cm）を，頂点 B と辺 CD 上の点 F を結ぶ線分 BF を折り目として折り返したところ，頂点 C が辺 AD 上の点 E に重なり，AE＝6cm になりました。</div>
+        <div class="row">
+          <div style="flex:1; display:flex; flex-direction:column; min-width:0">
+            <div style="font-size:10.5pt; margin-bottom:1mm"><b>(1)</b> △ABE∽△DEF を証明しなさい。【10点】</div>
+            <div class="ruled"><span class="lab">証明</span></div>
+          </div>
+          <div class="fig" style="width:64mm">
+            <svg width="56mm" viewBox="0 0 210 172" font-size="15" font-family="BIZ UDPGothic, sans-serif">
+              <path d="M20 148 L116 20 L180 68 Z" fill="#e6e6e6"/>
+              <g fill="none" stroke="#111" stroke-width="1.8">
+                <path d="M20 20 L180 20 L180 148 L20 148 Z"/>
+                <path d="M20 148 L116 20 L180 68 L20 148"/>
+                <path d="M20 28 h8 v-8 M172 20 v8 h8" stroke-width="1.2"/>
+              </g>
+              <text x="4" y="18">A</text><text x="184" y="18">D</text><text x="4" y="162">B</text><text x="184" y="162">C</text>
+              <text x="110" y="14">E</text><text x="186" y="74">F</text>
+              <g font-size="13"><text x="58" y="14">6cm</text><text x="4" y="90">8</text><text x="88" y="166">10cm</text></g>
+            </svg>
+          </div>
+        </div>
+        <div class="subs c3">
+          <div class="sub"><div class="st"><b>(2)</b> DF の長さ【4点】</div><div class="calc">計算</div><div class="ansbox">DF ＝<span style="flex:1"></span>cm</div></div>
+          <div class="sub"><div class="st"><b>(2)</b> EF の長さ【4点】</div><div class="calc">計算</div><div class="ansbox">EF ＝<span style="flex:1"></span>cm</div></div>
+          <div class="sub"><div class="st"><b>(3)</b> △DEF の面積は長方形 ABCD の何倍？【7点】</div><div class="calc">計算</div><div class="ansbox"><span style="flex:1"></span>倍</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 裏面：解答・解説 ======================= -->
+<section class="page ans" style="font-size:10.9pt">
+  <div class="head">
+    <div class="ttl">
+      <small>中学3年 数学 ／ 相似な図形</small>
+      <b>相似の証明 対策プリント <span class="tag">応用編</span>　解答・解説</b>
+    </div>
+    <div class="name" style="font-size:10pt; align-items:center">平行四辺形の面積を S とおくと考えやすい！（△ABC ＝ △ACD ＝ △ABD ＝ S の半分）</div>
+  </div>
+
+  <div class="cols">
+    <div class="col">
+      <!-- 応用1 解答 -->
+      <div class="q" style="flex:1">
+        <div class="qh"><span class="no">応用 1</span>答え　(2) <span class="red">2 : 3</span>　(3) <span class="red"><span class="frac"><span>2</span><span>15</span></span>倍</span>　(4) <span class="red"><span class="frac"><span>11</span><span>30</span></span>倍</span></div>
+        <div class="pf">
+          <p>(1)【証明】 △AFE と △CFB において</p>
+          <p>AD∥BC より，錯角は等しいから　∠FAE ＝ ∠FCB　…①</p>
+          <p>対頂角は等しいから　∠AFE ＝ ∠CFB　…②</p>
+          <p>①，②より，2組の角がそれぞれ等しいから　△AFE ∽ △CFB</p>
+        </div>
+        <p>(2) AD＝BC なので AD を 3 とすると AE＝2，CB＝3。△AFE∽△CFB より<br>
+        　AF : CF ＝ AE : CB ＝ <span class="red">2 : 3</span>　（同様に EF : BF ＝ 2 : 3）</p>
+        <p>(3) 平行四辺形の面積を S とすると，△ABC ＝ <span class="frac"><span>1</span><span>2</span></span>S。<br>
+        　<span class="tg">道具A</span>△ABF と △ABC は高さが共通で，底辺 AF : AC ＝ 2 : 5 → △ABF ＝ <span class="frac"><span>1</span><span>2</span></span>S × <span class="frac"><span>2</span><span>5</span></span> ＝ <span class="frac"><span>1</span><span>5</span></span>S<br>
+        　<span class="tg">道具A</span>△AFE と △ABF は高さが共通で，底辺 FE : BF ＝ 2 : 3 → △AFE ＝ <span class="frac"><span>1</span><span>5</span></span>S × <span class="frac"><span>2</span><span>3</span></span> ＝ <span class="red"><span class="frac"><span>2</span><span>15</span></span>S</span></p>
+        <p>(4) △ACD ＝ <span class="frac"><span>1</span><span>2</span></span>S なので，四角形 FCDE ＝ △ACD − △AFE ＝ <span class="frac"><span>15</span><span>30</span></span>S − <span class="frac"><span>4</span><span>30</span></span>S ＝ <span class="red"><span class="frac"><span>11</span><span>30</span></span>S</span></p>
+        <div class="pt"><span class="tg">検算</span><span class="tg">道具B</span>相似比 2 : 3 → 面積比 △AFE : △CFB ＝ 4 : 9 → △CFB ＝ <span class="frac"><span>2</span><span>15</span></span>S × <span class="frac"><span>9</span><span>4</span></span> ＝ <span class="frac"><span>3</span><span>10</span></span>S。△ABF ＋ △CFB ＝ <span class="frac"><span>1</span><span>5</span></span>S ＋ <span class="frac"><span>3</span><span>10</span></span>S ＝ <span class="frac"><span>1</span><span>2</span></span>S ＝ △ABC で一致！<br>
+        <span class="tg">注意</span>△AFE と △ABF のように<b>相似でない</b>三角形には m² : n² は使えません。相似なら道具B，高さが共通なら道具A，と使い分けよう。</div>
+      </div>
+
+      <!-- 応用2 解答 -->
+      <div class="q" style="flex:1">
+        <div class="qh"><span class="no">応用 2</span>答え　(2) <span class="red">3 : 4</span>　(3) <span class="red">3cm</span>　(4) <span class="red">27cm²</span>　(5) <span class="red">7cm²</span></div>
+        <div class="pf">
+          <p>(1)【証明】 △FBE と △FDA において</p>
+          <p>AD∥BC より，錯角は等しいから　∠FBE ＝ ∠FDA　…①</p>
+          <p>対頂角は等しいから　∠BFE ＝ ∠DFA　…②</p>
+          <p>①，②より，2組の角がそれぞれ等しいから　△FBE ∽ △FDA</p>
+        </div>
+        <p>(2) DA＝BC，BE : EC ＝ 3 : 1 より BE : DA ＝ 3 : 4。よって BF : DF ＝ BE : DA ＝ <span class="red">3 : 4</span>（AF : FE ＝ 4 : 3 もわかる）</p>
+        <p>(3) AB∥DG より △EBA∽△ECG（錯角 ∠EAB＝∠EGC，対頂角 ∠AEB＝∠GEC）。相似比 BE : CE ＝ 3 : 1 なので<br>
+        　AB : GC ＝ 3 : 1 → 9 : CG ＝ 3 : 1 → <span class="red">CG ＝ 3cm</span></p>
+        <p>(4) △ABC ＝ 168 ÷ 2 ＝ 84。<span class="tg">道具A</span> BE : BC ＝ 3 : 4 → △ABE ＝ 84 × <span class="frac"><span>3</span><span>4</span></span> ＝ 63<br>
+        　<span class="tg">道具A</span> FE : AE ＝ 3 : 7 → △BEF ＝ 63 × <span class="frac"><span>3</span><span>7</span></span> ＝ <span class="red">27cm²</span></p>
+        <p>(5) <span class="tg">道具B</span> △ECG∽△EBA，相似比 1 : 3 → 面積比 1 : 9。△ECG ＝ 63 × <span class="frac"><span>1</span><span>9</span></span> ＝ <span class="red">7cm²</span></p>
+        <div class="pt"><span class="tg">ポイント</span>1つの図に「砂時計型」が2つ（△FBE と △FDA，△EBA と △ECG）。どの平行線を使った相似かを意識して，比を図に書きこみながら進めよう。</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <!-- 応用3 解答 -->
+      <div class="q" style="flex:1">
+        <div class="qh"><span class="no">応用 3</span>答え　(2) DE:BC＝<span class="red">2 : 5</span>，EF:FB＝<span class="red">2 : 5</span>　(3) <span class="red">12cm²</span>　(4) <span class="red">75cm²</span></div>
+        <div class="pf">
+          <p>(1)【証明】 △FDE と △FCB において</p>
+          <p>DE∥BC より，錯角は等しいから　∠FDE ＝ ∠FCB　…①</p>
+          <p>対頂角は等しいから　∠DFE ＝ ∠CFB　…②</p>
+          <p>①，②より，2組の角がそれぞれ等しいから　△FDE ∽ △FCB</p>
+        </div>
+        <p>(2) DE∥BC より △ADE∽△ABC（同位角と共通な角）。相似比 AD : AB ＝ 2 : 5 なので DE : BC ＝ <span class="red">2 : 5</span>。<br>
+        　(1) より △FDE∽△FCB で相似比は DE : CB ＝ 2 : 5 なので EF : BF ＝ <span class="red">2 : 5</span>。</p>
+        <p>(3) AE : AC ＝ AD : AB ＝ 2 : 5（平行線と線分の比）。<br>
+        　<span class="tg">道具A</span> △ABE ＝ 175 × <span class="frac"><span>2</span><span>5</span></span> ＝ 70　→　<span class="tg">道具A</span> △DBE ＝ 70 × <span class="frac"><span>3</span><span>5</span></span> ＝ 42（AD : DB ＝ 2 : 3）<br>
+        　<span class="tg">道具A</span> EF : EB ＝ 2 : 7 → △DEF ＝ 42 × <span class="frac"><span>2</span><span>7</span></span> ＝ <span class="red">12cm²</span></p>
+        <p>(4) <span class="tg">道具B</span> △FDE∽△FCB，相似比 2 : 5 → 面積比 4 : 25。△FBC ＝ 12 × <span class="frac"><span>25</span><span>4</span></span> ＝ <span class="red">75cm²</span></p>
+        <div class="pt"><span class="tg">検算</span>△ADE ＝ 175 × <span class="frac"><span>4</span><span>25</span></span> ＝ 28，△DBF ＝ 42 − 12 ＝ 30，△FEC ＝ 30（△EBC ＝ 105 から 75 をひく）。28＋12＋30＋30＋75 ＝ 175 ✓<br>
+        <span class="tg">ポイント</span>台形 DBCE の中の「クロス（×）」は，上下の三角形が相似（砂時計型）。<b>左右の △DBF と △FEC は面積が等しくなる</b>のも有名な性質です。</div>
+      </div>
+
+      <!-- 応用4 解答 -->
+      <div class="q" style="flex:1">
+        <div class="qh"><span class="no">応用 4</span>答え　(2) DF＝<span class="red">3cm</span>，EF＝<span class="red">5cm</span>　(3) <span class="red"><span class="frac"><span>3</span><span>40</span></span>倍</span></div>
+        <div class="pf">
+          <p>(1)【証明】 △ABE と △DEF において</p>
+          <p>長方形の角だから　∠BAE ＝ ∠EDF ＝ 90°　…①</p>
+          <p>△ABE の内角の和より　∠ABE ＝ 180° − 90° − ∠AEB ＝ 90° − ∠AEB　…②</p>
+          <p>折り返した角だから　∠BEF ＝ ∠BCF ＝ 90°</p>
+          <p>3点 A，E，D は一直線上にあるから　∠DEF ＝ 180° − 90° − ∠AEB ＝ 90° − ∠AEB　…③</p>
+          <p>②，③より　∠ABE ＝ ∠DEF　…④</p>
+          <p>①，④より，2組の角がそれぞれ等しいから　△ABE ∽ △DEF</p>
+        </div>
+        <p>(2) ED ＝ 10 − 6 ＝ 4。折り返しより BE ＝ BC ＝ 10。相似比 AB : DE ＝ 8 : 4 ＝ 2 : 1。<br>
+        　AE : DF ＝ 2 : 1 → 6 : DF ＝ 2 : 1 → <span class="red">DF ＝ 3cm</span>　　BE : EF ＝ 2 : 1 → 10 : EF ＝ 2 : 1 → <span class="red">EF ＝ 5cm</span></p>
+        <p>(3) △DEF ＝ 4 × 3 ÷ 2 ＝ 6cm²，長方形 ＝ 8 × 10 ＝ 80cm² → 6 ÷ 80 ＝ <span class="red"><span class="frac"><span>3</span><span>40</span></span>倍</span></p>
+        <div class="pt"><span class="tg">検算</span>折り返しより FC ＝ EF ＝ 5。DF ＋ FC ＝ 3 ＋ 5 ＝ 8 ＝ CD ✓<br>
+        <span class="tg">ポイント</span>折り返し問題は「<b>折り返す前と後で，辺の長さも角の大きさも変わらない</b>」が最大の根拠。90° の角が一直線上に集まる「<b>一直線＝180°</b>」の形も頻出です。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
