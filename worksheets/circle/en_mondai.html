@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><title>円周角と中心角 問題</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .grid { display:grid; gap:2.5mm; flex:1; min-height:0; }
+  .g3 { grid-template-columns: repeat(3, 1fr); }
+  .cell { border:.3mm solid #666; border-radius:1.5mm; padding:1.2mm 2mm; display:flex; flex-direction:column; min-height:0; }
+  .cell .ct { font-size:9.6pt; line-height:1.35; min-height:9mm; }
+  .cell .ct b { margin-right:1mm; }
+  .cell .fig { flex:1; min-height:0; }
+  .cell .ansbox { align-self:flex-end; height:8.5mm; min-width:30mm; }
+  .q.adv { flex:1; }
+  .q.adv .row { flex:1; }
+  .subs.c3 { grid-template-columns: repeat(3, 1fr); }
+  .sub { min-height:24mm; }
+  .sub .calc { flex:1; font-size:8pt; color:#777; }
+  .thm { font-size:10.2pt; line-height:1.45; }
+  .thm td { border:.3mm solid #444; padding:.7mm 2mm; }
+  .thm td.n { width:8mm; text-align:center; font-weight:700; background:#222; color:#fff; }
+  .alist { display:grid; grid-template-columns: 1fr 1fr; gap:.6mm 4mm; font-size:9.8pt; line-height:1.45; }
+  .alist p { margin:.3mm 0; }
+</style></head><body>
+
+<!-- ======================= 表面 ======================= -->
+<section class="page">
+  <div class="head">
+    <div class="ttl"><small>中学3年 数学 ／ 円</small><b>円周角と中心角 対策プリント <span class="tag">導入・演習・応用</span></b></div>
+    <div class="name"><div>組<span class="w1"></span></div><div>番<span class="w1"></span></div>
+      <div>名前<span class="w2"></span></div><div class="score">/ 100点</div></div>
+  </div>
+  <div class="cols">
+    <div class="col">
+      <div class="col-title">STEP 1　導入<small>円周角の定理を覚えて，まずは使ってみよう</small></div>
+      <div class="box memo" style="padding:2.5mm 4mm">
+        <div class="qh" style="margin-bottom:1mm">★ 円周角の定理（ここが全部の土台！）</div>
+        <table class="cond thm">
+          <tr><td class="n">①</td><td>1つの弧に対する円周角は，その弧に対する<b>中心角の半分</b>　（∠APB ＝ <span class="frac"><span>1</span><span>2</span></span>∠AOB）</td></tr>
+          <tr><td class="n">②</td><td><b>同じ弧</b>に対する円周角は<b>等しい</b>　（∠APB ＝ ∠AQB）</td></tr>
+          <tr><td class="n">③</td><td><b>半円の弧</b>（直径）に対する円周角は <b>90°</b></td></tr>
+          <tr><td class="n">④</td><td><b>等しい弧</b>に対する円周角は等しい（弧の長さと円周角は比例する）</td></tr>
+          <tr><td class="n">⑤</td><td><b>円周角の定理の逆</b>：2点 P，Q が直線 AB について同じ側にあり ∠APB ＝ ∠AQB ならば，4点 A，B，P，Q は1つの円周上にある</td></tr>
+        </table>
+      </div>
+
+      <div class="q" style="flex:0 0 auto">
+        <div class="qh"><span class="no">導入 1</span>ことばの確認　<span style="font-weight:400;font-size:10.5pt">【各2点】</span></div>
+        <div class="row">
+          <div style="flex:1" class="proof-fill">
+            右の図で，∠APB を 弧AB に対する <span class="bl l"><i>①</i></span> といい，<br>
+            ∠AOB を 弧AB に対する <span class="bl l"><i>②</i></span> という。<br>
+            ∠AOB ＝ 100° のとき，∠ア ＝ <span class="bl "><i>③</i></span> °
+          </div>
+          <div class="fig" style="width:40mm"><svg width="38mm" viewBox="-68.0 -87.9 136.0 155.9" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="62.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-47.5" y1="39.9" x2="-10.8" y2="-61.1" stroke="#111" stroke-width="1.7"/>
+<line x1="-10.8" y1="-61.1" x2="47.5" y2="39.9" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="-47.5" y2="39.9" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="47.5" y2="39.9" stroke="#111" stroke-width="1.7"/>
+<path d="M-8.5 7.2 A11.2 11.2 0 0 0 8.5 7.2" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M-16.1 -46.5 A15.5 15.5 0 0 0 -3.0 -47.6" fill="none" stroke="#111" stroke-width="1.1"/>
+<circle cx="0.0" cy="-0.0" r="2.6" fill="#111"/>
+<text x="-55.6" y="46.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="55.6" y="46.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="-12.6" y="-71.4" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">P</text>
+<text x="0.0" y="-9.3" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">O</text>
+<text x="-0.0" y="22.3" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">100°</text>
+<text x="-8.5" y="-35.1" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">ア</text>
+</svg></div>
+        </div>
+      </div>
+
+      <div class="q grow">
+        <div class="qh"><span class="no">導入 2</span>∠x の大きさを求めなさい（O は円の中心）　<span style="font-weight:400;font-size:10.5pt">【各3点】</span></div>
+        <div class="grid g3"><div class="cell"><div class="ct"><b>(1)</b></div>
+      <div class="fig"><svg width="36mm" viewBox="-66.1 -84.1 132.2 148.1" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="58.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-47.5" y1="33.3" x2="-5.1" y2="-57.8" stroke="#111" stroke-width="1.7"/>
+<line x1="-5.1" y1="-57.8" x2="47.5" y2="33.3" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="-47.5" y2="33.3" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="47.5" y2="33.3" stroke="#111" stroke-width="1.7"/>
+<path d="M-8.1 5.7 A9.9 9.9 0 0 0 8.1 5.7" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M-11.2 -44.6 A14.5 14.5 0 0 0 2.2 -45.2" fill="none" stroke="#111" stroke-width="1.1"/>
+<circle cx="0.0" cy="-0.0" r="2.6" fill="#111"/>
+<text x="-55.6" y="38.9" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="55.6" y="38.9" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="-5.9" y="-67.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">P</text>
+<text x="0.0" y="-8.1" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">O</text>
+<text x="-0.0" y="20.9" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">110°</text>
+<text x="-4.0" y="-34.6" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div><div class="cell"><div class="ct"><b>(2)</b></div>
+      <div class="fig"><svg width="36mm" viewBox="-64.0 -83.3 128.0 155.4" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="58.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-33.3" y1="47.5" x2="10.1" y2="-57.1" stroke="#111" stroke-width="1.7"/>
+<line x1="10.1" y1="-57.1" x2="33.3" y2="47.5" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="-33.3" y2="47.5" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="33.3" y2="47.5" stroke="#111" stroke-width="1.7"/>
+<path d="M3.9 -42.1 A16.2 16.2 0 0 0 13.6 -41.3" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M-5.3 7.6 A9.3 9.3 0 0 0 5.3 7.6" fill="none" stroke="#111" stroke-width="1.1"/>
+<circle cx="0.0" cy="-0.0" r="2.6" fill="#111"/>
+<text x="-38.9" y="55.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="38.9" y="55.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="11.8" y="-66.8" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">P</text>
+<text x="-1.4" y="-8.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">O</text>
+<text x="7.8" y="-31.1" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">35°</text>
+<text x="-0.0" y="17.4" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div><div class="cell"><div class="ct"><b>(3)</b></div>
+      <div class="fig"><svg width="36mm" viewBox="-64.0 -72.1 128.0 140.6" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="58.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-37.3" y1="44.4" x2="33.3" y2="-47.5" stroke="#111" stroke-width="1.7"/>
+<line x1="33.3" y1="-47.5" x2="37.3" y2="44.4" stroke="#111" stroke-width="1.7"/>
+<line x1="-37.3" y1="44.4" x2="-41.0" y2="-41.0" stroke="#111" stroke-width="1.7"/>
+<line x1="-41.0" y1="-41.0" x2="37.3" y2="44.4" stroke="#111" stroke-width="1.7"/>
+<path d="M24.4 -36.0 A14.5 14.5 0 0 0 33.9 -33.0" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M-40.4 -26.5 A14.5 14.5 0 0 0 -31.2 -30.3" fill="none" stroke="#111" stroke-width="1.1"/>
+<text x="-43.6" y="52.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="43.6" y="52.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="38.9" y="-55.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="-48.0" y="-48.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">D</text>
+<text x="25.8" y="-23.7" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">40°</text>
+<text x="-32.1" y="-19.6" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div><div class="cell"><div class="ct"><b>(4)</b>AB は直径</div>
+      <div class="fig"><svg width="38mm" viewBox="-78.4 -72.8 156.7 136.8" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="58.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-58.0" y1="-0.0" x2="58.0" y2="-0.0" stroke="#111" stroke-width="1.7"/>
+<line x1="58.0" y1="-0.0" x2="-32.4" y2="-48.1" stroke="#111" stroke-width="1.7"/>
+<line x1="-32.4" y1="-48.1" x2="-58.0" y2="-0.0" stroke="#111" stroke-width="1.7"/>
+<path d="M42.6 -8.2 A17.4 17.4 0 0 0 40.6 -0.0" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M-43.5 -0.0 A14.5 14.5 0 0 0 -51.2 -12.8" fill="none" stroke="#111" stroke-width="1.1"/>
+<circle cx="0.0" cy="-0.0" r="2.6" fill="#111"/>
+<text x="-67.9" y="-0.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="67.9" y="-0.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="-37.9" y="-56.3" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="0.0" y="8.1" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">O</text>
+<text x="29.9" y="-7.0" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">28°</text>
+<text x="-38.1" y="-11.9" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div><div class="cell"><div class="ct"><b>(5)</b>点 P は弧 AB（短いほう）上</div>
+      <div class="fig"><svg width="36mm" viewBox="-74.3 -64.0 143.5 148.1" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="58.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-54.5" y1="19.8" x2="-5.1" y2="57.8" stroke="#111" stroke-width="1.7"/>
+<line x1="-5.1" y1="57.8" x2="50.2" y2="29.0" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="-54.5" y2="19.8" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="50.2" y2="29.0" stroke="#111" stroke-width="1.7"/>
+<path d="M-9.3 3.4 A9.9 9.9 0 0 0 8.5 4.9" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M2.7 53.8 A8.7 8.7 0 0 0 -12.0 52.5" fill="none" stroke="#111" stroke-width="1.1"/>
+<circle cx="0.0" cy="-0.0" r="2.6" fill="#111"/>
+<text x="-63.8" y="23.2" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="58.8" y="33.9" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="-5.9" y="67.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">P</text>
+<text x="0.0" y="-8.1" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">O</text>
+<text x="-1.8" y="20.8" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">130°</text>
+<text x="-3.6" y="41.6" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div><div class="cell"><div class="ct"><b>(6)</b></div>
+      <div class="fig"><svg width="36mm" viewBox="-64.0 -84.4 128.0 148.4" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="58.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-44.4" y1="37.3" x2="0.0" y2="-58.0" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-58.0" x2="44.4" y2="37.3" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="-44.4" y2="37.3" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="44.4" y2="37.3" stroke="#111" stroke-width="1.7"/>
+<line x1="-44.4" y1="37.3" x2="44.4" y2="37.3" stroke="#111" stroke-width="1.7"/>
+<path d="M-6.9 -43.3 A16.2 16.2 0 0 0 6.9 -43.3" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M-28.2 37.3 A16.2 16.2 0 0 0 -32.0 26.8" fill="none" stroke="#111" stroke-width="1.1"/>
+<circle cx="0.0" cy="-0.0" r="2.6" fill="#111"/>
+<text x="-52.0" y="43.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="52.0" y="43.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="0.0" y="-67.9" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">P</text>
+<text x="0.0" y="-8.1" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">O</text>
+<text x="0.0" y="-31.3" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">50°</text>
+<text x="-21.5" y="29.0" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-title">STEP 2　演習<small>どの弧に対する円周角かを図に書きこもう</small></div>
+      <div class="q grow">
+        <div class="qh"><span class="no">演習</span>∠x の大きさを求めなさい　<span style="font-weight:400;font-size:10.5pt">【各3点】</span>
+          <span class="hint" style="margin:0 0 0 2mm">ヒント：同じ弧に対する円周角に<b>同じ印</b>をつけると見えてくる！</span></div>
+        <div class="grid g3"><div class="cell"><div class="ct"><b>(1)</b>弦 AC と BD の交点が E</div>
+      <div class="fig"><svg width="44mm" viewBox="-64.0 -64.5 128.0 136.6" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="58.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-41.0" y1="-41.0" x2="33.3" y2="47.5" stroke="#111" stroke-width="1.7"/>
+<line x1="-33.3" y1="47.5" x2="41.0" y2="-41.0" stroke="#111" stroke-width="1.7"/>
+<line x1="-41.0" y1="-41.0" x2="-33.3" y2="47.5" stroke="#111" stroke-width="1.7"/>
+<line x1="33.3" y1="47.5" x2="41.0" y2="-41.0" stroke="#111" stroke-width="1.7"/>
+<path d="M-39.5 -23.7 A17.4 17.4 0 0 0 -29.8 -27.7" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M34.8 30.2 A17.4 17.4 0 0 0 22.1 34.2" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M-4.8 2.1 A7.5 7.5 0 0 0 -4.8 13.6" fill="none" stroke="#111" stroke-width="1.1"/>
+<text x="-48.0" y="-48.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="-38.9" y="55.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="38.9" y="55.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="48.0" y="-48.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">D</text>
+<text x="0.0" y="-0.8" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">E</text>
+<text x="-29.9" y="-14.2" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">35°</text>
+<text x="24.5" y="19.9" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">45°</text>
+<text x="-15.1" y="7.9" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div><div class="cell"><div class="ct"><b>(2)</b>AB は直径</div>
+      <div class="fig"><svg width="44mm" viewBox="-78.4 -81.0 156.7 156.3" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="58.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-58.0" y1="-0.0" x2="58.0" y2="-0.0" stroke="#111" stroke-width="1.7"/>
+<line x1="58.0" y1="-0.0" x2="17.9" y2="-55.2" stroke="#111" stroke-width="1.7"/>
+<line x1="17.9" y1="-55.2" x2="-58.0" y2="-0.0" stroke="#111" stroke-width="1.7"/>
+<line x1="-58.0" y1="-0.0" x2="29.0" y2="50.2" stroke="#111" stroke-width="1.7"/>
+<line x1="29.0" y1="50.2" x2="17.9" y2="-55.2" stroke="#111" stroke-width="1.7"/>
+<path d="M27.2 32.9 A17.4 17.4 0 0 0 13.9 41.5" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M-40.6 -0.0 A17.4 17.4 0 0 0 -43.9 -10.2" fill="none" stroke="#111" stroke-width="1.1"/>
+<circle cx="0.0" cy="-0.0" r="2.6" fill="#111"/>
+<text x="-67.9" y="-0.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="67.9" y="-0.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="21.0" y="-64.5" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="33.9" y="58.8" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">D</text>
+<text x="-1.4" y="8.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">O</text>
+<text x="13.8" y="26.9" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">54°</text>
+<text x="-32.6" y="-8.2" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div><div class="cell"><div class="ct"><b>(3)</b>O は円の中心</div>
+      <div class="fig"><svg width="44mm" viewBox="-74.3 -83.3 148.5 147.3" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="58.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-10.1" y1="-57.1" x2="-54.5" y2="19.8" stroke="#111" stroke-width="1.7"/>
+<line x1="-54.5" y1="19.8" x2="54.5" y2="19.8" stroke="#111" stroke-width="1.7"/>
+<line x1="54.5" y1="19.8" x2="-10.1" y2="-57.1" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="-54.5" y2="19.8" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="54.5" y2="19.8" stroke="#111" stroke-width="1.7"/>
+<path d="M-33.6 19.8 A20.9 20.9 0 0 0 -34.9 12.7" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M-17.3 -44.6 A14.5 14.5 0 0 0 -0.8 -46.0" fill="none" stroke="#111" stroke-width="1.1"/>
+<circle cx="0.0" cy="-0.0" r="2.6" fill="#111"/>
+<text x="-11.8" y="-66.8" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="-63.8" y="23.2" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="63.8" y="23.2" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="0.0" y="-8.1" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">O</text>
+<text x="-23.1" y="14.3" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">20°</text>
+<text x="-7.9" y="-32.9" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div><div class="cell"><div class="ct"><b>(4)</b>直線 BA と CD の交点が P</div>
+      <div class="fig"><svg width="48mm" viewBox="-134.1 -69.2 192.1 138.4" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="52.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-116.8" y1="-0.0" x2="26.0" y2="-45.0" stroke="#111" stroke-width="1.7"/>
+<line x1="-116.8" y1="-0.0" x2="26.0" y2="45.0" stroke="#111" stroke-width="1.7"/>
+<line x1="26.0" y1="-45.0" x2="-47.1" y2="22.0" stroke="#111" stroke-width="1.7"/>
+<path d="M8.1 -39.4 A18.7 18.7 0 0 0 12.2 -32.4" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M-36.2 25.4 A11.4 11.4 0 0 0 -38.7 14.2" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M-94.5 7.0 A23.4 23.4 0 0 0 -94.5 -7.0" fill="none" stroke="#111" stroke-width="1.1"/>
+<text x="-55.1" y="-25.7" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="30.4" y="-52.7" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="30.4" y="52.7" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="-55.1" y="25.7" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">D</text>
+<text x="-123.6" y="-0.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">P</text>
+<text x="-0.1" y="-30.0" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">25°</text>
+<text x="-25.8" y="17.2" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">60°</text>
+<text x="-85.6" y="-0.0" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div><div class="cell"><div class="ct"><b>(5)</b>円周を10等分する点 A〜J。AD と CH の交点が P</div>
+      <div class="fig"><svg width="44mm" viewBox="-73.9 -83.2 147.9 166.4" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="58.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-58.0" x2="55.2" y2="17.9" stroke="#111" stroke-width="1.7"/>
+<line x1="55.2" y1="-17.9" x2="-55.2" y2="17.9" stroke="#111" stroke-width="1.7"/>
+<path d="M38.9 -4.5 A8.1 8.1 0 0 0 41.8 -13.6" fill="none" stroke="#111" stroke-width="1.1"/>
+<circle cx="0.0" cy="-58.0" r="2.2" fill="#111"/>
+<circle cx="34.1" cy="-46.9" r="2.2" fill="#111"/>
+<circle cx="55.2" cy="-17.9" r="2.2" fill="#111"/>
+<circle cx="55.2" cy="17.9" r="2.2" fill="#111"/>
+<circle cx="34.1" cy="46.9" r="2.2" fill="#111"/>
+<circle cx="0.0" cy="58.0" r="2.2" fill="#111"/>
+<circle cx="-34.1" cy="46.9" r="2.2" fill="#111"/>
+<circle cx="-55.2" cy="17.9" r="2.2" fill="#111"/>
+<circle cx="-55.2" cy="-17.9" r="2.2" fill="#111"/>
+<circle cx="-34.1" cy="-46.9" r="2.2" fill="#111"/>
+<text x="0.0" y="-66.7" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="39.2" y="-54.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="63.4" y="-20.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="63.4" y="20.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">D</text>
+<text x="39.2" y="54.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">E</text>
+<text x="0.0" y="66.7" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">F</text>
+<text x="-39.2" y="54.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">G</text>
+<text x="-63.4" y="20.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">H</text>
+<text x="-63.4" y="-20.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">I</text>
+<text x="-39.2" y="-54.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">J</text>
+<text x="24.8" y="-14.4" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">P</text>
+<text x="49.0" y="-6.2" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div><div class="cell"><div class="ct"><b>(6)</b>弧 AB ＝ 弧 BC</div>
+      <div class="fig"><svg width="44mm" viewBox="-74.3 -84.4 138.3 166.7" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="58.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-58.0" x2="-54.5" y2="19.8" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-58.0" x2="-14.0" y2="56.3" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-58.0" x2="38.8" y2="43.1" stroke="#111" stroke-width="1.7"/>
+<line x1="-54.5" y1="19.8" x2="-14.0" y2="56.3" stroke="#111" stroke-width="1.1" stroke-dasharray="5 4"/>
+<line x1="-14.0" y1="56.3" x2="38.8" y2="43.1" stroke="#111" stroke-width="1.1" stroke-dasharray="5 4"/>
+<line x1="-31.9" y1="35.5" x2="-36.6" y2="40.6" stroke="#111" stroke-width="1.2"/>
+<line x1="11.5" y1="46.3" x2="13.2" y2="53.1" stroke="#111" stroke-width="1.2"/>
+<path d="M-14.0 -38.0 A24.4 24.4 0 0 0 -3.0 -33.8" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M-8.0 -46.6 A13.9 13.9 0 0 0 5.0 -45.0" fill="none" stroke="#111" stroke-width="1.1"/>
+<text x="-63.8" y="23.2" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="-16.4" y="65.8" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="45.4" y="50.4" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="0.0" y="-67.9" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">D</text>
+<text x="-12.9" y="-24.4" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">28°</text>
+<text x="-2.5" y="-37.3" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div><div class="cell"><div class="ct"><b>(7)</b>O は円の中心</div>
+      <div class="fig"><svg width="44mm" viewBox="-64.0 -64.0 133.3 148.4" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="58.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-44.4" y1="-37.3" x2="-0.0" y2="58.0" stroke="#111" stroke-width="1.7"/>
+<line x1="50.2" y1="-29.0" x2="-0.0" y2="58.0" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="-44.4" y2="-37.3" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="-0.0" y2="58.0" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-0.0" x2="50.2" y2="-29.0" stroke="#111" stroke-width="1.7"/>
+<path d="M-36.6 -20.5 A18.6 18.6 0 0 0 -30.2 -25.4" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M34.2 -19.7 A18.6 18.6 0 0 0 40.9 -12.9" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M7.5 -4.3 A8.7 8.7 0 0 0 -6.7 -5.6" fill="none" stroke="#111" stroke-width="1.1"/>
+<circle cx="0.0" cy="-0.0" r="2.6" fill="#111"/>
+<text x="-52.0" y="-43.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="-0.0" y="67.9" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="58.8" y="-33.9" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="-6.7" y="5.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">O</text>
+<text x="-26.1" y="-13.4" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">25°</text>
+<text x="28.9" y="-7.7" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">30°</text>
+<text x="1.4" y="-16.2" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div><div class="cell"><div class="ct"><b>(8)</b>弧AB:弧BC:弧CA＝3:4:5<br>（弧は残りの点を含まないほう）</div>
+      <div class="fig"><svg width="44mm" viewBox="-64.0 -84.4 142.4 159.6" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="58.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-58.0" x2="58.0" y2="-0.0" stroke="#111" stroke-width="1.7"/>
+<line x1="58.0" y1="-0.0" x2="-29.0" y2="50.2" stroke="#111" stroke-width="1.7"/>
+<line x1="-29.0" y1="50.2" x2="0.0" y2="-58.0" stroke="#111" stroke-width="1.7"/>
+<path d="M47.7 -10.3 A14.5 14.5 0 0 0 45.4 7.2" fill="none" stroke="#111" stroke-width="1.1"/>
+<text x="0.0" y="-67.9" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="67.9" y="-0.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="-33.9" y="58.8" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="35.0" y="-3.0" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div><div class="cell"><div class="ct"><b>(9)</b>円はかかれていません。<br>A，D は直線 BC について同じ側</div>
+      <div class="fig"><svg width="44mm" viewBox="-66.1 -82.0 128.6 142.2" font-family="BIZ UDPGothic, sans-serif">
+<line x1="-47.5" y1="-33.3" x2="-44.4" y2="37.3" stroke="#111" stroke-width="1.7"/>
+<line x1="-47.5" y1="-33.3" x2="44.4" y2="37.3" stroke="#111" stroke-width="1.7"/>
+<line x1="15.0" y1="-56.0" x2="-44.4" y2="37.3" stroke="#111" stroke-width="1.7"/>
+<line x1="15.0" y1="-56.0" x2="44.4" y2="37.3" stroke="#111" stroke-width="1.7"/>
+<line x1="-44.4" y1="37.3" x2="44.4" y2="37.3" stroke="#111" stroke-width="1.7"/>
+<line x1="-47.5" y1="-33.3" x2="15.0" y2="-56.0" stroke="#111" stroke-width="1.7"/>
+<path d="M-46.4 -8.9 A24.4 24.4 0 0 0 -28.2 -18.4" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M5.7 -41.3 A17.4 17.4 0 0 0 20.2 -39.4" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M-35.7 23.6 A16.2 16.2 0 0 0 -45.1 21.1" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M40.1 23.5 A14.5 14.5 0 0 0 32.9 28.5" fill="none" stroke="#111" stroke-width="1.1"/>
+<text x="-55.6" y="-38.9" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="-52.0" y="43.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="52.0" y="43.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="17.6" y="-65.5" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">D</text>
+<text x="-30.9" y="-1.4" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">50°</text>
+<text x="11.2" y="-27.3" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">50°</text>
+<text x="-37.4" y="11.0" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">35°</text>
+<text x="31.1" y="18.3" font-size="13" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">x</text>
+</svg></div>
+      <div class="ansbox">∠x ＝<span style="flex:1"></span>°</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 裏面 ======================= -->
+<section class="page">
+  <div class="head">
+    <div class="ttl"><small>中学3年 数学 ／ 円</small><b>円周角と中心角 対策プリント <span class="tag">応用：円と相似の証明</span></b></div>
+    <div class="name" style="font-size:10pt;align-items:center">（表面とあわせて 100点）</div>
+  </div>
+  <div class="box memo" style="padding:2mm 4mm; font-size:10.3pt; margin-bottom:3.5mm">
+    <b>円と相似の証明の作戦</b>
+    <span class="tg">1</span>円周角の定理で<b>等しい角</b>を見つける（「弧○○に対する円周角は等しいから」と書く）
+    <span class="tg">2</span>もう1組を<b>対頂角・共通な角・90°・仮定</b>から見つける
+    <span class="tg">3</span>「2組の角がそれぞれ等しいから」で結論
+  </div>
+  <div class="cols">
+    <div class="col">
+      <div class="q adv">
+      <div class="qh"><span class="no">応用 1</span>円の中で交わる2本の弦　<span style="font-weight:400;font-size:10.5pt">【12点】</span></div>
+      <div class="qtext given" style="font-size:10.5pt">円周上に4点 A，B，C，D があり，弦 AC と弦 BD の交点を P とします。</div>
+      <div class="row">
+        <div style="flex:1; display:flex; flex-direction:column; min-width:0">
+          <div style="font-size:10.5pt; margin-bottom:1mm"><b>(1)</b> △PAB∽△PDC を証明しなさい。【8点】</div>
+          <div class="ruled"><span class="lab">証明</span></div>
+        </div>
+        <div class="fig" style="width:60mm"><svg width="58mm" viewBox="-101.7 -107.3 185.7 207.3" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="78.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-7.4" y1="-77.6" x2="-31.6" y2="71.3" stroke="#111" stroke-width="1.7"/>
+<line x1="48.3" y1="-61.3" x2="-78.0" y2="-2.4" stroke="#111" stroke-width="1.7"/>
+<line x1="-7.4" y1="-77.6" x2="48.3" y2="-61.3" stroke="#111" stroke-width="1.7"/>
+<line x1="-78.0" y1="-2.4" x2="-31.6" y2="71.3" stroke="#111" stroke-width="1.7"/>
+<circle cx="-14.8" cy="-31.8" r="2.6" fill="#111"/>
+<text x="-8.6" y="-90.8" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="56.5" y="-71.7" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="-37.0" y="83.4" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="-91.2" y="-2.8" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">D</text>
+<text x="-4.6" y="-28.1" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">P</text>
+</svg></div>
+      </div>
+      <div class="subs c3" style="grid-template-columns: repeat(2, 1fr)"><div class="sub"><div class="st"><b>(2)</b> PA＝4cm，PB＝6cm，PC＝9cm のとき，PD の長さ【2点】</div><div class="calc">計算</div><div class="ansbox">PD ＝<span style='flex:1'></span>cm</div></div><div class="sub"><div class="st"><b>(3)</b> (2)のとき，AB＝5cm なら DC の長さは？【2点】</div><div class="calc">計算</div><div class="ansbox">DC ＝<span style='flex:1'></span>cm</div></div></div>
+    </div>
+      <div class="q adv">
+      <div class="qh"><span class="no">応用 2</span>円の外の点からひいた2本の直線　<span style="font-weight:400;font-size:10.5pt">【12点】</span></div>
+      <div class="qtext given" style="font-size:10.5pt">円の外の点 P を通る2本の直線が，円とそれぞれ点 A，B（PA&lt;PB）と点 C，D（PC&lt;PD）で交わっています。</div>
+      <div class="row">
+        <div style="flex:1; display:flex; flex-direction:column; min-width:0">
+          <div style="font-size:10.5pt; margin-bottom:1mm"><b>(1)</b> △PAD∽△PCB を証明しなさい。【8点】</div>
+          <div class="ruled"><span class="lab">証明</span></div>
+        </div>
+        <div class="fig" style="width:64mm"><svg width="62mm" viewBox="-126.1 -95.0 202.1 173.5" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="70.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-105.8" y1="0.0" x2="-9.1" y2="-69.4" stroke="#111" stroke-width="1.7"/>
+<line x1="-105.8" y1="0.0" x2="43.0" y2="55.2" stroke="#111" stroke-width="1.7"/>
+<line x1="-62.8" y1="-30.8" x2="43.0" y2="55.2" stroke="#111" stroke-width="1.7"/>
+<line x1="-68.6" y1="13.8" x2="-9.1" y2="-69.4" stroke="#111" stroke-width="1.7"/>
+<circle cx="-105.8" cy="0.0" r="2.6" fill="#111"/>
+<text x="-115.6" y="-0.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">P</text>
+<text x="-66.4" y="-40.7" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="-3.8" y="-78.5" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="-72.2" y="23.7" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="51.0" y="62.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">D</text>
+</svg></div>
+      </div>
+      <div class="subs c3" style="grid-template-columns: repeat(2, 1fr)"><div class="sub"><div class="st"><b>(2)</b> PA＝4cm，AB＝5cm，PC＝3cm のとき，CD の長さ【2点】</div><div class="calc">計算</div><div class="ansbox">CD ＝<span style='flex:1'></span>cm</div></div><div class="sub"><div class="st"><b>(3)</b> (2)のとき，△PAD の面積は △PCB の面積の何倍？【2点】</div><div class="calc">計算</div><div class="ansbox"><span style='flex:1'></span>倍</div></div></div>
+    </div>
+    </div>
+    <div class="col">
+      <div class="q adv">
+      <div class="qh"><span class="no">応用 3</span>直径と垂線（直角を2つ見つけよう）　<span style="font-weight:400;font-size:10.5pt">【13点】</span></div>
+      <div class="qtext given" style="font-size:10.5pt">△ABC の3つの頂点は円 O の周上にあり，線分 AD は円 O の直径です。頂点 A から辺 BC に垂線 AH をひきます。</div>
+      <div class="row">
+        <div style="flex:1; display:flex; flex-direction:column; min-width:0">
+          <div style="font-size:10.5pt; margin-bottom:1mm"><b>(1)</b> △ABH∽△ADC を証明しなさい。【8点】</div>
+          <div class="ruled"><span class="lab">証明</span></div>
+        </div>
+        <div class="fig" style="width:58mm"><svg width="56mm" viewBox="-90.3 -103.1 186.7 206.2" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="74.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-74.0" x2="-68.2" y2="28.8" stroke="#111" stroke-width="1.7"/>
+<line x1="-68.2" y1="28.8" x2="73.4" y2="9.3" stroke="#111" stroke-width="1.7"/>
+<line x1="73.4" y1="9.3" x2="0.0" y2="-74.0" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-74.0" x2="-0.0" y2="74.0" stroke="#111" stroke-width="1.7"/>
+<line x1="0.0" y1="-74.0" x2="12.6" y2="17.6" stroke="#111" stroke-width="1.7"/>
+<line x1="-0.0" y1="74.0" x2="73.4" y2="9.3" stroke="#111" stroke-width="1.7"/>
+<polyline points="11.7,10.5 18.8,9.5 19.8,16.6" fill="none" stroke="#111" stroke-width="1.1"/>
+<circle cx="0.0" cy="-0.0" r="2.6" fill="#111"/>
+<text x="0.0" y="-86.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="-79.8" y="33.7" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="85.9" y="10.8" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="-0.0" y="86.6" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">D</text>
+<text x="-7.0" y="-4.1" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">O</text>
+<text x="17.1" y="25.3" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">H</text>
+</svg></div>
+      </div>
+      <div class="subs c3" style="grid-template-columns: repeat(2, 1fr)"><div class="sub"><div class="st"><b>(2)</b> AB＝10cm，AC＝9cm，AD＝12cm のとき，AH の長さ【3点】</div><div class="calc">計算</div><div class="ansbox">AH ＝<span style='flex:1'></span>cm</div></div><div class="sub"><div class="st"><b>(3)</b> ∠ABC＝50° のとき，∠CAD の大きさ【2点】</div><div class="calc">計算</div><div class="ansbox">∠CAD ＝<span style='flex:1'></span>°</div></div></div>
+    </div>
+      <div class="q adv">
+      <div class="qh"><span class="no">応用 4</span>角の二等分線と円（発展）　<span style="font-weight:400;font-size:10.5pt">【12点】</span></div>
+      <div class="qtext given" style="font-size:10.5pt">△ABC の3つの頂点は円周上にあります。∠BAC の二等分線が辺 BC と交わる点を D，円と交わる点を E とします。</div>
+      <div class="row">
+        <div style="flex:1; display:flex; flex-direction:column; min-width:0">
+          <div style="font-size:10.5pt; margin-bottom:1mm"><b>(1)</b> △ABE∽△ADC を証明しなさい。【8点】</div>
+          <div class="ruled"><span class="lab">証明</span></div>
+        </div>
+        <div class="fig" style="width:56mm"><svg width="54mm" viewBox="-97.0 -105.9 194.0 213.6" font-family="BIZ UDPGothic, sans-serif">
+<circle cx="0.0" cy="-0.0" r="78.0" fill="none" stroke="#111" stroke-width="1.7"/>
+<line x1="-15.8" y1="-76.4" x2="-73.9" y2="-24.9" stroke="#111" stroke-width="1.7"/>
+<line x1="-73.9" y1="-24.9" x2="73.9" y2="-24.9" stroke="#111" stroke-width="1.7"/>
+<line x1="73.9" y1="-24.9" x2="-15.8" y2="-76.4" stroke="#111" stroke-width="1.7"/>
+<line x1="-15.8" y1="-76.4" x2="0.0" y2="78.0" stroke="#111" stroke-width="1.7"/>
+<line x1="-73.9" y1="-24.9" x2="0.0" y2="78.0" stroke="#111" stroke-width="1.7"/>
+<path d="M-27.5 -66.0 A15.6 15.6 0 0 0 -14.2 -60.9" fill="none" stroke="#111" stroke-width="1.1"/>
+<path d="M-14.2 -60.9 A15.6 15.6 0 0 0 -2.3 -68.6" fill="none" stroke="#111" stroke-width="1.1"/>
+<text x="-18.5" y="-89.4" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">A</text>
+<text x="-86.5" y="-29.2" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="86.5" y="-29.2" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">C</text>
+<text x="0.0" y="91.3" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">E</text>
+<text x="-2.5" y="-22.0" font-size="15" text-anchor="middle" dominant-baseline="central" stroke="#fff" stroke-width="4" paint-order="stroke">D</text>
+</svg></div>
+      </div>
+      <div class="subs c3" style="grid-template-columns: repeat(2, 1fr)"><div class="sub"><div class="st"><b>(2)</b> AB＝6cm，AC＝8cm，AD＝4cm のとき，DE の長さ【2点】</div><div class="calc">計算</div><div class="ansbox">DE ＝<span style='flex:1'></span>cm</div></div><div class="sub"><div class="st"><b>(3)</b> (2)のとき，△EBD∽△EAB となることを利用して BE の長さを求めなさい。【2点】</div><div class="calc">計算</div><div class="ansbox">BE ＝<span style='flex:1'></span>cm</div></div></div>
+    </div>
+    </div>
+  </div>
+</section>
+</body></html>
