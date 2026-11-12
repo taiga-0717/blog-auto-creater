@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>中3英語 関係代名詞 対策プリント</title>
+<style>
+@page { size: 420mm 297mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --ink:#1a1a1a; --sub:#555; --line:#9a9a9a; --accent:#1f4e8c; --ans:#c0262d; --soft:#eef3fa; --soft2:#fdf3e7; }
+html, body { background:#fff; color:var(--ink); font-family:"Inter","IPAPGothic",sans-serif; font-size:10.5pt; line-height:1.45; }
+.sheet { width:420mm; height:297mm; padding:9mm 10mm 8mm; overflow:hidden; page-break-after:always; display:flex; flex-direction:column; }
+.sheet:last-child { page-break-after:auto; }
+.top { display:flex; align-items:flex-end; justify-content:space-between; border-bottom:2.2px solid var(--accent); padding-bottom:2mm; margin-bottom:4mm; }
+.top h1 { font-size:19pt; letter-spacing:.04em; color:var(--accent); }
+.top h1 small { font-size:11pt; color:var(--sub); margin-left:4mm; font-weight:normal; }
+.namebox { display:flex; gap:4mm; font-size:10.5pt; }
+.namebox span { border-bottom:1px solid var(--ink); padding:0 1mm 1mm; }
+.cols { flex:1; display:grid; grid-template-columns: 0.86fr 1fr 1fr; gap:0 7mm; min-height:0; }
+.cols.c4 { grid-template-columns: 1.15fr 1fr 1fr 1fr; gap:0 5mm; }
+.cols.c4 .col + .col { padding-left:5mm; }
+.col { display:flex; flex-direction:column; min-height:0; }
+.col + .col { border-left:1px dashed #bbb; padding-left:7mm; }
+h2 { font-size:12.5pt; background:var(--accent); color:#fff; padding:1mm 3mm; border-radius:1.5mm; margin-bottom:2mm; }
+h2 .n { display:inline-block; background:#fff; color:var(--accent); border-radius:50%; width:6mm; height:6mm; line-height:6mm; text-align:center; margin-right:2mm; font-size:10.5pt; }
+h3 { font-size:10.5pt; color:var(--accent); border-left:3px solid var(--accent); padding-left:2mm; margin:2.5mm 0 1.5mm; }
+.point { background:var(--soft); border-radius:2mm; padding:1.8mm 3mm; font-size:9.6pt; margin-bottom:1.5mm; }
+.point b { color:var(--accent); }
+.q { margin-bottom:2.2mm; }
+.q .en { font-size:11pt; }
+.q .ja { font-size:10pt; }
+.num { display:inline-block; min-width:6mm; font-weight:bold; }
+.wl { border-bottom:1px solid var(--line); height:8.6mm; margin-left:6mm; }
+.wl.short { height:8mm; }
+.lab { font-size:8.5pt; color:var(--sub); }
+.bl { display:inline-block; min-width:16mm; border-bottom:1px solid var(--ink); text-align:center; margin:0 .6mm; height:6.5mm; vertical-align:bottom; }
+.bl.w { min-width:15mm; }
+.roomy .q { margin-bottom:5mm; }
+.roomy .wl { height:11mm; }
+u { text-decoration-thickness:1.2px; text-underline-offset:2px; }
+.kbox { display:inline-block; width:10mm; height:7mm; border:1.3px solid var(--ink); border-radius:1mm; vertical-align:middle; margin-right:2mm; }
+.row { display:flex; align-items:flex-end; gap:1mm; }
+.row .wl { flex:1; margin-left:0; }
+.choice { font-size:9pt; color:var(--sub); }
+/* verb table */
+table.verbs { width:100%; border-collapse:collapse; font-size:9.6pt; }
+table.verbs td, table.verbs th { border:1px solid #bbb; padding:.5mm 1.2mm; height:6.3mm; }
+table.verbs th { background:var(--soft); font-size:8.5pt; }
+table.verbs td.no { width:5mm; text-align:center; color:var(--sub); font-size:8pt; }
+table.verbs td.v { font-weight:bold; width:17mm; }
+table.verbs td.ck { width:6mm; }
+table.verbs td.m { font-size:8.8pt; }
+.ttable { width:100%; border-collapse:collapse; font-size:8.8pt; margin-bottom:1mm; }
+.ttable td { border:1px solid #bbb; padding:.6mm 1.5mm; }
+.ttable td:first-child { font-weight:bold; width:27mm; }
+.memo { flex:1; border:1.3px solid var(--ink); border-radius:2mm; padding:1.5mm 3mm; display:flex; flex-direction:column; min-height:0; margin-top:2mm; }
+.memo .t { font-weight:bold; font-size:10pt; }
+.memo .grid { flex:1; display:grid; grid-template-columns: 1fr 1.35fr; column-gap:4mm; background-image:repeating-linear-gradient(to bottom, transparent 0, transparent calc(8mm - 1px), var(--line) calc(8mm - 1px), var(--line) 8mm); }
+.memo .grid div { font-size:8pt; color:var(--sub); border-right:1px dotted var(--line); }
+.score { margin-top:auto; align-self:flex-end; border:1.3px solid var(--ink); border-radius:2mm; padding:1.5mm 4mm; font-size:10pt; }
+.mt { margin-top:auto; }
+/* answer page */
+.ans { color:var(--ans); font-weight:bold; }
+.a { margin-bottom:1.6mm; font-size:9.8pt; }
+.a .exp { font-size:9pt; color:#333; margin-left:6mm; }
+.box2 { background:var(--soft2); border-radius:2mm; padding:2mm 3mm; font-size:9.5pt; margin-bottom:2mm; }
+.box2 b { color:#a8540b; }
+table.sum { width:100%; border-collapse:collapse; font-size:9.3pt; margin-bottom:2mm; }
+table.sum th, table.sum td { border:1px solid #aaa; padding:1mm 1.5mm; vertical-align:top; }
+table.sum th { background:var(--soft); }
+ol.tips { padding-left:5mm; font-size:9.5pt; }
+ol.tips li { margin-bottom:1.2mm; }
+.flow { border:1.3px solid var(--accent); border-radius:2mm; padding:2mm 3mm; font-size:9.6pt; margin-bottom:2mm; }
+.flow p { margin-bottom:1mm; }
+.flow .arrow { color:var(--accent); font-weight:bold; }
+table.verbs td.p { width:15mm; color:#333; }
+.chart { width:100%; border-collapse:collapse; font-size:9.2pt; margin-bottom:1mm; }
+.chart th, .chart td { border:1px solid #aaa; padding:1mm 1.5mm; text-align:center; }
+.chart th { background:var(--soft); }
+.chart td:first-child { font-weight:bold; background:#fafafa; }
+.omit { display:inline-block; width:6mm; height:6mm; border:1.2px solid var(--ink); border-radius:50%; vertical-align:middle; margin-left:1mm; }
+.pb { display:inline-block; min-width:22mm; border-bottom:1px solid var(--ink); height:6.5mm; vertical-align:bottom; margin:0 .6mm; }
+.q1 { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:3.2mm; font-size:10.6pt; }
+.q1 .om { font-size:8.5pt; color:var(--sub); white-space:nowrap; }
+.cols.c4.rp { grid-template-columns: 1.3fr 1fr 1fr 1fr; }
+table.verbs { table-layout:fixed; }
+.rp table.verbs { font-size:9pt; }
+.rp table.verbs td.no { width:4.5mm; padding:0; }
+.rp table.verbs td.v { width:14.5mm; }
+.rp table.verbs td.p { width:15.5mm; font-size:8.6pt; }
+.rp table.verbs td.ck { width:4.5mm; padding:0; text-align:center; }
+.rp table.verbs td.m { font-size:8.4pt; }
+</style>
+</head>
+<body>
+
+<section class="sheet">
+  <div class="top">
+    <h1>関係代名詞（who・which・that）対策プリント<small>中学3年 英語 ／ 問題</small></h1>
+    <div class="namebox"><span>　　月　　日</span><span>　　年　　組　　番</span><span>名前　　　　　　　　　　　　　</span><span>得点　　　　／34</span></div>
+  </div>
+  <div class="cols c4 rp">
+    <div class="col">
+      <h2><span class="n">0</span>まずは確認！基本動詞30</h2>
+      <p class="lab" style="margin-bottom:1mm">関係代名詞の文は過去形がよく出ます。意味と過去形をかくして言えたら □ に ✓。</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2mm;"><table class="verbs"><tr><th style="width:4.5mm;padding:0"></th><th style="width:14.5mm">原形</th><th style="width:15.5mm">過去形</th><th>意味</th><th style="width:4.5mm;padding:0">✓</th></tr><tr><td class="no">1</td><td class="v">write</td><td class="p">wrote</td><td class="m">書く</td><td class="ck">□</td></tr><tr><td class="no">2</td><td class="v">make</td><td class="p">made</td><td class="m">作る</td><td class="ck">□</td></tr><tr><td class="no">3</td><td class="v">take</td><td class="p">took</td><td class="m">撮る・取る</td><td class="ck">□</td></tr><tr><td class="no">4</td><td class="v">buy</td><td class="p">bought</td><td class="m">買う</td><td class="ck">□</td></tr><tr><td class="no">5</td><td class="v">give</td><td class="p">gave</td><td class="m">与える</td><td class="ck">□</td></tr><tr><td class="no">6</td><td class="v">see</td><td class="p">saw</td><td class="m">見る・会う</td><td class="ck">□</td></tr><tr><td class="no">7</td><td class="v">read</td><td class="p">read</td><td class="m">読む</td><td class="ck">□</td></tr><tr><td class="no">8</td><td class="v">eat</td><td class="p">ate</td><td class="m">食べる</td><td class="ck">□</td></tr><tr><td class="no">9</td><td class="v">speak</td><td class="p">spoke</td><td class="m">話す</td><td class="ck">□</td></tr><tr><td class="no">10</td><td class="v">teach</td><td class="p">taught</td><td class="m">教える</td><td class="ck">□</td></tr><tr><td class="no">11</td><td class="v">live</td><td class="p">lived</td><td class="m">住む</td><td class="ck">□</td></tr><tr><td class="no">12</td><td class="v">use</td><td class="p">used</td><td class="m">使う</td><td class="ck">□</td></tr><tr><td class="no">13</td><td class="v">help</td><td class="p">helped</td><td class="m">手伝う</td><td class="ck">□</td></tr><tr><td class="no">14</td><td class="v">visit</td><td class="p">visited</td><td class="m">訪れる</td><td class="ck">□</td></tr><tr><td class="no">15</td><td class="v">paint</td><td class="p">painted</td><td class="m">（絵を）描く</td><td class="ck">□</td></tr></table><table class="verbs"><tr><th style="width:4.5mm;padding:0"></th><th style="width:14.5mm">原形</th><th style="width:15.5mm">過去形</th><th>意味</th><th style="width:4.5mm;padding:0">✓</th></tr><tr><td class="no">16</td><td class="v">build</td><td class="p">built</td><td class="m">建てる</td><td class="ck">□</td></tr><tr><td class="no">17</td><td class="v">know</td><td class="p">knew</td><td class="m">知っている</td><td class="ck">□</td></tr><tr><td class="no">18</td><td class="v">meet</td><td class="p">met</td><td class="m">会う</td><td class="ck">□</td></tr><tr><td class="no">19</td><td class="v">find</td><td class="p">found</td><td class="m">見つける</td><td class="ck">□</td></tr><tr><td class="no">20</td><td class="v">lose</td><td class="p">lost</td><td class="m">なくす</td><td class="ck">□</td></tr><tr><td class="no">21</td><td class="v">sing</td><td class="p">sang</td><td class="m">歌う</td><td class="ck">□</td></tr><tr><td class="no">22</td><td class="v">run</td><td class="p">ran</td><td class="m">走る</td><td class="ck">□</td></tr><tr><td class="no">23</td><td class="v">get</td><td class="p">got</td><td class="m">手に入れる</td><td class="ck">□</td></tr><tr><td class="no">24</td><td class="v">send</td><td class="p">sent</td><td class="m">送る</td><td class="ck">□</td></tr><tr><td class="no">25</td><td class="v">tell</td><td class="p">told</td><td class="m">伝える</td><td class="ck">□</td></tr><tr><td class="no">26</td><td class="v">borrow</td><td class="p">borrowed</td><td class="m">借りる</td><td class="ck">□</td></tr><tr><td class="no">27</td><td class="v">invent</td><td class="p">invented</td><td class="m">発明する</td><td class="ck">□</td></tr><tr><td class="no">28</td><td class="v">work</td><td class="p">worked</td><td class="m">働く</td><td class="ck">□</td></tr><tr><td class="no">29</td><td class="v">play</td><td class="p">played</td><td class="m">演奏する</td><td class="ck">□</td></tr><tr><td class="no">30</td><td class="v">love</td><td class="p">loved</td><td class="m">愛する</td><td class="ck">□</td></tr></table></div>
+      <h3>関係代名詞の使い分け表</h3>
+      <table class="chart">
+        <tr><th>先行詞</th><th>主格<br><span class="lab">後ろに「動詞」</span></th><th>目的格<br><span class="lab">後ろに「主語＋動詞」</span></th></tr>
+        <tr><td>人</td><td>who / that</td><td>that（who）</td></tr>
+        <tr><td>もの・動物</td><td>which / that</td><td>which / that</td></tr>
+        <tr><td>省略</td><td><b>できない</b></td><td><b>できる</b></td></tr>
+      </table>
+      <p class="lab">先行詞＝関係代名詞の直前にある、説明される名詞のこと。</p>
+      <div class="memo">
+        <div class="t">✎ わからなかった単語・表現メモ <span class="lab">（知らなかった単語と意味を書こう）</span></div>
+        <div class="grid"><div>英単語</div><div style="border-right:none">意味</div></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <h2><span class="n">1</span>主格の who（先行詞が人）</h2>
+      <div class="point"><b>人 ＋ who ＋ 動詞〜</b>「〜する（人）」<br>
+        a friend <u>who lives in Osaka</u>（大阪に住んでいる友達）<br>
+        ※ who の後ろの動詞は<b>先行詞</b>に合わせる → a friend who live<b>s</b></div>
+      <p class="lab">【A】日本語に訳しなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="en">I have a friend who lives in Canada.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(2)</span><span class="en">The boy who is running over there is my brother.</span><div class="wl"></div></div>
+
+      <p class="lab">【B】(3)は（　）に1語ずつ、(4)は who を使って1文にしなさい。</p>
+      <div class="q"><span class="num">(3)</span><span class="ja">私には英語を上手に話すおじがいます。</span><br><span style="margin-left:6mm" class="en">I have an uncle <span class="bl w"></span><span class="bl w"></span> English well.</span></div>
+
+      <div class="q"><span class="num">(4)</span><span class="en">I know a girl. She can play the guitar well.</span><div class="wl"></div></div>
+
+
+      <h2 style="margin-top:3mm"><span class="n">2</span>主格の which（先行詞がもの・動物）</h2>
+      <div class="point"><b>もの・動物 ＋ which ＋ 動詞〜</b>「〜する（もの）」<br>
+        a bus <u>which goes to the station</u>（駅へ行くバス）<br>
+        ※ who・which の代わりに <b>that</b> も使える。</div>
+      <p class="lab">【A】日本語に訳しなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="en">This is a bus which goes to the station.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(2)</span><span class="en">The book which is on the desk is mine.</span><div class="wl"></div></div>
+
+      <p class="lab">【B】(3)は（　）に1語ずつ、(4)は which を使って1文にしなさい。</p>
+      <div class="q"><span class="num">(3)</span><span class="ja">これは彼を有名にした歌です。</span><br><span style="margin-left:6mm" class="en">This is the song <span class="bl w"></span><span class="bl w"></span> him famous.</span></div>
+
+      <div class="q"><span class="num">(4)</span><span class="en">I bought a bag. It was made in Italy.</span><div class="wl"></div></div>
+
+    </div>
+
+    <div class="col">
+      <h2><span class="n">3</span>目的格の which / that</h2>
+      <div class="point"><b>名詞 ＋ which / that ＋ 主語 ＋ 動詞</b>「（主語）が〜する（名詞）」<br>
+        the book <u>which I bought</u>（私が買った本）← bought の後ろの目的語がない！<br>
+        ※ 先行詞が<b>人</b>のときは <b>that</b> を使うのが基本。</div>
+      <p class="lab">【A】日本語に訳しなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="en">This is the book which I bought yesterday.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(2)</span><span class="en">The man that I met at the station was kind.</span><div class="wl"></div></div>
+
+      <p class="lab">【B】(3)は（　）に1語ずつ、(4)は which を使って1文にしなさい。</p>
+      <div class="q"><span class="num">(3)</span><span class="ja">これは私の父が撮った写真です。</span><br><span style="margin-left:6mm" class="en">This is a picture <span class="bl w"></span> my father <span class="bl w"></span>.</span></div>
+
+      <div class="q"><span class="num">(4)</span><span class="en">The cake was delicious. My mother made it.</span><div class="wl"></div></div>
+
+
+      <h2 style="margin-top:3mm"><span class="n">4</span>関係代名詞の省略</h2>
+      <div class="point"><b>目的格</b>の関係代名詞は<b>省略できる</b> → <b>名詞 ＋ 主語 ＋ 動詞</b><br>
+        the book (which) I bought → the book <u>I bought</u><br>
+        ※ <b>主格</b>（後ろがすぐ動詞）は省略<b>できない</b>。</div>
+      <p class="lab">【A】関係代名詞が省略されている場所に ∨ を書き入れ、日本語に訳しなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="en">This is the camera I use every day.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(2)</span><span class="en">The girl you saw yesterday is my sister.</span><div class="wl"></div></div>
+
+      <p class="lab">【B】(3)下線部が省略できれば○、できなければ×。(4)は（　）に1語ずつ。</p>
+      <div class="q"><span class="num">(3)</span><span class="kbox"></span><span class="en">ア The man <u>who</u> teaches us math is Mr. Sato.</span><br>
+        <span style="margin-left:6mm"></span><span class="kbox" style="margin-top:2mm"></span><span class="en">イ The pen <u>that</u> I lost was blue.</span></div>
+      <div class="q"><span class="num">(4)</span><span class="ja">これは私が昨日読んだ本です。（関係代名詞を使わずに）</span><br><span style="margin-left:6mm" class="en">This is the book <span class="bl w"></span><span class="bl w"></span> yesterday.</span></div>
+
+    </div>
+
+    <div class="col">
+      <h2><span class="n">5</span>確認問題（まとめ）</h2>
+      <p class="lab" style="margin-bottom:2mm">【問1】（　）に <b>who</b> か <b>which</b> を書きなさい。さらに、その関係代名詞が<b>省略できる</b>ときは ○ の中に ○ を書きなさい。</p>
+      <div class="q1"><span><span class="num">(1)</span>Look at the cat <span class="pb"></span> is sleeping on the bed.</span><span class="om">省略<span class="omit"></span></span></div>
+
+      <div class="q1"><span><span class="num">(2)</span>The letter <span class="pb"></span> Ken wrote was long.</span><span class="om">省略<span class="omit"></span></span></div>
+
+      <div class="q1"><span><span class="num">(3)</span>Do you know the woman <span class="pb"></span> is talking with Mr. Ito?</span><span class="om">省略<span class="omit"></span></span></div>
+
+      <div class="q1"><span><span class="num">(4)</span>I like the pictures <span class="pb"></span> Tom painted.</span><span class="om">省略<span class="omit"></span></span></div>
+
+      
+      <div class="q1"><span><span class="num">(5)</span>Is this the bike <span class="pb"></span> you bought last week?</span><span class="om">省略<span class="omit"></span></span></div>
+
+
+      <p class="lab" style="margin:1mm 0 1.5mm">【問2】関係代名詞を使って、2つの文を1つの文にしなさい。</p>
+      
+      <div class="q"><span class="num">(1)</span><span class="en">This is the watch. My grandfather gave it to me.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(2)</span><span class="en">The boy is Ken. He is playing tennis.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(3)</span><span class="en">Kyoto is a city. Many people visit it every year.</span><div class="wl"></div></div>
+
+
+      <p class="lab" style="margin:1mm 0 1.5mm">【問3】日本語に合うように並べかえ、全文を書きなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="ja">私が昨日会った男性は医者です。</span><br><span style="margin-left:6mm" class="en">( I / the man / met / yesterday ) is a doctor.</span><div class="wl"></div></div>
+      <div class="q"><span class="num">(2)</span><span class="ja">彼女は青い目をしたネコを飼っている。</span><br><span style="margin-left:6mm" class="en">She has ( a cat / has / blue eyes / which ).</span><div class="wl"></div></div>
+
+      <p class="lab" style="margin:1mm 0 1.5mm">【問4】次の日本語を英語にしなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="ja">私には東京に住んでいる友達がいる。</span><div class="wl"></div></div>
+      <div class="q" style="margin-bottom:2mm"><span class="num">(2)</span><span class="ja">これは私が毎日使っている辞書です。</span><div class="wl"></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="sheet">
+  <div class="top">
+    <h1>関係代名詞 対策プリント<small>解答・解説</small></h1>
+    <div class="namebox"><span class="lab" style="border:none">赤字が答え。まちがえた問題には ✓ をつけ、表面のメモ欄に単語を書き足そう。</span></div>
+  </div>
+  <div class="cols">
+    <div class="col">
+      <h2><span class="n">★</span>関係代名詞 まとめ</h2>
+      <table class="sum">
+        <tr><th style="width:17mm">種類</th><th>形</th><th>訳し方</th><th>例</th></tr>
+        <tr><td><b>主格</b></td><td>先行詞＋<b>who/which/that</b>＋<b>動詞</b></td><td>〜する（名詞）</td><td>a girl <u>who sings</u><br>a bus <u>which goes</u></td></tr>
+        <tr><td><b>目的格</b></td><td>先行詞＋<b>which/that</b>＋<b>主語＋動詞</b></td><td>（主語）が〜する（名詞）</td><td>the book <u>which I read</u></td></tr>
+        <tr><td><b>省略</b></td><td>先行詞＋<b>主語＋動詞</b></td><td>目的格と同じ</td><td>the book <u>I read</u></td></tr>
+      </table>
+
+      <h3>who・which・that と省略の見分け方</h3>
+      <div class="flow">
+        <p><span class="arrow">STEP1</span>　先行詞（直前の名詞）は？<br>　人 → <b>who</b>／もの・動物 → <b>which</b>（どちらも <b>that</b> で OK）</p>
+        <p><span class="arrow">STEP2</span>　関係代名詞のすぐ後ろは？<br>　<b>動詞</b> → 主格（省略<b>できない</b>）<br>　<b>主語＋動詞</b> → 目的格（省略<b>できる</b>）</p>
+        <p style="margin-bottom:0"><span class="arrow">STEP3</span>　名詞のすぐ後ろに「主語＋動詞」が続いていたら<br>　→ 関係代名詞が<b>省略</b>されている！ the camera ∨ I use</p>
+      </div>
+
+      <h3>まちがえやすいポイント</h3>
+      <ol class="tips">
+        <li><b>主格の後ろの動詞は先行詞に合わせる。</b><br>a friend who live<b>s</b> ／ friends who live（複数なら s なし）</li>
+        <li><b>目的格では「もとの目的語」を消す。</b><br>× the book which I bought <s>it</s> → ○ the book which I bought</li>
+        <li><b>主語が長くなる文に注意。</b><br>The boy <u>who is running there</u> <b>is</b> my brother.<br>→ 本当の動詞は後ろの is。「〜している少年は…だ」</li>
+        <li><b>2文→1文のコツ</b><br>①2つの文で同じものを指す語を探す（a girl＝She）<br>②2文目の she / it / him を関係代名詞に変えて、先行詞の直後へ<br>③目的格なら関係代名詞を前に出し、もとの it などは消す</li>
+        <li><b>that がよく使われる場合</b><br>先行詞に the first / the only / all / 最上級 がつくとき、人＋動物のとき</li>
+      </ol>
+      <div class="box2 mt"><b>覚え方のヒント</b>　関係代名詞は「名詞にくわしい説明をくっつける<b>のり</b>」。<br>まず「どの名詞を説明しているか」を見つけ、説明部分を [ ] でくくると訳しやすい！</div>
+    </div>
+
+    <div class="col">
+      <h2><span class="n">1</span>主格の who 解答</h2>
+      <div class="a"><span class="num">(1)</span><span class="ans">私にはカナダに住んでいる友達がいます。</span><div class="exp">a friend ← who lives in Canada。lives は先行詞 a friend（3人称単数）に合わせて s。</div></div>
+
+      <div class="a"><span class="num">(2)</span><span class="ans">向こうで走っている少年は私の弟［兄］です。</span><div class="exp">The boy [who is running over there] is 〜。主語が長い文。</div></div>
+
+      <div class="a"><span class="num">(3)</span><span class="ans">who speaks</span><div class="exp">先行詞 an uncle は3人称単数 → speak<b>s</b>。that でも○。</div></div>
+
+      <div class="a"><span class="num">(4)</span><span class="ans">I know a girl who can play the guitar well.</span><div class="exp">a girl＝She。She を who に変えて a girl の直後へ。</div></div>
+
+      <h2 style="margin-top:3mm"><span class="n">2</span>主格の which 解答</h2>
+      <div class="a"><span class="num">(1)</span><span class="ans">これは駅へ行くバスです。</span><div class="exp">a bus ← which goes to the station。</div></div>
+
+      <div class="a"><span class="num">(2)</span><span class="ans">机の上にある本は私のものです。</span><div class="exp">The book [which is on the desk] is mine。mine＝私のもの。</div></div>
+
+      <div class="a"><span class="num">(3)</span><span class="ans">which [that] made</span><div class="exp">「彼を有名にした」＝ made him famous。make A B「AをBにする」。</div></div>
+
+      <div class="a"><span class="num">(4)</span><span class="ans">I bought a bag which [that] was made in Italy.</span><div class="exp">a bag＝It。「イタリアで作られたかばん」。受け身の was made もそのまま使う。</div></div>
+
+      <h2 style="margin-top:3mm"><span class="n">3</span>目的格の which / that 解答</h2>
+      <div class="a"><span class="num">(1)</span><span class="ans">これは私が昨日買った本です。</span><div class="exp">which の後ろが I bought（主語＋動詞）→ 目的格。</div></div>
+
+      <div class="a"><span class="num">(2)</span><span class="ans">私が駅で会った男性は親切だった。</span><div class="exp">先行詞が人の目的格 → that。The man [that I met at the station] was kind。</div></div>
+
+      <div class="a"><span class="num">(3)</span><span class="ans">which [that] ／ took</span><div class="exp">「父が撮った」＝ my father took。take の過去形 took。</div></div>
+
+      <div class="a"><span class="num">(4)</span><span class="ans">The cake which [that] my mother made was delicious.</span><div class="exp">it を消して The cake の直後に which my mother made を入れる。「母が作ったケーキはおいしかった」。</div></div>
+
+      <h2 style="margin-top:3mm"><span class="n">4</span>関係代名詞の省略 解答</h2>
+      <div class="a"><span class="num">(1)</span><span class="ans">This is the camera ∨ I use every day.<br>これは私が毎日使っているカメラです。</span><div class="exp">camera の後ろに I use（主語＋動詞）→ which [that] が省略されている。</div></div>
+
+      <div class="a"><span class="num">(2)</span><span class="ans">The girl ∨ you saw yesterday is my sister.<br>あなたが昨日見た女の子は私の姉［妹］です。</span><div class="exp">girl の後ろに you saw → that が省略。本当の動詞は is。</div></div>
+
+      <div class="a"><span class="num">(3)</span><span class="ans">ア ×　　イ ○</span><div class="exp">ア：who の後ろがすぐ動詞 teaches → 主格は省略できない。イ：that の後ろが I lost → 目的格なので省略できる。</div></div>
+
+      <div class="a"><span class="num">(4)</span><span class="ans">I read</span><div class="exp">the book の後ろに I read（主語＋動詞）を直接続ける。read の過去形も read。</div></div>
+
+    </div>
+
+    <div class="col">
+      <h2><span class="n">5</span>確認問題 解答</h2>
+      <p class="lab">【問1】（that はどれにも使える）</p>
+      <div class="a"><span class="num">(1)</span><span class="ans">which　省略 ×</span><div class="exp">先行詞 the cat（動物）。後ろが is sleeping（動詞）→ 主格。</div></div>
+
+      <div class="a"><span class="num">(2)</span><span class="ans">which　省略 ○</span><div class="exp">先行詞 the letter（もの）。後ろが Ken wrote（主語＋動詞）→ 目的格。</div></div>
+
+      <div class="a"><span class="num">(3)</span><span class="ans">who　省略 ×</span><div class="exp">先行詞 the woman（人）。後ろが is talking → 主格。</div></div>
+
+      <div class="a"><span class="num">(4)</span><span class="ans">which　省略 ○</span><div class="exp">先行詞 the pictures（もの）。後ろが Tom painted → 目的格。</div></div>
+
+      
+      <div class="a"><span class="num">(5)</span><span class="ans">which　省略 ○</span><div class="exp">先行詞 the bike（もの）。後ろが you bought → 目的格。</div></div>
+
+      <p class="lab" style="margin-top:2mm">【問2】2文→1文（who・which は that でも○）</p>
+      
+      <div class="a"><span class="num">(1)</span><span class="ans">This is the watch which my grandfather gave (to) me.</span><div class="exp">the watch＝it → 目的格 which。it を消すのを忘れずに。which は省略も可。</div></div>
+
+      <div class="a"><span class="num">(2)</span><span class="ans">The boy who is playing tennis is Ken.</span><div class="exp">The boy＝He。The boy の直後に入れる「挟み込み型」。「テニスをしている少年はケンだ」。</div></div>
+
+      <div class="a"><span class="num">(3)</span><span class="ans">Kyoto is a city which many people visit every year.</span><div class="exp">a city＝it → 目的格。「毎年多くの人が訪れる都市」。which は省略可。</div></div>
+
+      <p class="lab" style="margin-top:2mm">【問3】並べかえ</p>
+      <div class="a"><span class="num">(1)</span><span class="ans">The man I met yesterday is a doctor.</span><div class="exp">the man ＋ I met（主語＋動詞）→ that の省略。</div></div>
+
+      <div class="a"><span class="num">(2)</span><span class="ans">She has a cat which has blue eyes.</span><div class="exp">a cat ← which has blue eyes（主格）。has が2回出てくるので注意。</div></div>
+
+      <p class="lab" style="margin-top:2mm">【問4】英作文</p>
+      <div class="a"><span class="num">(1)</span><span class="ans">I have a friend who [that] lives in Tokyo.</span><div class="exp">lives の s を忘れずに。</div></div>
+
+      <div class="a"><span class="num">(2)</span><span class="ans">This is the dictionary (which [that]) I use every day.</span><div class="exp">目的格なので which / that は省略しても○。</div></div>
+
+      <div class="score mt" style="align-self:stretch"><b>ふり返り</b>　□ 主格 who　□ 主格 which　□ 目的格　□ 省略　□ 2文→1文</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
