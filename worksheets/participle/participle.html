@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>中3英語 分詞 対策プリント</title>
+<style>
+@page { size: 420mm 297mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --ink:#1a1a1a; --sub:#555; --line:#9a9a9a; --accent:#1f4e8c; --ans:#c0262d; --soft:#eef3fa; --soft2:#fdf3e7; }
+html, body { background:#fff; color:var(--ink); font-family:"Inter","IPAPGothic",sans-serif; font-size:10.5pt; line-height:1.45; }
+.sheet { width:420mm; height:297mm; padding:9mm 10mm 8mm; overflow:hidden; page-break-after:always; display:flex; flex-direction:column; }
+.sheet:last-child { page-break-after:auto; }
+.top { display:flex; align-items:flex-end; justify-content:space-between; border-bottom:2.2px solid var(--accent); padding-bottom:2mm; margin-bottom:4mm; }
+.top h1 { font-size:19pt; letter-spacing:.04em; color:var(--accent); }
+.top h1 small { font-size:11pt; color:var(--sub); margin-left:4mm; font-weight:normal; }
+.namebox { display:flex; gap:4mm; font-size:10.5pt; }
+.namebox span { border-bottom:1px solid var(--ink); padding:0 1mm 1mm; }
+.cols { flex:1; display:grid; grid-template-columns: 0.86fr 1fr 1fr; gap:0 7mm; min-height:0; }
+.cols.c4 { grid-template-columns: 1.15fr 1fr 1fr 1fr; gap:0 5mm; }
+.cols.c4 .col + .col { padding-left:5mm; }
+.col { display:flex; flex-direction:column; min-height:0; }
+.col + .col { border-left:1px dashed #bbb; padding-left:7mm; }
+h2 { font-size:12.5pt; background:var(--accent); color:#fff; padding:1mm 3mm; border-radius:1.5mm; margin-bottom:2mm; }
+h2 .n { display:inline-block; background:#fff; color:var(--accent); border-radius:50%; width:6mm; height:6mm; line-height:6mm; text-align:center; margin-right:2mm; font-size:10.5pt; }
+h3 { font-size:10.5pt; color:var(--accent); border-left:3px solid var(--accent); padding-left:2mm; margin:2.5mm 0 1.5mm; }
+.point { background:var(--soft); border-radius:2mm; padding:1.8mm 3mm; font-size:9.6pt; margin-bottom:1.5mm; }
+.point b { color:var(--accent); }
+.q { margin-bottom:2.2mm; }
+.q .en { font-size:11pt; }
+.q .ja { font-size:10pt; }
+.num { display:inline-block; min-width:6mm; font-weight:bold; }
+.wl { border-bottom:1px solid var(--line); height:8.6mm; margin-left:6mm; }
+.wl.short { height:8mm; }
+.lab { font-size:8.5pt; color:var(--sub); }
+.bl { display:inline-block; min-width:16mm; border-bottom:1px solid var(--ink); text-align:center; margin:0 .6mm; height:6.5mm; vertical-align:bottom; }
+.bl.w { min-width:15mm; }
+.roomy .q { margin-bottom:5mm; }
+.roomy .wl { height:11mm; }
+u { text-decoration-thickness:1.2px; text-underline-offset:2px; }
+.kbox { display:inline-block; width:10mm; height:7mm; border:1.3px solid var(--ink); border-radius:1mm; vertical-align:middle; margin-right:2mm; }
+.row { display:flex; align-items:flex-end; gap:1mm; }
+.row .wl { flex:1; margin-left:0; }
+.choice { font-size:9pt; color:var(--sub); }
+/* verb table */
+table.verbs { width:100%; border-collapse:collapse; font-size:9.6pt; }
+table.verbs td, table.verbs th { border:1px solid #bbb; padding:.5mm 1.2mm; height:6.3mm; }
+table.verbs th { background:var(--soft); font-size:8.5pt; }
+table.verbs td.no { width:5mm; text-align:center; color:var(--sub); font-size:8pt; }
+table.verbs td.v { font-weight:bold; width:17mm; }
+table.verbs td.ck { width:6mm; }
+table.verbs td.m { font-size:8.8pt; }
+.ttable { width:100%; border-collapse:collapse; font-size:8.8pt; margin-bottom:1mm; }
+.ttable td { border:1px solid #bbb; padding:.6mm 1.5mm; }
+.ttable td:first-child { font-weight:bold; width:27mm; }
+.memo { flex:1; border:1.3px solid var(--ink); border-radius:2mm; padding:1.5mm 3mm; display:flex; flex-direction:column; min-height:0; margin-top:2mm; }
+.memo .t { font-weight:bold; font-size:10pt; }
+.memo .grid { flex:1; display:grid; grid-template-columns: 1fr 1.35fr; column-gap:4mm; background-image:repeating-linear-gradient(to bottom, transparent 0, transparent calc(8mm - 1px), var(--line) calc(8mm - 1px), var(--line) 8mm); }
+.memo .grid div { font-size:8pt; color:var(--sub); border-right:1px dotted var(--line); }
+.score { margin-top:auto; align-self:flex-end; border:1.3px solid var(--ink); border-radius:2mm; padding:1.5mm 4mm; font-size:10pt; }
+.mt { margin-top:auto; }
+/* answer page */
+.ans { color:var(--ans); font-weight:bold; }
+.a { margin-bottom:1.6mm; font-size:9.8pt; }
+.a .exp { font-size:9pt; color:#333; margin-left:6mm; }
+.box2 { background:var(--soft2); border-radius:2mm; padding:2mm 3mm; font-size:9.5pt; margin-bottom:2mm; }
+.box2 b { color:#a8540b; }
+table.sum { width:100%; border-collapse:collapse; font-size:9.3pt; margin-bottom:2mm; }
+table.sum th, table.sum td { border:1px solid #aaa; padding:1mm 1.5mm; vertical-align:top; }
+table.sum th { background:var(--soft); }
+ol.tips { padding-left:5mm; font-size:9.5pt; }
+ol.tips li { margin-bottom:1.2mm; }
+.flow { border:1.3px solid var(--accent); border-radius:2mm; padding:2mm 3mm; font-size:9.6pt; margin-bottom:2mm; }
+.flow p { margin-bottom:1mm; }
+.flow .arrow { color:var(--accent); font-weight:bold; }
+table.verbs td.p { width:15mm; color:#333; }
+.chart { width:100%; border-collapse:collapse; font-size:9.2pt; margin-bottom:1mm; }
+.chart th, .chart td { border:1px solid #aaa; padding:1mm 1.5mm; text-align:center; }
+.chart th { background:var(--soft); }
+.chart td:first-child { font-weight:bold; background:#fafafa; }
+.omit { display:inline-block; width:6mm; height:6mm; border:1.2px solid var(--ink); border-radius:50%; vertical-align:middle; margin-left:1mm; }
+.pb { display:inline-block; min-width:22mm; border-bottom:1px solid var(--ink); height:6.5mm; vertical-align:bottom; margin:0 .6mm; }
+.q1 { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:3.2mm; font-size:10.6pt; }
+.q1 .om { font-size:8.5pt; color:var(--sub); white-space:nowrap; }
+.cols.c4.rp { grid-template-columns: 1.3fr 1fr 1fr 1fr; }
+table.verbs { table-layout:fixed; }
+.rp table.verbs { font-size:9pt; }
+.rp table.verbs td.no { width:4.5mm; padding:0; }
+.rp table.verbs td.v { width:14.5mm; }
+.rp table.verbs td.p { width:15.5mm; font-size:8.6pt; }
+.rp table.verbs td.ck { width:4.5mm; padding:0; text-align:center; }
+.rp table.verbs td.m { font-size:8.4pt; }
+table.irr { width:100%; border-collapse:collapse; table-layout:fixed; font-size:9.3pt; }
+table.irr th, table.irr td { border:1px solid #bbb; padding:.3mm 1.2mm; height:6.5mm; }
+table.irr th { background:var(--soft); font-size:8.3pt; }
+table.irr td.v { font-weight:bold; }
+table.irr td.pp { font-weight:bold; color:var(--accent); }
+table.irr td.m { font-size:8.2pt; }
+table.irr td.ck { text-align:center; padding:0; }
+table.irr tr.g td { background:var(--accent); color:#fff; font-weight:bold; font-size:8.8pt; }
+table.irr tr.g td span { font-weight:normal; font-size:8pt; }
+table.drill { width:100%; border-collapse:collapse; table-layout:fixed; font-size:10pt; }
+table.drill th, table.drill td { border:1px solid #999; padding:.5mm 1.5mm; height:9.2mm; }
+table.drill th { background:var(--soft); font-size:8.5pt; height:6mm; }
+table.drill td.m { font-size:8.5pt; color:var(--sub); }
+.sel { white-space:nowrap; }
+.big4 { width:100%; border-collapse:collapse; font-size:9.2pt; margin:1mm 0 1.5mm; }
+.big4 th, .big4 td { border:1px solid #aaa; padding:1mm 1.5mm; vertical-align:top; }
+.big4 th { background:var(--soft); }
+.roomy2 .q { margin-bottom:4.2mm; }
+.roomy2 .bl.w { min-width:26mm; }
+.roomy2 .wl { height:10.5mm; }
+.roomy2 .point { margin-bottom:3mm; }
+.roomy2 .lab { margin-top:1mm; }
+</style>
+</head>
+<body>
+
+<section class="sheet">
+  <div class="top"><h1>分詞（現在分詞・過去分詞）対策プリント<small>中学3年 英語 ／ ① 不規則動詞・導入</small></h1>
+    <div class="namebox"><span>　　月　　日</span><span>　　年　　組　　番</span><span>名前　　　　　　　　　　　　　</span><span>テスト得点　　　／36</span></div></div>
+  <div class="cols c4 pt">
+    <div class="col" style="grid-column: span 2">
+      <h2><span class="n">0</span>不規則変化動詞 一覧（66語）<span style="font-size:9pt;font-weight:normal;margin-left:3mm">分詞の単元では <b>過去分詞（青字）</b> がとても大事！ 言えたら □ に ✓</span></h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4mm; align-items:start"><table class="irr"><colgroup><col style="width:6mm"><col style="width:21mm"><col style="width:20mm"><col style="width:22mm"><col><col style="width:5mm"></colgroup><tr><th></th><th>原形</th><th>過去形</th><th>過去分詞</th><th>意味</th><th>✓</th></tr><tr class="g"><td colspan="6">A-A-A 型　<span>全部同じ形</span></td></tr><tr><td class="no">1</td><td class="v">cut</td><td>cut</td><td class="pp">cut</td><td class="m">切る</td><td class="ck">□</td></tr><tr><td class="no">2</td><td class="v">put</td><td>put</td><td class="pp">put</td><td class="m">置く</td><td class="ck">□</td></tr><tr><td class="no">3</td><td class="v">set</td><td>set</td><td class="pp">set</td><td class="m">置く・設定する</td><td class="ck">□</td></tr><tr><td class="no">4</td><td class="v">hit</td><td>hit</td><td class="pp">hit</td><td class="m">打つ</td><td class="ck">□</td></tr><tr><td class="no">5</td><td class="v">let</td><td>let</td><td class="pp">let</td><td class="m">〜させる</td><td class="ck">□</td></tr><tr><td class="no">6</td><td class="v">shut</td><td>shut</td><td class="pp">shut</td><td class="m">閉める</td><td class="ck">□</td></tr><tr><td class="no">7</td><td class="v">hurt</td><td>hurt</td><td class="pp">hurt</td><td class="m">傷つける</td><td class="ck">□</td></tr><tr><td class="no">8</td><td class="v">read</td><td>read</td><td class="pp">read</td><td class="m">読む（過去・過去分詞は[red]）</td><td class="ck">□</td></tr><tr class="g"><td colspan="6">A-B-A 型　<span>原形＝過去分詞</span></td></tr><tr><td class="no">9</td><td class="v">come</td><td>came</td><td class="pp">come</td><td class="m">来る</td><td class="ck">□</td></tr><tr><td class="no">10</td><td class="v">become</td><td>became</td><td class="pp">become</td><td class="m">〜になる</td><td class="ck">□</td></tr><tr><td class="no">11</td><td class="v">run</td><td>ran</td><td class="pp">run</td><td class="m">走る</td><td class="ck">□</td></tr><tr class="g"><td colspan="6">A-B-B 型　<span>過去形＝過去分詞</span></td></tr><tr><td class="no">12</td><td class="v">bring</td><td>brought</td><td class="pp">brought</td><td class="m">持ってくる</td><td class="ck">□</td></tr><tr><td class="no">13</td><td class="v">buy</td><td>bought</td><td class="pp">bought</td><td class="m">買う</td><td class="ck">□</td></tr><tr><td class="no">14</td><td class="v">build</td><td>built</td><td class="pp">built</td><td class="m">建てる</td><td class="ck">□</td></tr><tr><td class="no">15</td><td class="v">catch</td><td>caught</td><td class="pp">caught</td><td class="m">つかまえる</td><td class="ck">□</td></tr><tr><td class="no">16</td><td class="v">feel</td><td>felt</td><td class="pp">felt</td><td class="m">感じる</td><td class="ck">□</td></tr><tr><td class="no">17</td><td class="v">find</td><td>found</td><td class="pp">found</td><td class="m">見つける</td><td class="ck">□</td></tr><tr><td class="no">18</td><td class="v">have</td><td>had</td><td class="pp">had</td><td class="m">持っている</td><td class="ck">□</td></tr><tr><td class="no">19</td><td class="v">hear</td><td>heard</td><td class="pp">heard</td><td class="m">聞こえる</td><td class="ck">□</td></tr><tr><td class="no">20</td><td class="v">hold</td><td>held</td><td class="pp">held</td><td class="m">持つ・開催する</td><td class="ck">□</td></tr><tr><td class="no">21</td><td class="v">keep</td><td>kept</td><td class="pp">kept</td><td class="m">保つ</td><td class="ck">□</td></tr><tr><td class="no">22</td><td class="v">leave</td><td>left</td><td class="pp">left</td><td class="m">去る・残す</td><td class="ck">□</td></tr><tr><td class="no">23</td><td class="v">lend</td><td>lent</td><td class="pp">lent</td><td class="m">貸す</td><td class="ck">□</td></tr><tr><td class="no">24</td><td class="v">lose</td><td>lost</td><td class="pp">lost</td><td class="m">失う</td><td class="ck">□</td></tr><tr><td class="no">25</td><td class="v">make</td><td>made</td><td class="pp">made</td><td class="m">作る</td><td class="ck">□</td></tr><tr><td class="no">26</td><td class="v">meet</td><td>met</td><td class="pp">met</td><td class="m">会う</td><td class="ck">□</td></tr><tr><td class="no">27</td><td class="v">pay</td><td>paid</td><td class="pp">paid</td><td class="m">支払う</td><td class="ck">□</td></tr><tr><td class="no">28</td><td class="v">say</td><td>said</td><td class="pp">said</td><td class="m">言う</td><td class="ck">□</td></tr><tr><td class="no">29</td><td class="v">sell</td><td>sold</td><td class="pp">sold</td><td class="m">売る</td><td class="ck">□</td></tr><tr><td class="no">30</td><td class="v">send</td><td>sent</td><td class="pp">sent</td><td class="m">送る</td><td class="ck">□</td></tr><tr><td class="no">31</td><td class="v">sit</td><td>sat</td><td class="pp">sat</td><td class="m">座る</td><td class="ck">□</td></tr><tr><td class="no">32</td><td class="v">sleep</td><td>slept</td><td class="pp">slept</td><td class="m">眠る</td><td class="ck">□</td></tr><tr><td class="no">33</td><td class="v">spend</td><td>spent</td><td class="pp">spent</td><td class="m">過ごす・使う</td><td class="ck">□</td></tr></table><table class="irr"><colgroup><col style="width:6mm"><col style="width:21mm"><col style="width:20mm"><col style="width:22mm"><col><col style="width:5mm"></colgroup><tr><th></th><th>原形</th><th>過去形</th><th>過去分詞</th><th>意味</th><th>✓</th></tr><tr><td class="no">34</td><td class="v">stand</td><td>stood</td><td class="pp">stood</td><td class="m">立つ</td><td class="ck">□</td></tr><tr><td class="no">35</td><td class="v">teach</td><td>taught</td><td class="pp">taught</td><td class="m">教える</td><td class="ck">□</td></tr><tr><td class="no">36</td><td class="v">tell</td><td>told</td><td class="pp">told</td><td class="m">伝える</td><td class="ck">□</td></tr><tr><td class="no">37</td><td class="v">think</td><td>thought</td><td class="pp">thought</td><td class="m">思う</td><td class="ck">□</td></tr><tr><td class="no">38</td><td class="v">understand</td><td>understood</td><td class="pp">understood</td><td class="m">理解する</td><td class="ck">□</td></tr><tr><td class="no">39</td><td class="v">win</td><td>won</td><td class="pp">won</td><td class="m">勝つ</td><td class="ck">□</td></tr><tr><td class="no">40</td><td class="v">get</td><td>got</td><td class="pp">got / gotten</td><td class="m">得る</td><td class="ck">□</td></tr><tr class="g"><td colspan="6">A-B-C 型　<span>全部ちがう形</span></td></tr><tr><td class="no">41</td><td class="v">be</td><td>was / were</td><td class="pp">been</td><td class="m">〜である</td><td class="ck">□</td></tr><tr><td class="no">42</td><td class="v">begin</td><td>began</td><td class="pp">begun</td><td class="m">始める</td><td class="ck">□</td></tr><tr><td class="no">43</td><td class="v">break</td><td>broke</td><td class="pp">broken</td><td class="m">こわす</td><td class="ck">□</td></tr><tr><td class="no">44</td><td class="v">choose</td><td>chose</td><td class="pp">chosen</td><td class="m">選ぶ</td><td class="ck">□</td></tr><tr><td class="no">45</td><td class="v">do</td><td>did</td><td class="pp">done</td><td class="m">する</td><td class="ck">□</td></tr><tr><td class="no">46</td><td class="v">draw</td><td>drew</td><td class="pp">drawn</td><td class="m">（線で）描く</td><td class="ck">□</td></tr><tr><td class="no">47</td><td class="v">drink</td><td>drank</td><td class="pp">drunk</td><td class="m">飲む</td><td class="ck">□</td></tr><tr><td class="no">48</td><td class="v">drive</td><td>drove</td><td class="pp">driven</td><td class="m">運転する</td><td class="ck">□</td></tr><tr><td class="no">49</td><td class="v">eat</td><td>ate</td><td class="pp">eaten</td><td class="m">食べる</td><td class="ck">□</td></tr><tr><td class="no">50</td><td class="v">fall</td><td>fell</td><td class="pp">fallen</td><td class="m">落ちる</td><td class="ck">□</td></tr><tr><td class="no">51</td><td class="v">fly</td><td>flew</td><td class="pp">flown</td><td class="m">飛ぶ</td><td class="ck">□</td></tr><tr><td class="no">52</td><td class="v">forget</td><td>forgot</td><td class="pp">forgotten</td><td class="m">忘れる</td><td class="ck">□</td></tr><tr><td class="no">53</td><td class="v">give</td><td>gave</td><td class="pp">given</td><td class="m">与える</td><td class="ck">□</td></tr><tr><td class="no">54</td><td class="v">go</td><td>went</td><td class="pp">gone</td><td class="m">行く</td><td class="ck">□</td></tr><tr><td class="no">55</td><td class="v">grow</td><td>grew</td><td class="pp">grown</td><td class="m">育つ・育てる</td><td class="ck">□</td></tr><tr><td class="no">56</td><td class="v">know</td><td>knew</td><td class="pp">known</td><td class="m">知っている</td><td class="ck">□</td></tr><tr><td class="no">57</td><td class="v">ride</td><td>rode</td><td class="pp">ridden</td><td class="m">乗る</td><td class="ck">□</td></tr><tr><td class="no">58</td><td class="v">see</td><td>saw</td><td class="pp">seen</td><td class="m">見る</td><td class="ck">□</td></tr><tr><td class="no">59</td><td class="v">show</td><td>showed</td><td class="pp">shown</td><td class="m">見せる</td><td class="ck">□</td></tr><tr><td class="no">60</td><td class="v">sing</td><td>sang</td><td class="pp">sung</td><td class="m">歌う</td><td class="ck">□</td></tr><tr><td class="no">61</td><td class="v">speak</td><td>spoke</td><td class="pp">spoken</td><td class="m">話す</td><td class="ck">□</td></tr><tr><td class="no">62</td><td class="v">swim</td><td>swam</td><td class="pp">swum</td><td class="m">泳ぐ</td><td class="ck">□</td></tr><tr><td class="no">63</td><td class="v">take</td><td>took</td><td class="pp">taken</td><td class="m">取る・撮る</td><td class="ck">□</td></tr><tr><td class="no">64</td><td class="v">throw</td><td>threw</td><td class="pp">thrown</td><td class="m">投げる</td><td class="ck">□</td></tr><tr><td class="no">65</td><td class="v">wear</td><td>wore</td><td class="pp">worn</td><td class="m">身につけている</td><td class="ck">□</td></tr><tr><td class="no">66</td><td class="v">write</td><td>wrote</td><td class="pp">written</td><td class="m">書く</td><td class="ck">□</td></tr></table></div>
+      <p class="lab mt">覚え方：まず「型」で分けて覚えよう。A-B-B型は過去形と過去分詞が同じなので1つ覚えれば2つ分！ 不安な動詞は声に出して「write - wrote - written」とリズムで覚えよう。</p>
+    </div>
+
+    <div class="col">
+      <h2><span class="n">★</span>不規則動詞 チェックテスト</h2>
+      <p class="lab" style="margin-bottom:1.5mm">一覧をかくして、過去形と過去分詞を書こう。（1つ1点・36点）</p>
+      <table class="drill"><colgroup><col style="width:6mm"><col style="width:17mm"><col style="width:20mm"><col><col></colgroup><tr><th></th><th>原形</th><th>意味</th><th>過去形</th><th>過去分詞</th></tr><tr><td class="no">1</td><td class="v" style="font-weight:bold">write</td><td class="m">書く</td><td></td><td></td></tr><tr><td class="no">2</td><td class="v" style="font-weight:bold">speak</td><td class="m">話す</td><td></td><td></td></tr><tr><td class="no">3</td><td class="v" style="font-weight:bold">take</td><td class="m">取る・撮る</td><td></td><td></td></tr><tr><td class="no">4</td><td class="v" style="font-weight:bold">break</td><td class="m">こわす</td><td></td><td></td></tr><tr><td class="no">5</td><td class="v" style="font-weight:bold">make</td><td class="m">作る</td><td></td><td></td></tr><tr><td class="no">6</td><td class="v" style="font-weight:bold">build</td><td class="m">建てる</td><td></td><td></td></tr><tr><td class="no">7</td><td class="v" style="font-weight:bold">sell</td><td class="m">売る</td><td></td><td></td></tr><tr><td class="no">8</td><td class="v" style="font-weight:bold">catch</td><td class="m">つかまえる</td><td></td><td></td></tr><tr><td class="no">9</td><td class="v" style="font-weight:bold">teach</td><td class="m">教える</td><td></td><td></td></tr><tr><td class="no">10</td><td class="v" style="font-weight:bold">sing</td><td class="m">歌う</td><td></td><td></td></tr><tr><td class="no">11</td><td class="v" style="font-weight:bold">know</td><td class="m">知っている</td><td></td><td></td></tr><tr><td class="no">12</td><td class="v" style="font-weight:bold">see</td><td class="m">見る</td><td></td><td></td></tr><tr><td class="no">13</td><td class="v" style="font-weight:bold">eat</td><td class="m">食べる</td><td></td><td></td></tr><tr><td class="no">14</td><td class="v" style="font-weight:bold">give</td><td class="m">与える</td><td></td><td></td></tr><tr><td class="no">15</td><td class="v" style="font-weight:bold">find</td><td class="m">見つける</td><td></td><td></td></tr><tr><td class="no">16</td><td class="v" style="font-weight:bold">cut</td><td class="m">切る</td><td></td><td></td></tr><tr><td class="no">17</td><td class="v" style="font-weight:bold">draw</td><td class="m">描く</td><td></td><td></td></tr><tr><td class="no">18</td><td class="v" style="font-weight:bold">wear</td><td class="m">身につけている</td><td></td><td></td></tr></table>
+      <div class="memo">
+        <div class="t">✎ 覚えられなかった動詞・単語メモ</div>
+        <div class="grid"><div>英単語</div><div style="border-right:none">意味・変化形</div></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <h2><span class="n">1</span>導入：分詞ってなに？</h2>
+      <div class="point">動詞の形を変えて、<b>名詞を説明する</b>（形容詞のようにはたらく）のが分詞。<br>
+        <b>現在分詞</b>（動詞の ing 形）＝「〜している」<br>
+        <b>過去分詞</b>（左の青字の形）＝「〜された・〜されている」</div>
+      <table class="big4">
+        <tr><th></th><th>現在分詞「〜している」</th><th>過去分詞「〜された」</th></tr>
+        <tr><td><b>1語</b><br><span class="lab">名詞の<b>前</b></span></td><td>a <u>sleeping</u> baby<br><span class="lab">眠っている赤ちゃん</span></td><td>a <u>broken</u> cup<br><span class="lab">割れた（割られた）カップ</span></td></tr>
+        <tr><td><b>2語以上</b><br><span class="lab">名詞の<b>後ろ</b></span></td><td>the boy <u>running in the park</u><br><span class="lab">公園で走っている少年</span></td><td>a car <u>made in Japan</u><br><span class="lab">日本で作られた車</span></td></tr>
+      </table>
+      <div class="point"><b>見分け方</b>：説明される名詞が<br>
+        「自分で〜<b>する</b>側」→ <b>ing</b>（a crying baby：赤ちゃんが泣く）<br>
+        「〜<b>される</b>側」→ <b>過去分詞</b>（a broken cup：カップが割られる）</div>
+      <div class="point"><b>ing 形の作り方</b>：play → playing ／ <b>e で終わる</b>：make → mak<b>ing</b>（e をとる）<br>
+        <b>短い音＋子音字</b>：run → run<b>n</b>ing, swim → swim<b>m</b>ing, sit → sit<b>t</b>ing</div>
+      <h3>導入チェック</h3>
+      <p class="lab" style="margin-bottom:1.5mm">日本語に合うほうを○で囲みなさい。</p>
+      <div class="q" style="margin-bottom:2.4mm"><span class="num">(1)</span><span class="en">泣いている赤ちゃん<br><span style="margin-left:6mm"></span>a ( crying ／ cried ) baby</span></div>
+
+      <div class="q" style="margin-bottom:2.4mm"><span class="num">(2)</span><span class="en">割れた窓<br><span style="margin-left:6mm"></span>a ( breaking ／ broken ) window</span></div>
+
+      <div class="q" style="margin-bottom:2.4mm"><span class="num">(3)</span><span class="en">公園で走っている少年<br><span style="margin-left:6mm"></span>the boy ( running ／ ran ) in the park</span></div>
+
+      <div class="q" style="margin-bottom:2.4mm"><span class="num">(4)</span><span class="en">英語で書かれた手紙<br><span style="margin-left:6mm"></span>a letter ( writing ／ written ) in English</span></div>
+
+      <div class="q" style="margin-bottom:2.4mm"><span class="num">(5)</span><span class="en">ベンチに座っている女性<br><span style="margin-left:6mm"></span>ア the sitting on the bench woman<br><span style="margin-left:6mm"></span>イ the woman sitting on the bench</span></div>
+
+      <p class="lab" style="margin-bottom:1.5mm">次の動詞を ing 形にしなさい。</p>
+      <div class="en" style="display:grid;grid-template-columns:1fr 1fr;row-gap:3mm;font-size:10pt"><div><span class="num">(6)</span>swim → <span class="pb" style="min-width:17mm"></span></div><div><span class="num">(7)</span>make → <span class="pb" style="min-width:17mm"></span></div>
+        <div><span class="num">(8)</span>sit → <span class="pb" style="min-width:17mm"></span></div><div><span class="num">(9)</span>write → <span class="pb" style="min-width:17mm"></span></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="sheet">
+  <div class="top"><h1>分詞 対策プリント<small>② 演習</small></h1>
+    <div class="namebox"><span>　　月　　日</span><span>　　年　　組　　番</span><span>名前　　　　　　　　　　　　　</span><span>得点　　　　／43</span></div></div>
+  <div class="cols c4 pt2 roomy2">
+    <div class="col">
+      <h2><span class="n">2</span>現在分詞「〜している」</h2>
+      <div class="point">1語 → 名詞の<b>前</b>：a <u>sleeping</u> cat<br>2語以上 → 名詞の<b>後ろ</b>：the girl <u>playing the piano</u></div>
+      <p class="lab">【A】日本語に訳しなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="en">Look at that sleeping cat.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(2)</span><span class="en">The girl playing the piano is my sister.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(3)</span><span class="en">I know the man standing by the door.</span><div class="wl"></div></div>
+
+      <p class="lab">【B】（　）内の動詞を適切な形にして、下線部に書きなさい。</p>
+      <div class="q"><span class="num">(4)</span><span class="ja">走っている犬を見て。</span>　<b class="en">( run )</b><br><span style="margin-left:6mm" class="en">Look at the <span class="bl w"></span> dog.</span></div>
+
+      <div class="q"><span class="num">(5)</span><span class="ja">川で泳いでいる少年たちは私の友達です。</span>　<b class="en">( swim )</b><br><span style="margin-left:6mm" class="en">The boys <span class="bl w"></span> in the river are my friends.</span></div>
+
+      <div class="q"><span class="num">(6)</span><span class="ja">私は英語を話している男性に話しかけた。</span>　<b class="en">( speak )</b><br><span style="margin-left:6mm" class="en">I talked to the man <span class="bl w"></span> English.</span></div>
+
+      <p class="lab">【C】並べかえて、全文を書きなさい。</p>
+      <div class="q"><span class="num">(7)</span><span class="ja">木の下で本を読んでいる女の子はメグです。</span><br><span style="margin-left:6mm" class="en">( reading / the girl / under the tree / a book ) is Meg.</span><div class="wl"></div></div>
+<div class="q"><span class="num">(8)</span><span class="ja">あそこで歌っている女の子たちを知っていますか。</span><br><span style="margin-left:6mm" class="en">Do you know ( singing / the girls / over there )?</span><div class="wl"></div></div>
+
+    </div>
+
+    <div class="col">
+      <h2><span class="n">3</span>過去分詞「〜された」</h2>
+      <div class="point">1語 → 名詞の<b>前</b>：a <u>used</u> car（使われた車＝中古車）<br>2語以上 → 名詞の<b>後ろ</b>：a picture <u>taken by him</u><br>「〜によって」は <b>by 〜</b></div>
+      <p class="lab">【A】日本語に訳しなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="en">Look at the fallen leaves.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(2)</span><span class="en">This is a picture taken by my father.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(3)</span><span class="en">English is a language spoken all over the world.</span><div class="wl"></div></div>
+
+      <p class="lab">【B】（　）内の動詞を適切な形にして、下線部に書きなさい。</p>
+      <div class="q"><span class="num">(4)</span><span class="ja">私は英語で書かれた手紙を受け取った。</span>　<b class="en">( write )</b><br><span style="margin-left:6mm" class="en">I got a letter <span class="bl w"></span> in English.</span></div>
+
+      <div class="q"><span class="num">(5)</span><span class="ja">これらは母によって作られたケーキです。</span>　<b class="en">( make )</b><br><span style="margin-left:6mm" class="en">These are cakes <span class="bl w"></span> by my mother.</span></div>
+
+      <div class="q"><span class="num">(6)</span><span class="ja">彼は日本で売られている車を買った。</span>　<b class="en">( sell )</b><br><span style="margin-left:6mm" class="en">He bought a car <span class="bl w"></span> in Japan.</span></div>
+
+      <p class="lab">【C】並べかえて、全文を書きなさい。</p>
+      <div class="q"><span class="num">(7)</span><span class="ja">これは100年前に建てられた家です。</span><br><span style="margin-left:6mm" class="en">This is ( built / a house / 100 years ago ).</span><div class="wl"></div></div>
+      <div class="memo"><div class="t">✎ わからなかった単語メモ</div><div class="grid"><div>英単語</div><div style="border-right:none">意味</div></div></div>
+
+    </div>
+
+    <div class="col">
+      <h2><span class="n">4</span>現在分詞？ 過去分詞？</h2>
+      <p class="lab" style="margin-bottom:1.5mm">【問1】（　）内から正しいほうを○で囲み、文を日本語に訳しなさい。（選択・訳 各1点）</p>
+      <div class="q"><span class="num">(1)</span><span class="en">Look at the ( singing ／ sung ) birds.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(2)</span><span class="en">I bought a ( using ／ used ) bike.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(3)</span><span class="en">The man ( driving ／ driven ) the bus is my uncle.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(4)</span><span class="en">This is a book ( writing ／ written ) by Soseki.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(5)</span><span class="en">The language ( speaking ／ spoken ) in Brazil is Portuguese.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(6)</span><span class="en">Who is the boy ( talking ／ talked ) with Ms. Ito?</span><div class="wl"></div></div>
+
+      <p class="lab" style="margin:1mm 0 1.5mm">【問2】（　）内の動詞を適切な形にして書きなさい。<b>不規則動詞に注意！</b></p>
+      <div class="q" style="margin-bottom:2.4mm"><span class="num">(1)</span><span class="en">I like the song ( sing ) by her.<br><span style="margin-left:6mm"></span>→ <span class="bl w"></span></span></div>
+
+      <div class="q" style="margin-bottom:2.4mm"><span class="num">(2)</span><span class="en">The ( sleep ) baby is cute.<br><span style="margin-left:6mm"></span>→ <span class="bl w"></span></span></div>
+
+      <div class="q" style="margin-bottom:2.4mm"><span class="num">(3)</span><span class="en">I have a friend ( live ) in Kyoto.<br><span style="margin-left:6mm"></span>→ <span class="bl w"></span></span></div>
+
+      <div class="q" style="margin-bottom:2.4mm"><span class="num">(4)</span><span class="en">He showed me a picture ( draw ) by his son.<br><span style="margin-left:6mm"></span>→ <span class="bl w"></span></span></div>
+
+      <div class="q" style="margin-bottom:2.4mm"><span class="num">(5)</span><span class="en">Be careful of the ( break ) glass.<br><span style="margin-left:6mm"></span>→ <span class="bl w"></span></span></div>
+
+      <div class="q" style="margin-bottom:2.4mm"><span class="num">(6)</span><span class="en">The girl ( wear ) a red hat is Yumi.<br><span style="margin-left:6mm"></span>→ <span class="bl w"></span></span></div>
+
+    </div>
+
+    <div class="col">
+      <h2><span class="n">5</span>確認問題（まとめ）</h2>
+      <p class="lab" style="margin-bottom:1.5mm">【問1】分詞を使って、2つの文を1つの文にしなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="en">Look at the boy. He is swimming in the sea.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(2)</span><span class="en">I have a camera. It was made in Germany.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(3)</span><span class="en">The woman is my aunt. She is talking to Ken.</span><div class="wl"></div></div>
+
+      <p class="lab" style="margin:1mm 0 1.5mm">【問2】関係代名詞を使わずに、ほぼ同じ意味の文にしなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="en">The boy who is running over there is Tom.</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(2)</span><span class="en">This is a bag which was made in Italy.</span><div class="wl"></div></div>
+
+      <p class="lab" style="margin:1mm 0 1.5mm">【問3】並べかえて、全文を書きなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="ja">私は彼から送られた手紙を読んだ。</span><br><span style="margin-left:6mm" class="en">I read ( sent / the letter / by / him ).</span><div class="wl"></div></div>
+
+      <div class="q"><span class="num">(2)</span><span class="ja">窓のそばに立っている男性はだれですか。</span><br><span style="margin-left:6mm" class="en">Who is ( the window / standing / the man / by )?</span><div class="wl"></div></div>
+
+      <p class="lab" style="margin:1mm 0 1.5mm">【問4】次の日本語を英語にしなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="ja">私はピアノを弾いている女の子を知っている。</span><div class="wl"></div></div>
+      <div class="q"><span class="num">(2)</span><span class="ja">これは多くの人に読まれている本です。</span><div class="wl"></div></div>
+      <div class="q" style="margin-bottom:0"><span class="num">(3)</span><span class="ja">私は日本で作られた時計がほしい。</span><div class="wl"></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="sheet">
+  <div class="top"><h1>分詞 対策プリント<small>解答・解説</small></h1>
+    <div class="namebox"><span class="lab" style="border:none">赤字が答え。まちがえた問題には ✓ をつけ、メモ欄に書き足そう。</span></div></div>
+  <div class="cols c4 pt3">
+    <div class="col">
+      <h2><span class="n">★</span>分詞 まとめ</h2>
+      <table class="sum">
+        <tr><th style="width:17mm"></th><th>形</th><th>意味</th><th>例</th></tr>
+        <tr><td><b>現在分詞</b></td><td>動詞の ing 形</td><td>〜している<br><span class="lab">（名詞が<b>する</b>側）</span></td><td>a <u>running</u> dog</td></tr>
+        <tr><td><b>過去分詞</b></td><td>規則：-ed<br>不規則：一覧で確認</td><td>〜された<br><span class="lab">（名詞が<b>される</b>側）</span></td><td>a <u>used</u> car</td></tr>
+      </table>
+      <h3>見分け方の2ステップ</h3>
+      <div class="flow">
+        <p><span class="arrow">STEP1</span>　名詞が「する」？「される」？<br>　する → <b>ing</b>　／　される → <b>過去分詞</b><br>　<span class="lab">例：the boy（少年が走る）→ running<br>　　 the letter（手紙が書かれる）→ written</span></p>
+        <p style="margin-bottom:0"><span class="arrow">STEP2</span>　分詞は何語のかたまり？<br>　<b>1語</b> → 名詞の<b>前</b>：a <u>sleeping</u> cat<br>　<b>2語以上</b> → 名詞の<b>後ろ</b>：a cat <u>sleeping on the bed</u></p>
+      </div>
+      <h3>関係代名詞とのつながり</h3>
+      <div class="box2" style="margin-bottom:2mm">
+        the boy <s>who is</s> running there ＝ the boy <b>running</b> there<br>
+        a bag <s>which was</s> made in Italy ＝ a bag <b>made</b> in Italy<br>
+        <span class="lab">「関係代名詞＋be動詞」を消すと分詞の文になる！</span></div>
+      <h3>まちがえやすいポイント</h3>
+      <ol class="tips">
+        <li><b>過去形と過去分詞をまちがえない。</b><br>× a letter wrote → ○ a letter <b>written</b><br>× a picture drew → ○ a picture <b>drawn</b></li>
+        <li><b>ing の綴りに注意。</b><br>run<b>n</b>ing ／ swim<b>m</b>ing ／ sit<b>t</b>ing ／ mak<b>ing</b> ／ writ<b>ing</b></li>
+        <li><b>文の本当の動詞を見つける。</b><br>The girl [playing the piano] <b>is</b> my sister.<br>→ [ ] の部分が主語を説明。動詞は is。</li>
+        <li><b>by 〜 は「〜によって」</b>。過去分詞とセットでよく出る。</li>
+      </ol>
+    </div>
+
+    <div class="col">
+      <h2><span class="n">0</span>チェックテスト 解答</h2>
+      <table class="sum" style="font-size:9pt"><tr><th></th><th>原形</th><th>過去形</th><th>過去分詞</th><th></th><th>原形</th><th>過去形</th><th>過去分詞</th></tr><tr><td class="no">1</td><td><b>write</b></td><td class="ans">wrote</td><td class="ans">written</td><td class="no">10</td><td><b>sing</b></td><td class="ans">sang</td><td class="ans">sung</td></tr><tr><td class="no">2</td><td><b>speak</b></td><td class="ans">spoke</td><td class="ans">spoken</td><td class="no">11</td><td><b>know</b></td><td class="ans">knew</td><td class="ans">known</td></tr><tr><td class="no">3</td><td><b>take</b></td><td class="ans">took</td><td class="ans">taken</td><td class="no">12</td><td><b>see</b></td><td class="ans">saw</td><td class="ans">seen</td></tr><tr><td class="no">4</td><td><b>break</b></td><td class="ans">broke</td><td class="ans">broken</td><td class="no">13</td><td><b>eat</b></td><td class="ans">ate</td><td class="ans">eaten</td></tr><tr><td class="no">5</td><td><b>make</b></td><td class="ans">made</td><td class="ans">made</td><td class="no">14</td><td><b>give</b></td><td class="ans">gave</td><td class="ans">given</td></tr><tr><td class="no">6</td><td><b>build</b></td><td class="ans">built</td><td class="ans">built</td><td class="no">15</td><td><b>find</b></td><td class="ans">found</td><td class="ans">found</td></tr><tr><td class="no">7</td><td><b>sell</b></td><td class="ans">sold</td><td class="ans">sold</td><td class="no">16</td><td><b>cut</b></td><td class="ans">cut</td><td class="ans">cut</td></tr><tr><td class="no">8</td><td><b>catch</b></td><td class="ans">caught</td><td class="ans">caught</td><td class="no">17</td><td><b>draw</b></td><td class="ans">drew</td><td class="ans">drawn</td></tr><tr><td class="no">9</td><td><b>teach</b></td><td class="ans">taught</td><td class="ans">taught</td><td class="no">18</td><td><b>wear</b></td><td class="ans">wore</td><td class="ans">worn</td></tr></table>
+      <p class="lab" style="margin-bottom:2mm">まちがえた動詞は表面の一覧で型（A-B-C など）を確認し、3回書いて覚えよう。特に <b>sing - sang - sung</b>、<b>draw - drew - drawn</b>、<b>wear - wore - worn</b> は要注意！</p>
+      <h2><span class="n">1</span>導入チェック 解答</h2>
+      <div class="a"><span class="num">(1)</span><span class="ans">crying</span><div class="exp">赤ちゃんが自分で泣いている（する側）→ 現在分詞。1語なので名詞の前。</div></div>
+
+      <div class="a"><span class="num">(2)</span><span class="ans">broken</span><div class="exp">窓は割られた（される側）→ 過去分詞。break - broke - <b>broken</b>。</div></div>
+
+      <div class="a"><span class="num">(3)</span><span class="ans">running</span><div class="exp">少年が走っている → 現在分詞。in the park がつき2語以上なので名詞の後ろ。</div></div>
+
+      <div class="a"><span class="num">(4)</span><span class="ans">written</span><div class="exp">手紙は書かれる → 過去分詞。write - wrote - <b>written</b>。</div></div>
+
+      <div class="a"><span class="num">(5)</span><span class="ans">イ</span><div class="exp">sitting on the bench は4語 → 名詞 the woman の後ろに置く。</div></div>
+
+      <div class="a"><span class="num">(6〜9)</span><span class="ans">(6) swimming　(7) making　(8) sitting　(9) writing</span><div class="exp">swim・sit は最後の文字を重ねる。make・write は e をとって ing。</div></div>
+
+    </div>
+
+    <div class="col">
+      <h2><span class="n">2</span>現在分詞 解答</h2>
+      <div class="a"><span class="num">(1)</span><span class="ans">あの眠っているネコを見て。</span><div class="exp">sleeping（1語）が cat を前から説明。</div></div>
+
+      <div class="a"><span class="num">(2)</span><span class="ans">ピアノを弾いている女の子は私の姉［妹］です。</span><div class="exp">The girl [playing the piano] is 〜。動詞は is。</div></div>
+
+      <div class="a"><span class="num">(3)</span><span class="ans">私はドアのそばに立っている男性を知っている。</span><div class="exp">the man ← standing by the door。by＝〜のそばに。</div></div>
+
+      <div class="a"><span class="num">(4)</span><span class="ans">running</span><div class="exp">1語なので dog の前。n を重ねる。</div></div>
+
+      <div class="a"><span class="num">(5)</span><span class="ans">swimming</span><div class="exp">in the river がつくので boys の後ろ。m を重ねる。</div></div>
+
+      <div class="a"><span class="num">(6)</span><span class="ans">speaking</span><div class="exp">the man ← speaking English。男性が話している（する側）。</div></div>
+
+      <div class="a"><span class="num">(7)</span><span class="ans">The girl reading a book under the tree is Meg.</span><div class="exp">The girl の後ろに reading a book under the tree をまとめて置く。</div></div>
+<div class="a"><span class="num">(8)</span><span class="ans">Do you know the girls singing over there?</span><div class="exp">the girls ← singing over there（2語以上なので後ろ）。</div></div>
+
+      <h2 style="margin-top:3mm"><span class="n">3</span>過去分詞 解答</h2>
+      <div class="a"><span class="num">(1)</span><span class="ans">落ち葉を見て。（落ちた葉を見て。）</span><div class="exp">fall - fell - <b>fallen</b>。fallen leaves＝落ち葉。</div></div>
+
+      <div class="a"><span class="num">(2)</span><span class="ans">これは私の父によって撮られた写真です。</span><div class="exp">take - took - <b>taken</b>。「父が撮った写真」と訳してもよい。</div></div>
+
+      <div class="a"><span class="num">(3)</span><span class="ans">英語は世界中で話されている言語です。</span><div class="exp">speak - spoke - <b>spoken</b>。all over the world＝世界中で。</div></div>
+
+      <div class="a"><span class="num">(4)</span><span class="ans">written</span><div class="exp">手紙は書かれる側。wrote（過去形）にしないこと！</div></div>
+
+      <div class="a"><span class="num">(5)</span><span class="ans">made</span><div class="exp">make - made - made（A-B-B型）。by my mother＝母によって。</div></div>
+
+      <div class="a"><span class="num">(6)</span><span class="ans">sold</span><div class="exp">sell - sold - sold。車は売られる側。</div></div>
+
+      <div class="a"><span class="num">(7)</span><span class="ans">This is a house built 100 years ago.</span><div class="exp">build - built - built。a house ← built 100 years ago。</div></div>
+
+    </div>
+
+    <div class="col">
+      <h2><span class="n">4</span>現在分詞？過去分詞？ 解答</h2>
+      <p class="lab">【問1】</p>
+      <div class="a"><span class="num">(1)</span><span class="ans">singing　歌っている鳥たちを見て。</span><div class="exp">鳥が歌う（する側）→ ing。</div></div>
+
+      <div class="a"><span class="num">(2)</span><span class="ans">used　私は中古の自転車を買った。</span><div class="exp">自転車は使われた（される側）。used＝中古の。</div></div>
+
+      <div class="a"><span class="num">(3)</span><span class="ans">driving　バスを運転している男性は私のおじです。</span><div class="exp">男性が運転する（する側）。</div></div>
+
+      <div class="a"><span class="num">(4)</span><span class="ans">written　これは漱石によって書かれた本です。</span><div class="exp">本は書かれる側＋by 〜。</div></div>
+
+      <div class="a"><span class="num">(5)</span><span class="ans">spoken　ブラジルで話されている言語はポルトガル語です。</span><div class="exp">言語は話される側。</div></div>
+
+      <div class="a"><span class="num">(6)</span><span class="ans">talking　伊藤先生と話している少年はだれですか。</span><div class="exp">少年が話している（する側）。</div></div>
+
+      <p class="lab">【問2】</p>
+      <div class="a"><span class="ans">(1) sung　(2) sleeping　(3) living　(4) drawn　(5) broken　(6) wearing</span>
+        <div class="exp" style="margin-left:0">(1) sing - sang - <b>sung</b>（歌は歌われる）(3) live は e をとって ing (4) draw - drew - <b>drawn</b> (5) Be careful of 〜＝〜に気をつけて</div></div>
+      <h2 style="margin-top:2.5mm"><span class="n">5</span>確認問題 解答</h2>
+      <div class="a"><span class="num">(問1-1)</span><span class="ans">Look at the boy swimming in the sea.</span><div class="exp">He is を消して swimming 以下を the boy の後ろへ。</div></div>
+
+      <div class="a"><span class="num">(問1-2)</span><span class="ans">I have a camera made in Germany.</span><div class="exp">It was を消して made 以下を後ろへ。</div></div>
+
+      <div class="a"><span class="num">(問1-3)</span><span class="ans">The woman talking to Ken is my aunt.</span><div class="exp">主語 The woman の直後に入れる。</div></div>
+
+      <div class="a"><span class="num">(問2-1)</span><span class="ans">The boy running over there is Tom.</span><div class="exp">who is を消す。</div></div>
+
+      <div class="a"><span class="num">(問2-2)</span><span class="ans">This is a bag made in Italy.</span><div class="exp">which was を消す。</div></div>
+
+      <div class="a"><span class="num">(問3-1)</span><span class="ans">I read the letter sent by him.</span><div class="exp">send - sent - sent。</div></div>
+
+      <div class="a"><span class="num">(問3-2)</span><span class="ans">Who is the man standing by the window?</span><div class="exp">the man ← standing by the window。</div></div>
+
+      <div class="a"><span class="num">(問4-1)</span><span class="ans">I know the girl [a girl] playing the piano.</span></div>
+
+      <div class="a"><span class="num">(問4-2)</span><span class="ans">This is a book read by many people.</span><div class="exp">read の過去分詞は read（発音は[red]）。</div></div>
+<div class="a"><span class="num">(問4-3)</span><span class="ans">I want a watch made in Japan.</span><div class="exp">a watch ← made in Japan（日本で作られた）。</div></div>
+
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
