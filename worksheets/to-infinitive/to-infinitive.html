@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>中2英語 to不定詞 対策プリント</title>
+<style>
+@page { size: 420mm 297mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --ink:#1a1a1a; --sub:#555; --line:#9a9a9a; --accent:#1f4e8c; --ans:#c0262d; --soft:#eef3fa; --soft2:#fdf3e7; }
+html, body { background:#fff; color:var(--ink); font-family:"Inter","IPAPGothic",sans-serif; font-size:10.5pt; line-height:1.45; }
+.sheet { width:420mm; height:297mm; padding:9mm 10mm 8mm; overflow:hidden; page-break-after:always; display:flex; flex-direction:column; }
+.sheet:last-child { page-break-after:auto; }
+.top { display:flex; align-items:flex-end; justify-content:space-between; border-bottom:2.2px solid var(--accent); padding-bottom:2mm; margin-bottom:4mm; }
+.top h1 { font-size:19pt; letter-spacing:.04em; color:var(--accent); }
+.top h1 small { font-size:11pt; color:var(--sub); margin-left:4mm; font-weight:normal; }
+.namebox { display:flex; gap:4mm; font-size:10.5pt; }
+.namebox span { border-bottom:1px solid var(--ink); padding:0 1mm 1mm; }
+.cols { flex:1; display:grid; grid-template-columns: 0.86fr 1fr 1fr; gap:0 7mm; min-height:0; }
+.cols.c4 { grid-template-columns: 1.15fr 1fr 1fr 1fr; gap:0 5mm; }
+.cols.c4 .col + .col { padding-left:5mm; }
+.col { display:flex; flex-direction:column; min-height:0; }
+.col + .col { border-left:1px dashed #bbb; padding-left:7mm; }
+h2 { font-size:12.5pt; background:var(--accent); color:#fff; padding:1mm 3mm; border-radius:1.5mm; margin-bottom:2mm; }
+h2 .n { display:inline-block; background:#fff; color:var(--accent); border-radius:50%; width:6mm; height:6mm; line-height:6mm; text-align:center; margin-right:2mm; font-size:10.5pt; }
+h3 { font-size:10.5pt; color:var(--accent); border-left:3px solid var(--accent); padding-left:2mm; margin:2.5mm 0 1.5mm; }
+.point { background:var(--soft); border-radius:2mm; padding:1.8mm 3mm; font-size:9.6pt; margin-bottom:1.5mm; }
+.point b { color:var(--accent); }
+.q { margin-bottom:2.2mm; }
+.q .en { font-size:11pt; }
+.q .ja { font-size:10pt; }
+.num { display:inline-block; min-width:6mm; font-weight:bold; }
+.wl { border-bottom:1px solid var(--line); height:8.6mm; margin-left:6mm; }
+.wl.short { height:8mm; }
+.lab { font-size:8.5pt; color:var(--sub); }
+.bl { display:inline-block; min-width:16mm; border-bottom:1px solid var(--ink); text-align:center; margin:0 .6mm; height:6.5mm; vertical-align:bottom; }
+.bl.w { min-width:15mm; }
+.roomy .q { margin-bottom:5mm; }
+.roomy .wl { height:11mm; }
+u { text-decoration-thickness:1.2px; text-underline-offset:2px; }
+.kbox { display:inline-block; width:10mm; height:7mm; border:1.3px solid var(--ink); border-radius:1mm; vertical-align:middle; margin-right:2mm; }
+.row { display:flex; align-items:flex-end; gap:1mm; }
+.row .wl { flex:1; margin-left:0; }
+.choice { font-size:9pt; color:var(--sub); }
+/* verb table */
+table.verbs { width:100%; border-collapse:collapse; font-size:9.6pt; }
+table.verbs td, table.verbs th { border:1px solid #bbb; padding:.5mm 1.2mm; height:6.3mm; }
+table.verbs th { background:var(--soft); font-size:8.5pt; }
+table.verbs td.no { width:5mm; text-align:center; color:var(--sub); font-size:8pt; }
+table.verbs td.v { font-weight:bold; width:17mm; }
+table.verbs td.ck { width:6mm; }
+table.verbs td.m { font-size:8.8pt; }
+.ttable { width:100%; border-collapse:collapse; font-size:8.8pt; margin-bottom:1mm; }
+.ttable td { border:1px solid #bbb; padding:.6mm 1.5mm; }
+.ttable td:first-child { font-weight:bold; width:27mm; }
+.memo { flex:1; border:1.3px solid var(--ink); border-radius:2mm; padding:1.5mm 3mm; display:flex; flex-direction:column; min-height:0; margin-top:2mm; }
+.memo .t { font-weight:bold; font-size:10pt; }
+.memo .grid { flex:1; display:grid; grid-template-columns: 1fr 1.35fr; column-gap:4mm; background-image:repeating-linear-gradient(to bottom, transparent 0, transparent calc(8mm - 1px), var(--line) calc(8mm - 1px), var(--line) 8mm); }
+.memo .grid div { font-size:8pt; color:var(--sub); border-right:1px dotted var(--line); }
+.score { margin-top:auto; align-self:flex-end; border:1.3px solid var(--ink); border-radius:2mm; padding:1.5mm 4mm; font-size:10pt; }
+.mt { margin-top:auto; }
+/* answer page */
+.ans { color:var(--ans); font-weight:bold; }
+.a { margin-bottom:1.6mm; font-size:9.8pt; }
+.a .exp { font-size:9pt; color:#333; margin-left:6mm; }
+.box2 { background:var(--soft2); border-radius:2mm; padding:2mm 3mm; font-size:9.5pt; margin-bottom:2mm; }
+.box2 b { color:#a8540b; }
+table.sum { width:100%; border-collapse:collapse; font-size:9.3pt; margin-bottom:2mm; }
+table.sum th, table.sum td { border:1px solid #aaa; padding:1mm 1.5mm; vertical-align:top; }
+table.sum th { background:var(--soft); }
+ol.tips { padding-left:5mm; font-size:9.5pt; }
+ol.tips li { margin-bottom:1.2mm; }
+.flow { border:1.3px solid var(--accent); border-radius:2mm; padding:2mm 3mm; font-size:9.6pt; margin-bottom:2mm; }
+.flow p { margin-bottom:1mm; }
+.flow .arrow { color:var(--accent); font-weight:bold; }
+</style>
+</head>
+<body>
+
+<!-- ===================== 表面：問題 ===================== -->
+<section class="sheet">
+  <div class="top">
+    <h1>to不定詞（to＋動詞の原形）対策プリント<small>中学2年 英語 ／ 問題</small></h1>
+    <div class="namebox">
+      <span>　　月　　日</span>
+      <span>　　年　　組　　番</span>
+      <span>名前　　　　　　　　　　　　　</span>
+    </div>
+  </div>
+
+  <div class="cols c4">
+    <!-- 列1：動詞リスト＋メモ -->
+    <div class="col">
+      <h2><span class="n">0</span>まずは確認！基本動詞30</h2>
+      <p class="lab" style="margin-bottom:1mm">意味を手でかくして言えたら □ に ✓。to のあとは必ずこの「原形」が来ます。</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2mm;">
+        <table class="verbs">
+          <tr><th></th><th>原形</th><th>意味</th><th>✓</th></tr>
+          <tr><td class="no">1</td><td class="v">play</td><td class="m">（スポーツを）する・演奏する</td><td class="ck">□</td></tr>
+          <tr><td class="no">2</td><td class="v">study</td><td class="m">勉強する</td><td class="ck">□</td></tr>
+          <tr><td class="no">3</td><td class="v">read</td><td class="m">読む</td><td class="ck">□</td></tr>
+          <tr><td class="no">4</td><td class="v">write</td><td class="m">書く</td><td class="ck">□</td></tr>
+          <tr><td class="no">5</td><td class="v">speak</td><td class="m">話す</td><td class="ck">□</td></tr>
+          <tr><td class="no">6</td><td class="v">listen</td><td class="m">聞く（listen to 〜）</td><td class="ck">□</td></tr>
+          <tr><td class="no">7</td><td class="v">watch</td><td class="m">（じっと）見る</td><td class="ck">□</td></tr>
+          <tr><td class="no">8</td><td class="v">see</td><td class="m">見る・会う</td><td class="ck">□</td></tr>
+          <tr><td class="no">9</td><td class="v">eat</td><td class="m">食べる</td><td class="ck">□</td></tr>
+          <tr><td class="no">10</td><td class="v">drink</td><td class="m">飲む</td><td class="ck">□</td></tr>
+          <tr><td class="no">11</td><td class="v">buy</td><td class="m">買う</td><td class="ck">□</td></tr>
+          <tr><td class="no">12</td><td class="v">make</td><td class="m">作る</td><td class="ck">□</td></tr>
+          <tr><td class="no">13</td><td class="v">cook</td><td class="m">料理する</td><td class="ck">□</td></tr>
+          <tr><td class="no">14</td><td class="v">visit</td><td class="m">訪れる</td><td class="ck">□</td></tr>
+          <tr><td class="no">15</td><td class="v">go</td><td class="m">行く</td><td class="ck">□</td></tr>
+        </table>
+        <table class="verbs">
+          <tr><th></th><th>原形</th><th>意味</th><th>✓</th></tr>
+          <tr><td class="no">16</td><td class="v">come</td><td class="m">来る</td><td class="ck">□</td></tr>
+          <tr><td class="no">17</td><td class="v">get</td><td class="m">手に入れる・着く</td><td class="ck">□</td></tr>
+          <tr><td class="no">18</td><td class="v">take</td><td class="m">取る・連れて行く</td><td class="ck">□</td></tr>
+          <tr><td class="no">19</td><td class="v">help</td><td class="m">手伝う・助ける</td><td class="ck">□</td></tr>
+          <tr><td class="no">20</td><td class="v">learn</td><td class="m">学ぶ・習い覚える</td><td class="ck">□</td></tr>
+          <tr><td class="no">21</td><td class="v">meet</td><td class="m">会う</td><td class="ck">□</td></tr>
+          <tr><td class="no">22</td><td class="v">swim</td><td class="m">泳ぐ</td><td class="ck">□</td></tr>
+          <tr><td class="no">23</td><td class="v">run</td><td class="m">走る</td><td class="ck">□</td></tr>
+          <tr><td class="no">24</td><td class="v">sing</td><td class="m">歌う</td><td class="ck">□</td></tr>
+          <tr><td class="no">25</td><td class="v">use</td><td class="m">使う</td><td class="ck">□</td></tr>
+          <tr><td class="no">26</td><td class="v">become</td><td class="m">〜になる</td><td class="ck">□</td></tr>
+          <tr><td class="no">27</td><td class="v">live</td><td class="m">住む</td><td class="ck">□</td></tr>
+          <tr><td class="no">28</td><td class="v">travel</td><td class="m">旅行する</td><td class="ck">□</td></tr>
+          <tr><td class="no">29</td><td class="v">practice</td><td class="m">練習する</td><td class="ck">□</td></tr>
+          <tr><td class="no">30</td><td class="v">hear</td><td class="m">聞こえる・（知らせを）聞く</td><td class="ck">□</td></tr>
+        </table>
+      </div>
+
+      <h3>to〜 とセットで覚える表現</h3>
+      <table class="ttable">
+        <tr><td>want to 〜</td><td>〜したい</td><td style="font-weight:bold">like to 〜</td><td>〜するのが好きだ</td></tr>
+        <tr><td>try to 〜</td><td>〜しようとする</td><td style="font-weight:bold">need to 〜</td><td>〜する必要がある</td></tr>
+        <tr><td>start [begin] to 〜</td><td>〜し始める</td><td style="font-weight:bold">hope to 〜</td><td>〜することを望む</td></tr>
+        <tr><td>be happy [glad] to 〜</td><td>〜してうれしい</td><td style="font-weight:bold">be sad to 〜</td><td>〜して悲しい</td></tr>
+        <tr><td>be surprised to 〜</td><td>〜して驚く</td><td style="font-weight:bold">something to 〜</td><td>何か〜するもの</td></tr>
+      </table>
+
+      <div class="memo">
+        <div class="t">✎ わからなかった単語・表現メモ <span class="lab">（問題を解きながら、知らなかった単語と意味を書こう）</span></div>
+        <div class="grid">
+          <div>英単語</div><div style="border-right:none">意味</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 列2：3つの用法 -->
+    <div class="col">
+      <h2><span class="n">1</span>名詞的用法 「〜すること」</h2>
+      <div class="point"><b>to＋動詞の原形</b> が「名詞」のかたまりになる。<br>
+        I like <u>to read</u>.（読む<b>こと</b>が好き）／ My dream is <u>to become</u> 〜.（夢は〜になる<b>こと</b>）／ <u>To swim</u> is fun.（泳ぐ<b>こと</b>は）</div>
+      <p class="lab">【A】日本語に訳しなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="en">I like to listen to music.</span><div class="wl"></div></div>
+      <div class="q"><span class="num">(2)</span><span class="en">My dream is to become a doctor.</span><div class="wl"></div></div>
+      <div class="q"><span class="num">(3)</span><span class="en">To speak English is not easy.</span><div class="wl"></div></div>
+      <p class="lab">【B】日本語に合うように（　）に1語ずつ書きなさい。</p>
+      <div class="q"><span class="num">(4)</span><span class="ja">私は新しい自転車を買いたい。</span><br>
+        <span style="margin-left:6mm" class="en">I <span class="bl w"></span><span class="bl w"></span><span class="bl w"></span> a new bike.</span></div>
+      <div class="q"><span class="num">(5)</span><span class="ja">彼は泳ぐことが好きです。</span><br>
+        <span style="margin-left:6mm" class="en">He <span class="bl w"></span><span class="bl w"></span><span class="bl w"></span> .</span></div>
+
+      <h2 style="margin-top:2.5mm"><span class="n">2</span>形容詞的用法「〜するための」</h2>
+      <div class="point"><b>名詞 ＋ to〜</b> で、後ろから名詞を説明する。「〜すべき」と訳すことも。<br>
+        time <u>to sleep</u>（寝る<b>ための</b>時間）／ something <u>to eat</u>（何か食べる<b>もの</b>）</div>
+      <p class="lab">【A】日本語に訳しなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="en">I have a lot of homework to do today.</span><div class="wl"></div></div>
+      <div class="q"><span class="num">(2)</span><span class="en">Please give me something to drink.</span><div class="wl"></div></div>
+      <div class="q"><span class="num">(3)</span><span class="en">Kyoto has many places to visit.</span><div class="wl"></div></div>
+      <p class="lab">【B】(4)は（　）に1語ずつ、(5)は語を並べかえて全文を書きなさい。</p>
+      <div class="q"><span class="num">(4)</span><span class="ja">私には本を読む時間がありません。</span><br>
+        <span style="margin-left:6mm" class="en">I have no <span class="bl w"></span><span class="bl w"></span><span class="bl w"></span> books.</span></div>
+      <div class="q"><span class="num">(5)</span><span class="ja">彼には手伝ってくれる友達がたくさんいる。</span><br>
+        <span style="margin-left:6mm" class="en">( friends / help / has / many / to / him ).</span><div class="wl"></div></div>
+
+      <div class="mt"></div>
+    </div>
+
+    <!-- 列3：副詞的用法＋確認問題 問1 -->
+    <div class="col">
+      <h2><span class="n">3</span>副詞的用法 「〜するために」「〜して」</h2>
+      <div class="point"><b>①目的</b>「〜するために」：I went to the park <u>to play</u> soccer.<br>
+        <b>②感情の原因</b>「〜して」：happy / glad / sad / surprised ＋ to〜 → I'm glad <u>to meet</u> you.</div>
+      <p class="lab">【A】日本語に訳しなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="en">I went to the library to study.</span><div class="wl"></div></div>
+      <div class="q"><span class="num">(2)</span><span class="en">She got up early to make breakfast.</span><div class="wl"></div></div>
+      <div class="q"><span class="num">(3)</span><span class="en">We were surprised to hear the news.</span><div class="wl"></div></div>
+      <p class="lab">【B】日本語に合うように（　）に1語ずつ書きなさい。</p>
+      <div class="q"><span class="num">(4)</span><span class="ja">彼は英語を学ぶためにアメリカへ行った。</span><br>
+        <span style="margin-left:6mm" class="en">He went to America <span class="bl w"></span><span class="bl w"></span> English.</span></div>
+      <div class="q" style="margin-bottom:0"><span class="num">(5)</span><span class="en">A: Why did you go to the park?</span>
+        <span class="ja">（なぜ公園へ行ったの？）</span><br>
+        <span style="margin-left:6mm" class="en">B: <span class="bl w"></span><span class="bl w"></span> soccer.</span>
+        <span class="ja">（サッカーをするためだよ。）</span></div>
+
+      <h2 style="margin-top:3.5mm"><span class="n">4</span>確認問題（用法ミックス）</h2>
+      <p class="lab" style="margin-bottom:1.5mm">【問1】下線部の用法を <b>A 名詞的</b>・<b>B 形容詞的</b>・<b>C 副詞的</b> から選び、□に記号を書きなさい。また、文全体を日本語に訳しなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="en">I want <u>to eat</u> sushi.</span>
+        <div class="row" style="margin-left:6mm"><span class="kbox"></span><div class="wl"></div></div></div>
+      <div class="q"><span class="num">(2)</span><span class="en">I went to the store <u>to buy</u> some milk.</span>
+        <div class="row" style="margin-left:6mm"><span class="kbox"></span><div class="wl"></div></div></div>
+      <div class="q"><span class="num">(3)</span><span class="en">I have no time <u>to watch</u> TV.</span>
+        <div class="row" style="margin-left:6mm"><span class="kbox"></span><div class="wl"></div></div></div>
+      <div class="q"><span class="num">(4)</span><span class="en">Ken was sad <u>to hear</u> the story.</span>
+        <div class="row" style="margin-left:6mm"><span class="kbox"></span><div class="wl"></div></div></div>
+      <div class="q"><span class="num">(5)</span><span class="en"><u>To swim</u> in this river is dangerous.</span> <span class="lab">dangerous＝危険な</span>
+        <div class="row" style="margin-left:6mm"><span class="kbox"></span><div class="wl"></div></div></div>
+      <div class="q"><span class="num">(6)</span><span class="en">Do you have anything <u>to eat</u>?</span>
+        <div class="row" style="margin-left:6mm"><span class="kbox"></span><div class="wl"></div></div></div>
+    </div>
+
+    <!-- 列4：確認問題 問2〜4 -->
+    <div class="col roomy">
+      <h2><span class="n">4</span>確認問題（つづき）</h2>
+      <p class="lab" style="margin:0 0 1.5mm">【問2】to不定詞を使って、2つの文を1つの文にしなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="en">I went to the park. I played tennis there.</span><div class="wl"></div></div>
+      <div class="q"><span class="num">(2)</span><span class="en">I heard the news. I was very happy.</span><div class="wl"></div></div>
+      <div class="q"><span class="num">(3)</span><span class="en">I have many books. I must read them.</span><div class="wl"></div></div>
+      <div class="q"><span class="num">(4)</span><span class="en">I saw a big dog. I was surprised.</span><div class="wl"></div></div>
+
+      <p class="lab" style="margin:2mm 0 1.5mm">【問3】まちがいを1か所ずつ直して、正しい文を書きなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="en">She wants to plays the piano.</span><div class="wl"></div></div>
+      <div class="q"><span class="num">(2)</span><span class="en">I went to the park for play soccer.</span><div class="wl"></div></div>
+
+      <p class="lab" style="margin:2mm 0 1.5mm">【問4】次の日本語を英語にしなさい。</p>
+      <div class="q"><span class="num">(1)</span><span class="ja">私は将来、先生になりたい。</span> <span class="lab">将来＝in the future</span><div class="wl"></div></div>
+      <div class="q"><span class="num">(2)</span><span class="ja">私は友達に会うために駅へ行きました。</span><div class="wl"></div></div>
+      <div class="q" style="margin-bottom:0"><span class="num">(3)</span><span class="ja">私には今日するべきことがたくさんある。</span> <span class="lab">こと＝things</span><div class="wl"></div></div>
+
+      <div class="score mt" style="align-self:stretch">得点　　　　　／ 36点 <span class="lab">（1問1点／問1は記号・訳 各1点）</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 裏面：解答・解説 ===================== -->
+<section class="sheet">
+  <div class="top">
+    <h1>to不定詞 対策プリント<small>解答・解説</small></h1>
+    <div class="namebox"><span class="lab" style="border:none">赤字が答え。まちがえた問題には ✓ をつけ、表面のメモ欄に単語を書き足そう。</span></div>
+  </div>
+
+  <div class="cols">
+    <!-- 列1：まとめ -->
+    <div class="col">
+      <h2><span class="n">★</span>3つの用法 まとめ</h2>
+      <table class="sum">
+        <tr><th style="width:19mm">用法</th><th>訳し方</th><th>形・目印</th><th>例</th></tr>
+        <tr><td><b>名詞的</b></td><td>〜すること</td><td>動詞の後ろ／文の主語／be動詞の後ろ</td><td>I want <u>to go</u>.</td></tr>
+        <tr><td><b>形容詞的</b></td><td>〜するための<br>〜すべき</td><td><b>名詞</b>の直後に to〜</td><td>time <u>to eat</u></td></tr>
+        <tr><td><b>副詞的</b></td><td>①〜するために<br>②〜して</td><td>①文が完成した後ろに to〜<br>②感情の形容詞＋to〜</td><td>①go <u>to see</u> him<br>②glad <u>to see</u> you</td></tr>
+      </table>
+
+      <h3>用法の見分け方（to のすぐ前を見よう！）</h3>
+      <div class="flow">
+        <p><span class="arrow">▶</span> to の前が <b>want / like / try / need / start</b> などの動詞、または文の頭・is の後ろ<br>　<span class="arrow">→ 名詞的「〜すること」</span></p>
+        <p><span class="arrow">▶</span> to の前が <b>名詞</b>（time, something, homework, places…）<br>　<span class="arrow">→ 形容詞的「〜するための・〜すべき」</span></p>
+        <p style="margin-bottom:0"><span class="arrow">▶</span> to の前で文が終わっている（I went to the park.）、または <b>happy / sad / surprised</b><br>　<span class="arrow">→ 副詞的「〜するために」「〜して」</span></p>
+      </div>
+
+      <h3>まちがえやすいポイント</h3>
+      <ol class="tips">
+        <li><b>to のあとは必ず原形！</b><br>主語が he / she でも、過去の文でも形は変わらない。<br>× to plays ／ × to played → ○ <b>to play</b></li>
+        <li><b>「〜するために」は for ではなく to。</b><br>× for play soccer → ○ <b>to play</b> soccer</li>
+        <li><b>語順は「名詞 → to〜」。</b><br>「何か飲むもの」＝ something <b>to drink</b>（× to drink something）</li>
+        <li><b>want の主語が3人称単数なら wants。</b><br>He <b>wants</b> to 〜 ／ She <b>likes</b> to 〜（s がつくのは前の動詞だけ）</li>
+        <li><b>2文→1文のコツ</b><br>①2文目の動詞を to＋原形にする　②there / them など重なる語は消す　③感情は「〜して」の形に</li>
+      </ol>
+
+      <div class="box2 mt"><b>覚え方のヒント</b>　to不定詞は「これから〜する」という<b>未来・目的</b>のイメージ。<br>want to（これから〜したい）、to buy（これから買うために）と考えると訳しやすい！</div>
+    </div>
+
+    <!-- 列2：1〜3の解答 -->
+    <div class="col">
+      <h2><span class="n">1</span>名詞的用法 解答</h2>
+      <div class="a"><span class="num">(1)</span><span class="ans">私は音楽を聞くことが好きです。</span><div class="exp">like to 〜「〜することが好き」。listen to 〜 で「〜を聞く」。</div></div>
+      <div class="a"><span class="num">(2)</span><span class="ans">私の夢は医者になることです。</span><div class="exp">is の後ろの to become が「なること」。become＝〜になる。</div></div>
+      <div class="a"><span class="num">(3)</span><span class="ans">英語を話すことは簡単ではない。</span><div class="exp">文の頭の To speak English が主語「英語を話すことは」。</div></div>
+      <div class="a"><span class="num">(4)</span><span class="ans">want to buy</span><div class="exp">「〜したい」＝ want to＋原形。</div></div>
+      <div class="a"><span class="num">(5)</span><span class="ans">likes to swim</span><div class="exp">主語 He なので like<b>s</b>。to の後ろの swim は原形のまま。</div></div>
+
+      <h2 style="margin-top:3mm"><span class="n">2</span>形容詞的用法 解答</h2>
+      <div class="a"><span class="num">(1)</span><span class="ans">今日はするべき宿題がたくさんある。</span><div class="exp">homework（名詞）← to do（するべき）。後ろから説明している。</div></div>
+      <div class="a"><span class="num">(2)</span><span class="ans">何か飲むものをください。</span><div class="exp">something to drink＝「何か飲むもの」。セットで覚えよう。</div></div>
+      <div class="a"><span class="num">(3)</span><span class="ans">京都には訪れるべき場所がたくさんある。</span><div class="exp">places ← to visit。「訪れるための場所」でも○。</div></div>
+      <div class="a"><span class="num">(4)</span><span class="ans">time to read</span><div class="exp">「読むための時間」＝ time to read。have no 〜「〜がない」。</div></div>
+      <div class="a"><span class="num">(5)</span><span class="ans">He has many friends to help him.</span><div class="exp">まず He has many friends（友達がたくさんいる）を作り、後ろに to help him（彼を手伝ってくれる）をつなげる。</div></div>
+
+      <h2 style="margin-top:3mm"><span class="n">3</span>副詞的用法 解答</h2>
+      <div class="a"><span class="num">(1)</span><span class="ans">私は勉強するために図書館へ行った。</span><div class="exp">I went to the library. で文は完成 → to study は「目的」。</div></div>
+      <div class="a"><span class="num">(2)</span><span class="ans">彼女は朝食を作るために早く起きた。</span><div class="exp">got up early（早く起きた）の目的が to make breakfast。</div></div>
+      <div class="a"><span class="num">(3)</span><span class="ans">私たちはその知らせを聞いて驚いた。</span><div class="exp">surprised（驚いた）＋ to hear →「聞いて」＝感情の原因。</div></div>
+      <div class="a"><span class="num">(4)</span><span class="ans">to learn</span><div class="exp">「学ぶために」＝目的。went（過去）でも to の後ろは原形 learn。</div></div>
+      <div class="a"><span class="num">(5)</span><span class="ans">To play</span><div class="exp">Why〜?（なぜ）には To〜.（〜するためです）で答えられる。文頭なので大文字。</div></div>
+    </div>
+
+    <!-- 列3：確認問題の解答 -->
+    <div class="col">
+      <h2><span class="n">4</span>確認問題 解答</h2>
+      <p class="lab">【問1】記号と訳</p>
+      <div class="a"><span class="num">(1)</span><span class="ans">A</span>　<span class="ans">私はすしを食べたい。</span><div class="exp">want to 〜 → 名詞的（「食べることを望む」＝食べたい）。</div></div>
+      <div class="a"><span class="num">(2)</span><span class="ans">C</span>　<span class="ans">私は牛乳を買うために店へ行った。</span><div class="exp">I went to the store. で文が完成 → 目的「〜するために」。</div></div>
+      <div class="a"><span class="num">(3)</span><span class="ans">B</span>　<span class="ans">私にはテレビを見る時間がない。</span><div class="exp">time（名詞）の直後 → 形容詞的「見るための時間」。</div></div>
+      <div class="a"><span class="num">(4)</span><span class="ans">C</span>　<span class="ans">ケンはその話を聞いて悲しかった。</span><div class="exp">sad（感情）＋ to〜 → 副詞的「〜して」（感情の原因）。</div></div>
+      <div class="a"><span class="num">(5)</span><span class="ans">A</span>　<span class="ans">この川で泳ぐことは危険だ。</span><div class="exp">文の頭で主語になっている → 名詞的「泳ぐことは」。</div></div>
+      <div class="a"><span class="num">(6)</span><span class="ans">B</span>　<span class="ans">あなたは何か食べるものを持っていますか。</span><div class="exp">anything（名詞）← to eat。疑問文では something が anything になる。</div></div>
+
+      <p class="lab" style="margin-top:2mm">【問2】2文→1文</p>
+      <div class="a"><span class="num">(1)</span><span class="ans">I went to the park to play tennis.</span><div class="exp">played → to play（原形に）。there（公園で）は重なるので消す。副詞的・目的。</div></div>
+      <div class="a"><span class="num">(2)</span><span class="ans">I was very happy to hear the news.</span><div class="exp">「知らせを聞いて、とてもうれしかった」。感情の文を前に、原因を to hear で後ろに。</div></div>
+      <div class="a"><span class="num">(3)</span><span class="ans">I have many books to read.</span><div class="exp">「読むべき本」＝ books to read。them は books と同じなので消す。形容詞的。</div></div>
+      <div class="a"><span class="num">(4)</span><span class="ans">I was surprised to see a big dog.</span><div class="exp">「大きな犬を見て驚いた」。感情（surprised）を前に、原因 saw → to see を後ろに。</div></div>
+
+      <p class="lab" style="margin-top:2mm">【問3】まちがい直し</p>
+      <div class="a"><span class="num">(1)</span><span class="ans">She wants to play the piano.</span><div class="exp">plays → play。s がつくのは wants だけ。to の後ろは原形。</div></div>
+      <div class="a"><span class="num">(2)</span><span class="ans">I went to the park to play soccer.</span><div class="exp">for play → to play。「〜するために」は to＋原形。</div></div>
+
+      <p class="lab" style="margin-top:2mm">【問4】英作文</p>
+      <div class="a"><span class="num">(1)</span><span class="ans">I want to be [become] a teacher in the future.</span><div class="exp">「〜になりたい」＝ want to be / want to become。a を忘れずに。</div></div>
+      <div class="a"><span class="num">(2)</span><span class="ans">I went to the station to meet [see] my friend.</span><div class="exp">「駅へ行った」で文を作ってから、目的 to meet my friend を後ろに。</div></div>
+      <div class="a"><span class="num">(3)</span><span class="ans">I have a lot of [many] things to do today.</span><div class="exp">「するべきこと」＝ things to do（形容詞的）。</div></div>
+
+      <div class="score mt" style="align-self:stretch">
+        <b>ふり返り</b>　□ 名詞的　□ 形容詞的　□ 副詞的　□ 2文→1文 <span class="lab">（自信のない用法に ✓ → 表面をもう一度！）</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
